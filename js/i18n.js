@@ -288,6 +288,8 @@
                 }
             } else if (options['data-words']) {
                 el.setAttribute('data-words', options['data-words']);
+            } else if (options.asHTML) {
+                el.innerHTML = text;
             } else {
                 el.textContent = text;
             }
