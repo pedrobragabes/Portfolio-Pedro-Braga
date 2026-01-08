@@ -21,9 +21,9 @@
         "about": {
             "label": "Sobre",
             "title": "Quem sou eu",
-            "text1": "Cresci dentro de uma loja de computadores. Meu pai, <strong>sargento da PM e técnico autodidata</strong>, abriu seu próprio negócio de TI no final dos anos 90 - consertando hardware, instalando software e resolvendo problemas. Foi ali, entre placas-mãe e gabinetes abertos, que aprendi que <strong>tecnologia é sobre fazer funcionar</strong>.",
-            "text2": "O que começou como hobby virou profissão. Hoje gerencio um <strong>servidor pessoal com Proxmox</strong> rodando diversos serviços em produção - de apps mobile de estoque com scanner até <strong>automações</strong> que economizam horas de trabalho manual.",
-            "text3": "Como cofundador digital da <strong>AquaFlora AgroShop</strong>, lidero a transformação digital da empresa - do e-commerce inicial às automações com IA que hoje respondem clientes no WhatsApp."
+            "text1": "Cresci dentro de uma loja de computadores. Meu pai, sargento da PM e técnico autodidata, abriu seu próprio negócio de TI no final dos anos 90 - consertando hardware, instalando software e resolvendo problemas. Foi ali, entre placas-mãe e gabinetes abertos, que aprendi que tecnologia é sobre fazer funcionar.",
+            "text2": "O que começou como hobby virou profissão. Hoje gerencio um servidor pessoal com Proxmox rodando diversos serviços em produção - de apps mobile de estoque com scanner até automações que economizam horas de trabalho manual.",
+            "text3": "Como cofundador digital da AquaFlora AgroShop, lidero a transformação digital da empresa - do e-commerce inicial às automações com IA que hoje respondem clientes no WhatsApp."
         },
         "services": {
             "label": "Soluções",
@@ -123,9 +123,9 @@
         "about": {
             "label": "About",
             "title": "Who am I",
-            "text1": "I grew up inside a computer shop. My father, a <strong>police sergeant and self-taught technician</strong>, opened his own IT business in the late 90s - fixing hardware, installing software, and solving problems. It was there, among motherboards and open cases, that I learned <strong>technology is about making things work</strong>.",
-            "text2": "What started as a hobby became a profession. Today I manage a <strong>personal server with Proxmox</strong> running multiple production services - from mobile inventory apps with scanners to <strong>automations</strong> that save hours of manual work.",
-            "text3": "As digital co-founder of <strong>AquaFlora AgroShop</strong>, I lead the company's digital transformation - from the initial e-commerce to AI automations that now respond to customers on WhatsApp."
+            "text1": "I grew up inside a computer shop. My father, a police sergeant and self-taught technician, opened his own IT business in the late 90s - fixing hardware, installing software, and solving problems. It was there, among motherboards and open cases, that I learned technology is about making things work.",
+            "text2": "What started as a hobby became a profession. Today I manage a personal server with Proxmox running multiple production services - from mobile inventory apps with scanners to automations that save hours of manual work.",
+            "text3": "As digital co-founder of AquaFlora AgroShop, I lead the company's digital transformation - from the initial e-commerce to AI automations that now respond to customers on WhatsApp."
         },
         "services": {
             "label": "Solutions",
