@@ -1,0 +1,206 @@
+{
+    "pt": {
+        "nav": {
+            "about": "Sobre",
+            "solutions": "Soluções",
+            "skills": "Competências",
+            "projects": "Projetos",
+            "education": "Formação",
+            "blog": "Blog",
+            "contact": "Contato"
+        },
+        "hero": {
+            "badge": "Aberto para oportunidades",
+            "greeting": "Olá, eu sou",
+            "name": "Pedro Braga",
+            "role": "Software Engineer & Full Stack Developer",
+            "description": "Transformo ideias em sistemas eficientes. De servidores e landing pages a lojas e-commerce de alta conversão.",
+            "cta_projects": "Ver Projetos",
+            "cta_cv": "Currículo"
+        },
+        "about": {
+            "label": "Sobre",
+            "title": "Quem sou eu",
+            "text1": "Cresci dentro de uma loja de computadores. Meu pai, <strong>sargento da PM e técnico autodidata</strong>, abriu seu próprio negócio de TI no final dos anos 90 - consertando hardware, instalando software e resolvendo problemas. Foi ali, entre placas-mãe e gabinetes abertos, que aprendi que <strong>tecnologia é sobre fazer funcionar</strong>.",
+            "text2": "O que começou como hobby virou profissão. Hoje gerencio um <strong>servidor pessoal com Proxmox</strong> rodando diversos serviços em produção - de apps mobile de estoque com scanner até <strong>automações</strong> que economizam horas de trabalho manual.",
+            "text3": "Como cofundador digital da <strong>AquaFlora AgroShop</strong>, lidero a transformação digital da empresa - do e-commerce inicial às automações com IA que hoje respondem clientes no WhatsApp."
+        },
+        "services": {
+            "label": "Soluções",
+            "title": "Como posso ajudar",
+            "cta": "Solicitar Consultoria Digital",
+            "card1_title": "Logística & Estoque Inteligente",
+            "card1_desc": "Sistemas customizados com leitura de código de barras e controle em tempo real. Elimine rupturas e perdas com gestão precisa.",
+            "card2_title": "Bots & Automação (RPA)",
+            "card2_desc": "Robôs que trabalham por você 24/7. Chatbots para WhatsApp, automação de emissão de notas e integração entre sistemas legados.",
+            "card3_title": "E-commerce High-Performance",
+            "card3_desc": "Lojas virtuais otimizadas para performance máxima (Core Web Vitals). SEO técnico e UX focado em taxa de conversão."
+        },
+        "skills": {
+            "label": "Competências",
+            "title": "O que eu uso"
+        },
+        "projects": {
+            "label": "Portfólio",
+            "title": "Projetos em Destaque",
+            "view_case": "Ver Case Study →",
+            "btn_site": "Ver Site",
+            "btn_code": "GitHub"
+        },
+        "education": {
+            "label": "Formação",
+            "title": "Educação & Certificações",
+            "degree_title": "Engenharia de Computação",
+            "degree_university": "UNIVESP - Universidade Virtual do Estado de São Paulo",
+            "degree_status": "Em andamento",
+            "degree_expected": "Previsão: 2030",
+            "degree_semester": "2º Semestre",
+            "degree_focus": "Disciplinas Atuais:",
+            "progress_label": "20% concluído",
+            "certs_title": "Certificações & Formações"
+        },
+        "testimonials": {
+            "label": "Depoimentos",
+            "title": "O que dizem"
+        },
+        "blog": {
+            "label": "Blog & Stats",
+            "title": "Últimos Artigos & Atividade",
+            "articles_title": "Artigos Técnicos",
+            "coming_soon": "Em breve",
+            "coming_soon_text": "Tutoriais hands-on sobre infraestrutura e desenvolvimento.",
+            "github_title": "GitHub Activity",
+            "wakatime_title": "Tempo de Código",
+            "wakatime_note": "Estatísticas das últimas semanas via",
+            "follow_cta": "Me siga no GitHub para não perder!",
+            "topic_1": "🖥️ Self-Hosting com Proxmox",
+            "topic_2": "🐳 Docker para Iniciantes",
+            "topic_3": "🐍 Automações com Python",
+            "topic_4": "⚡ Node.js + APIs REST"
+        },
+        "contact": {
+            "label": "Contato",
+            "title": "Vamos construir sua solução?",
+            "subtitle": "Pronto para elevar o nível do seu projeto? Entre em contato e vamos discutir como posso ajudar.",
+            "name": "Nome",
+            "name_placeholder": "Seu nome",
+            "email": "Email",
+            "email_placeholder": "seu@email.com",
+            "subject": "Assunto",
+            "subject_placeholder": "Sobre o que quer conversar?",
+            "message": "Mensagem",
+            "message_placeholder": "Descreva seu projeto ou ideia...",
+            "submit": "Enviar Mensagem",
+            "whatsapp": "Chamar no WhatsApp"
+        },
+        "credentials": {
+            "in_progress": "Em andamento"
+        },
+        "footer": {
+            "developed": "Desenvolvido com <3 por Pedro Braga",
+            "rights": "Todos os direitos reservados"
+        }
+    },
+    "en": {
+        "nav": {
+            "about": "About",
+            "solutions": "Solutions",
+            "skills": "Skills",
+            "projects": "Projects",
+            "education": "Education",
+            "blog": "Blog",
+            "contact": "Contact"
+        },
+        "hero": {
+            "badge": "Open to opportunities",
+            "greeting": "Hi, I'm",
+            "name": "Pedro Braga",
+            "role": "Software Engineer & Full Stack Developer",
+            "description": "I turn ideas into working systems. From Proxmox servers to Python automations and high-converting e-commerce stores.",
+            "cta_projects": "View Projects",
+            "cta_cv": "Resume"
+        },
+        "about": {
+            "label": "About",
+            "title": "Who am I",
+            "text1": "I grew up inside a computer shop. My father, a <strong>police sergeant and self-taught technician</strong>, opened his own IT business in the late 90s - fixing hardware, installing software, and solving problems. It was there, among motherboards and open cases, that I learned <strong>technology is about making things work</strong>.",
+            "text2": "What started as a hobby became a profession. Today I manage a <strong>personal server with Proxmox</strong> running multiple production services - from mobile inventory apps with scanners to <strong>automations</strong> that save hours of manual work.",
+            "text3": "As digital co-founder of <strong>AquaFlora AgroShop</strong>, I lead the company's digital transformation - from the initial e-commerce to AI automations that now respond to customers on WhatsApp."
+        },
+        "services": {
+            "label": "Solutions",
+            "title": "How I can help",
+            "cta": "Request Digital Consulting",
+            "card1_title": "Logistics & Smart Inventory",
+            "card1_desc": "Custom systems with barcode scanning and real-time control. Eliminate stockouts and losses with precise management.",
+            "card2_title": "Bots & Automation (RPA)",
+            "card2_desc": "Robots that work for you 24/7. WhatsApp chatbots, invoice automation, and legacy system integration.",
+            "card3_title": "High-Performance E-commerce",
+            "card3_desc": "Online stores optimized for maximum performance (Core Web Vitals). Technical SEO and UX focused on conversion rates."
+        },
+        "skills": {
+            "label": "Skills",
+            "title": "My Stack"
+        },
+        "projects": {
+            "label": "Portfolio",
+            "title": "Featured Projects",
+            "view_case": "View Case Study →",
+            "btn_site": "View Site",
+            "btn_code": "GitHub"
+        },
+        "education": {
+            "label": "Education",
+            "title": "Education & Certifications",
+            "degree_title": "Computer Engineering",
+            "degree_university": "UNIVESP - Virtual University of São Paulo State",
+            "degree_status": "In progress",
+            "degree_expected": "Expected: 2030",
+            "degree_semester": "2nd Semester",
+            "degree_focus": "Current Subjects:",
+            "progress_label": "20% complete",
+            "certs_title": "Certifications & Training"
+        },
+        "testimonials": {
+            "label": "Testimonials",
+            "title": "What they say"
+        },
+        "blog": {
+            "label": "Blog & Stats",
+            "title": "Latest Articles & Activity",
+            "articles_title": "Technical Articles",
+            "coming_soon": "Coming Soon",
+            "coming_soon_text": "Hands-on tutorials about infrastructure and development.",
+            "github_title": "GitHub Activity",
+            "wakatime_title": "Coding Time",
+            "wakatime_note": "Last weeks stats via",
+            "follow_cta": "Follow me on GitHub to stay tuned!",
+            "topic_1": "🖥️ Self-Hosting with Proxmox",
+            "topic_2": "🐳 Docker for Beginners",
+            "topic_3": "🐍 Python Automations",
+            "topic_4": "⚡ Node.js + REST APIs"
+        },
+        "contact": {
+            "label": "Contact",
+            "title": "Let's build your solution?",
+            "subtitle": "Ready to take your project to the next level? Get in touch and let's discuss how I can help.",
+            "name": "Name",
+            "name_placeholder": "Your name",
+            "email": "Email",
+            "email_placeholder": "your@email.com",
+            "subject": "Subject",
+            "subject_placeholder": "What do you want to talk about?",
+            "message": "Message",
+            "message_placeholder": "Describe your project or idea...",
+            "submit": "Send Message",
+            "whatsapp": "Chat on WhatsApp"
+        },
+        "credentials": {
+            "in_progress": "In progress"
+        },
+        "footer": {
+            "developed": "Developed with ☕ by Pedro Braga",
+            "rights": "All rights reserved"
+        }
+    }
+}

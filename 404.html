@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Pedro Braga</title>
+    <link rel="icon" type="image/png" href="assets/PB.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 404 Specific Styles */
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-warm);
+        }
+
+        .error-code {
+            font-family: var(--font-heading);
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent-brown);
+            opacity: 0.2;
+            margin-bottom: -2rem;
+            display: block;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .error-code {
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <span class="error-code">404</span>
+                <h1 class="hero__title">Página não encontrada</h1>
+                <p class="hero__subtitle" style="max-width: 500px; margin: 0 auto 2rem auto;">
+                    Parece que você se perdeu no ciberespaço. A página que você procura não existe ou foi movida.
+                </p>
+                <a href="/" class="btn btn--primary">
+                    Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

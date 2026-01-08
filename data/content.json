@@ -1,0 +1,74 @@
+{
+  "certifications": [
+    {
+      "title": "Inglês Avançado C1",
+      "institution": "EF SET",
+      "credentialUrl": "https://cert.efset.org/pt/VMJDhJ",
+      "status": "completed",
+      "hours": "64/100",
+      "logo": "efset",
+      "isHighlight": true
+    },
+    {
+      "title": "Backend Node.js",
+      "institution": "Alura",
+      "credentialUrl": "https://cursos.alura.com.br/",
+      "status": "in-progress",
+      "hours": "80h+",
+      "logo": "alura"
+    },
+    {
+      "title": "Engenharia de Software",
+      "institution": "Alura",
+      "credentialUrl": "https://cursos.alura.com.br/",
+      "status": "in-progress",
+      "hours": "60h+",
+      "logo": "alura"
+    },
+    {
+      "title": "JavaScript & Lógica",
+      "institution": "Alura",
+      "credentialUrl": "https://cursos.alura.com.br/degree/certificate/f53c0415-6401-4ba8-a288-b946b78c4259?lang=pt_BR",
+      "status": "completed",
+      "hours": "40h",
+      "logo": "alura"
+    },
+    {
+      "title": "WordPress Full Stack",
+      "institution": "Alura",
+      "credentialUrl": "https://cursos.alura.com.br/degree/certificate/6ec63722-f65b-418b-b3d7-bd1565d332e7?lang",
+      "status": "completed",
+      "hours": "35h",
+      "logo": "alura"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "text": "A criação da nossa loja virtual era um desejo antigo, e o Pedro não só tirou isso do papel com maestria, como expandiu nossa visão. Ele entendeu nossas dores e transformou processos manuais em sistemas tão eficientes que hoje enxergamos a possibilidade de nos digitalizarmos por completo. O grande diferencial foi ele ter olhado para o nosso negócio, e não apenas para o código.",
+      "authorName": "Diego",
+      "authorRole": "Dono @ AquaFlora AgroShop",
+      "authorPhoto": "assets/testimonials/Diego Crente.jpg",
+      "authorInitial": "D"
+    }
+  ],
+  "contact": {
+    "sectionLabel": "Contato",
+    "sectionTitle": "Vamos construir sua solução?",
+    "sectionSubtitle": "Pronto para elevar o nível do seu projeto? Entre em contato e vamos discutir como posso ajudar.",
+    "email": "pedrobraga855@gmail.com",
+    "whatsappNumber": "5516996234322",
+    "whatsappMessage": "Olá Pedro, vi seu portfólio e gostaria de conversar sobre um projeto."
+  },
+  "education": {
+    "currentSemester": 2,
+    "totalSemesters": 10,
+    "expectedYear": 2030,
+    "subjects": [
+      "Algoritmos II",
+      "Cálculo I",
+      "Introdução à Computação",
+      "Fundamentos Web"
+    ]
+  }
+}
