@@ -109,6 +109,7 @@ Todas as traduções organizadas por seção (nav, hero, about, etc.)
 3. **Hero badge sem i18n** - Adicionado `data-i18n="hero.badge"`
 4. **Formulário muito "sênior"** - Ajustado para perfil com foco em oportunidades de emprego
 5. **Opção de Mentoria removida** - Não adequada ao nível de experiência atual
+6. **Textos com promessas impossíveis** - Reescritas descrições da hero para serem profissionais e realistas
 
 ### 🟢 Menores (Pendentes)
 
@@ -274,4 +275,4 @@ Todas as traduções organizadas por seção (nav, hero, about, etc.)
 ---
 
 > **Autor do documento**: Análise assistida por IA
-> **Versão do projeto**: v1.4.0 (Refinamento e i18n Robusto)
+> **Versão do projeto**: v1.5.0 (Refinamento de Conteúdo e Foco em Carreira)

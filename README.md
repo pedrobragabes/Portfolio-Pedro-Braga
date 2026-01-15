@@ -109,6 +109,13 @@ portfolio-pedro-braga/
 - [x] **Full Translation Coverage**: "Sobre mim", "Soluções" e todos os badges dinâmicos (Em andamento) agora 100% traduzidos.
 - [x] **Blog Hidden**: Seção de Blog temporariamente oculta (com código preservado) para focar nas funcionalidades principais.
 
+### v1.5.0 (Refinamento de Conteúdo e Foco em Carreira)
+- [x] **Hero Text Profissional**: Descrição reescrita para refletir experiência real (removido texto com promessas impossíveis).
+- [x] **Formulário de Contato Reformulado**: Agora focado em atrair vagas de programação (Freelance/Emprego/Parceria/Networking).
+- [x] **Opção de Mentoria Removida**: Ajustado para perfil de desenvolvedor em início de carreira.
+- [x] **Bug Fixes**: Corrigido typo `??`, hero badge com i18n, link GitHub unificado para `pedrobragabes`.
+- [x] **Documentação**: Criado arquivo `contexto.md` para contextualizar futuras edições.
+
 ### Ideias para o Futuro (Roadmap)
 - [ ] **Blog Técnico Funcional**: Artigos reais em Markdown com conversão estática.
 - [ ] **Case Study Modals Dinâmicos**: Carregar conteúdo dos case studies via JSON/API.
