@@ -105,9 +105,12 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             setTheme(savedTheme);
-        } else {
-            setTheme('dark');
+            return;
         }
+
+        // Default respects system preference to avoid unexpected flash
+        const systemPrefersDark = prefersDark.matches ? 'dark' : 'light';
+        setTheme(systemPrefersDark);
     }
 
     initTheme();
@@ -154,13 +157,12 @@
     // Use requestAnimationFrame for smooth parallax
     let ticking = false;
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                handleParallax();
-                ticking = true;
-            });
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(() => {
+            handleParallax();
             ticking = false;
-        }
+        });
     }, { passive: true });
 
     // ==========================================================================
@@ -436,40 +438,42 @@
 
     function openModal(projectName) {
         const data = caseStudies[projectName];
-        if (data && modal) {
-            document.getElementById('modalTag').textContent = data.tag;
-            document.getElementById('modalTitle').textContent = data.title;
-            document.getElementById('modalProblem').textContent = data.problem;
-            document.getElementById('modalSolution').textContent = data.solution;
-            document.getElementById('modalResult').textContent = data.result;
-
-            // Gallery Logic
-            const galleryContainer = document.getElementById('modalImages');
-            if (galleryContainer) {
-                galleryContainer.innerHTML = ''; // Clear existing images
-
-                if (data.images && data.images.length > 0) {
-                    data.images.forEach(imgSrc => {
-                        const img = document.createElement('img');
-                        img.src = imgSrc;
-                        img.alt = `${data.title} Screenshot`;
-                        img.className = 'modal__image';
-                        img.loading = 'lazy';
-                        img.onclick = () => openLightbox(imgSrc); // Add click to zoom
-                        galleryContainer.appendChild(img);
-                    });
-                } else {
-                    // Fallback or empty state if no images
-                    const placeholder = document.createElement('div');
-                    placeholder.className = 'modal__image-placeholder';
-                    placeholder.textContent = 'Galeria em breve';
-                    galleryContainer.appendChild(placeholder);
-                }
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        if (!data || !modal) {
+            console.warn(`Case study data not found for "${projectName}"`);
+            return;
         }
+
+        document.getElementById('modalTag').textContent = data.tag;
+        document.getElementById('modalTitle').textContent = data.title;
+        document.getElementById('modalProblem').textContent = data.problem;
+        document.getElementById('modalSolution').textContent = data.solution;
+        document.getElementById('modalResult').textContent = data.result;
+
+        // Gallery Logic
+        const galleryContainer = document.getElementById('modalImages');
+        if (galleryContainer) {
+            galleryContainer.innerHTML = '';
+
+            if (data.images && data.images.length > 0) {
+                data.images.forEach(imgSrc => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = `${data.title} Screenshot`;
+                    img.className = 'modal__image';
+                    img.loading = 'lazy';
+                    img.onclick = () => openLightbox(imgSrc);
+                    galleryContainer.appendChild(img);
+                });
+            } else {
+                const placeholder = document.createElement('div');
+                placeholder.className = 'modal__image-placeholder';
+                placeholder.textContent = 'Galeria em breve';
+                galleryContainer.appendChild(placeholder);
+            }
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     // ==========================================================================
@@ -575,29 +579,8 @@
 
     projectCards.forEach(card => {
         const video = card.querySelector('video');
-        if (video) {
-            card.addEventListener('mouseenter', () => {
-                video.play().catch(e => console.log('Video play error:', e));
-            });
+        if (!video) return;
 
-            card.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        }
-    });
-
-})();
-
-// ==========================================================================
-// 13. PROJECT VIDEO HOVER
-// ==========================================================================
-
-const projectCards = document.querySelectorAll('.project-card');
-
-projectCards.forEach(card => {
-    const video = card.querySelector('video');
-    if (video) {
         card.addEventListener('mouseenter', () => {
             video.play().catch(e => console.log('Video play error:', e));
         });
@@ -606,6 +589,7 @@ projectCards.forEach(card => {
             video.pause();
             video.currentTime = 0;
         });
-    }
-});
+    });
+
+})();
 

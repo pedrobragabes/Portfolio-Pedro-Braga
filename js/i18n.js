@@ -210,6 +210,7 @@
         updatePlaceholder('#email', t.contact.email_placeholder);
         updatePlaceholder('#subject', t.contact.subject_placeholder);
         updatePlaceholder('#message', t.contact.message_placeholder);
+        updatePlaceholder('#details', t.contact.details_placeholder);
 
         // Update credential badges (Handled by data-i18n now)
         // updateCredentialBadges(t.credentials?.in_progress);

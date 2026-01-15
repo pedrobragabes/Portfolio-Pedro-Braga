@@ -39,7 +39,7 @@
     /* Spacing */
     --section-padding: clamp(80px, 12vh, 140px);
     --container-max: 1100px;
-    --container-padding: clamp(24px, 6vw, 48px);
+    --container-padding: clamp(16px, 6vw, 48px);
 
     /* Motion */
     --transition-fast: 0.2s ease;
@@ -433,7 +433,7 @@ ol {
 
 .hero__title {
     font-family: var(--font-heading);
-    font-size: clamp(2.75rem, 6vw, 4rem);
+    font-size: clamp(2rem, 9vw, 4rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -503,6 +503,19 @@ ol {
 
 @media (max-width: 768px) {
     .hero__cta-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .hero__cta-group {
+        flex-direction: column !important;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero__cta {
+        width: 100%;
         justify-content: center;
     }
 }
@@ -1928,18 +1941,20 @@ ol {
 }
 
 .contact__input,
-.contact__textarea {
+.contact__textarea,
+.contact__select {
     padding: 0.875rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     font-family: var(--font-body);
     font-size: 0.95rem;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-    background: var(--bg-cream);
+    background-color: var(--bg-cream);
 }
 
 .contact__input:focus,
-.contact__textarea:focus {
+.contact__textarea:focus,
+.contact__select:focus {
     outline: none;
     border-color: var(--accent-brown);
     box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
@@ -1948,6 +1963,22 @@ ol {
 .contact__textarea {
     min-height: 140px;
     resize: vertical;
+}
+
+.contact__select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%233D3D3D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
+}
+
+.contact__select option {
+    background: var(--bg-cream);
+    color: var(--text-dark);
 }
 
 .contact__submit {
@@ -2001,14 +2032,25 @@ ol {
 }
 
 [data-theme="dark"] .contact__input,
-[data-theme="dark"] .contact__textarea {
-    background: #18181B;
+[data-theme="dark"] .contact__textarea,
+[data-theme="dark"] .contact__select {
+    background-color: #18181B;
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #E0E0E0;
 }
 
+[data-theme="dark"] .contact__select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23E0E0E0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .contact__select option {
+    background: #18181B;
+    color: #E0E0E0;
+}
+
 [data-theme="dark"] .contact__input:focus,
-[data-theme="dark"] .contact__textarea:focus {
+[data-theme="dark"] .contact__textarea:focus,
+[data-theme="dark"] .contact__select:focus {
     border-color: var(--accent-brown);
     box-shadow: 0 0 0 3px rgba(238, 187, 119, 0.1);
 }

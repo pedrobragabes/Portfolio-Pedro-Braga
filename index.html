@@ -135,13 +135,14 @@
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero__content">
-                    <a href="#contact" class="hero__badge">Disponível para projetos</a>
+                    <a href="#contact" class="hero__badge"><span data-i18n="hero.badge">Aberto para
+                            oportunidades</span></a>
                     <h1 class="hero__title">
                         Software Engineer
                     </h1>
                     <p class="hero__subtitle">
-                        Engenheiro de Computação em formação com foco em Backend e DevOps. Crio soluções unindo
-                        desenvolvimento (Python/Node.js) e orquestração de infraestrutura.
+                        Desenvolvedor Full Stack com foco em Backend e Infraestrutura. Experiência em automações Python,
+                        APIs Node.js e arquitetura de e-commerce.
                     </p>
                     <div class="hero__cta-group">
                         <a href="#projects" class="hero__cta">
@@ -935,38 +936,67 @@
             <div class="container">
                 <div class="contact__header reveal">
                     <span class="section-label">Contato</span>
-                    <h2 class="section-title">Vamos construir sua solução?</h2>
+                    <h2 class="section-title" data-i18n="contact.title">Vamos conversar?</h2>
                     <p class="contact__subtitle">
-                        Pronto para elevar o nível do seu projeto? Entre em contato e vamos discutir como posso ajudar.
+                        Conte sobre seu projeto ou oportunidade. Responderei o mais breve possível!
                     </p>
                 </div>
 
                 <form class="contact__form reveal" action="https://formsubmit.co/pedrobraga855@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Novo contato via Portfólio">
+                    <input type="hidden" name="_subject" value="Novo contato via Portfolio">
                     <input type="hidden" name="_captcha" value="false">
+
                     <div class="contact__row">
                         <div class="contact__field">
-                            <label class="contact__label" for="name">Nome</label>
+                            <label class="contact__label" for="name" data-i18n="contact.name">Nome</label>
                             <input class="contact__input" type="text" id="name" name="name" required
                                 placeholder="Seu nome">
                         </div>
                         <div class="contact__field">
-                            <label class="contact__label" for="email">Email</label>
+                            <label class="contact__label" for="email" data-i18n="contact.email">Email</label>
                             <input class="contact__input" type="email" id="email" name="email" required
                                 placeholder="seu@email.com">
                         </div>
                     </div>
+
                     <div class="contact__field full">
-                        <label class="contact__label" for="subject">Assunto</label>
-                        <input class="contact__input" type="text" id="subject" name="subject"
-                            placeholder="Sobre o que quer conversar?">
+                        <label class="contact__label" for="service-type" data-i18n="contact.service_label">Área de
+                            interesse</label>
+                        <select class="contact__select" id="service-type" name="service_type" required>
+                            <option value="" disabled selected data-i18n="contact.service_placeholder">Selecione uma
+                                opção</option>
+                            <option value="Infraestrutura" data-i18n="contact.service_infra">Infraestrutura & DevOps
+                                (Docker, Linux)</option>
+                            <option value="Automacao" data-i18n="contact.service_automation">Automação e Bots (Python,
+                                Node.js)</option>
+                            <option value="Ecommerce" data-i18n="contact.service_ecom">E-commerce & WordPress</option>
+                            <option value="Software" data-i18n="contact.service_software">Desenvolvimento de Software /
+                                APIs</option>
+                            <option value="Outro" data-i18n="contact.service_outro">Oportunidade de trabalho / Outro
+                            </option>
+                        </select>
                     </div>
+
                     <div class="contact__field full">
-                        <label class="contact__label" for="message">Mensagem</label>
-                        <textarea class="contact__textarea" id="message" name="message" required
-                            placeholder="Descreva seu projeto ou ideia..."></textarea>
+                        <label class="contact__label" for="budget" data-i18n="contact.budget_label">Tipo de
+                            contato</label>
+                        <select class="contact__select" id="budget" name="budget" required>
+                            <option value="" disabled selected data-i18n="contact.budget_placeholder">Selecione uma
+                                opção</option>
+                            <option value="Freelance" data-i18n="contact.budget_discovery">Projeto freelance</option>
+                            <option value="Emprego" data-i18n="contact.budget_sprint">Proposta de emprego</option>
+                            <option value="Parceria" data-i18n="contact.budget_medio">Parceria técnica</option>
+                            <option value="Networking" data-i18n="contact.budget_grande">Apenas networking</option>
+                        </select>
                     </div>
-                    <button class="contact__submit" type="submit">Enviar Mensagem</button>
+
+                    <div class="contact__field full">
+                        <label class="contact__label" for="details" data-i18n="contact.details_label">Detalhes</label>
+                        <textarea class="contact__textarea" id="details" name="details" required
+                            placeholder="Conte mais sobre o projeto, vaga ou ideia..."></textarea>
+                    </div>
+
+                    <button class="contact__submit" type="submit">Enviar mensagem</button>
                 </form>
                 <div class="contact__methods reveal">
                     <a href="mailto:pedrobraga855@gmail.com" class="contact__method">
@@ -999,7 +1029,7 @@
             <div class="footer__content">
                 <span class="footer__logo">PB</span>
                 <div class="footer__social">
-                    <a href="https://github.com/errinhopog" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/pedrobragabes" target="_blank" rel="noopener noreferrer"
                         class="footer__social-link" aria-label="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
