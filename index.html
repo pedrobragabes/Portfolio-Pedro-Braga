@@ -37,7 +37,7 @@
       "description": "Engenheiro de Computação em formação e especialista em infraestrutura e automação.",
       "image": "assets/Pedro Braga.webp",
       "sameAs": [
-        "https://github.com/errinhopog",
+        "https://github.com/pedrobragabes",
         "https://www.linkedin.com/in/pedrobragabes/"
       ]
     }
@@ -46,27 +46,34 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Preload LCP Image (Critical for performance) -->
+    <link rel="preload" as="image" href="assets/profile/Pedro Braga.webp" fetchpriority="high">
+
+    <!-- Google Fonts with display=swap -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Stylesheet (Critical) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Devicon - Loaded async to not block render -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    </noscript>
+
+    <!-- Google Analytics - Deferred -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7M61DXD7W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-C7M61DXD7W');
     </script>
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Devicon -->
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -168,7 +175,7 @@
                 <div class="hero__photo">
                     <div class="hero__photo-wrapper animate-fade-in-up">
                         <img src="assets/profile/Pedro Braga.webp" alt="Pedro Braga - Engenheiro de Software"
-                            width="320" height="320">
+                            width="320" height="427" fetchpriority="high" decoding="async">
                     </div>
                 </div>
             </div>
@@ -1129,16 +1136,14 @@
             </svg>
         </button>
         <div class="lightbox__content">
-            <img src="" alt="Zoom" class="lightbox__image" id="lightboxImage">
+            <img src="" alt="Zoom" class="lightbox__image" id="lightboxImage" width="800" height="600">
         </div>
     </div>
 
-    <!-- Content Loader (Mini-CMS) -->
-    <script src="js/content-loader.js"></script>
-    <!-- Internationalization (EN/PT) -->
-    <script src="js/i18n.js"></script>
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Scripts - Deferred for better performance -->
+    <script src="js/content-loader.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 
