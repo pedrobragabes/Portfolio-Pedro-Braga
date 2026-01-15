@@ -344,15 +344,21 @@
 
             try {
                 const formData = new FormData(form);
+                if (!formData.get('_replyto') && formData.get('email')) {
+                    formData.append('_replyto', formData.get('email'));
+                }
                 const response = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
 
+                const result = await response.json().catch(() => null);
+                const isSuccess = response.ok && (result?.success === true || result?.success === 'true');
+
                 form.classList.remove('submitting');
 
-                if (response.ok) {
+                if (isSuccess) {
                     // Success feedback
                     const successDiv = document.createElement('div');
                     successDiv.className = 'form-success';
