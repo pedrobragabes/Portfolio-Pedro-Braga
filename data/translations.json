@@ -114,6 +114,55 @@
         "footer": {
             "developed": "Desenvolvido com <3 por Pedro Braga",
             "rights": "Todos os direitos reservados"
+        },
+        "legal": {
+            "header": {
+                "back": "Voltar"
+            },
+            "hero": {
+                "title": "Institucional & Informações Legais",
+                "subtitle": "Esta página reúne os termos gerais de uso, diretrizes de privacidade e políticas aplicáveis à marca PB Digital.",
+                "updated": "Última atualização: 16 de janeiro de 2026"
+            },
+            "terms": {
+                "title": "Termos de uso",
+                "body": "O conteúdo deste site é informativo e institucional. Ao acessar, você concorda em utilizar as informações de forma lícita e respeitosa, em conformidade com a legislação aplicável.",
+                "item1": "Não é permitida a reprodução de conteúdos sem autorização.",
+                "item2": "As informações podem ser atualizadas sem aviso prévio.",
+                "item3": "O site pode conter links para terceiros, sujeitos às políticas desses serviços.",
+                "item4": "Estes termos se estendem ao uso dos softwares RastreIAGastos e CadastraFacil, regendo a licença de uso concedida aos usuários destas ferramentas.",
+                "note": "Para solicitações comerciais ou parcerias, entre em contato pelo e-mail abaixo."
+            },
+            "privacy": {
+                "title": "Privacidade",
+                "body": "Respeitamos a privacidade dos visitantes. Coletamos apenas informações essenciais para contato e atendimento, quando fornecidas voluntariamente, em conformidade com a LGPD e boas práticas de segurança.",
+                "item1": "Dados enviados via formulário são usados apenas para retorno de contato.",
+                "item2": "Não compartilhamos informações pessoais com terceiros sem consentimento.",
+                "item3": "Você pode solicitar a remoção de seus dados a qualquer momento.",
+                "saas_title": "Uso de Dados em Nossas Aplicações (SaaS)",
+                "saas_intro": "A PB Digital desenvolve e opera os softwares RastreIAGastos e CadastraFacil. Ao utilizar a autenticação \"Entrar com Google\" nestes serviços, coletamos e processamos estritamente:",
+                "saas": {
+                    "item1": "Endereço de e-mail: para criação de conta única e comunicação transacional.",
+                    "item2": "Nome e foto de perfil: para personalização da interface do usuário.",
+                    "item3": "Estes dados são utilizados exclusivamente para autenticação e funcionamento dos serviços contratados. Não vendemos dados de usuários para redes de publicidade nem utilizamos dados privados para treinamento de IA sem consentimento explícito."
+                }
+            },
+            "cookies": {
+                "title": "Cookies",
+                "body": "Este site pode utilizar cookies para melhorar a experiência de navegação e medir desempenho. Você pode gerenciar permissões diretamente no seu navegador."
+            },
+            "notice": {
+                "title": "Aviso legal",
+                "body": "A PB Digital é um nome profissional e marca de atuação para serviços digitais. Nenhuma informação publicada aqui constitui oferta pública vinculante.",
+                "item1": "Projetos e cases apresentados são ilustrativos e podem variar conforme o contexto.",
+                "item2": "Resultados podem depender de fatores externos e de escopo contratado."
+            },
+            "contact": {
+                "title": "Contato institucional",
+                "body": "Para dúvidas legais, solicitações de dados ou questões institucionais:",
+                "email_label": "E-mail:",
+                "whatsapp_label": "WhatsApp:"
+            }
         }
     },
     "en": {
@@ -231,6 +280,55 @@
         "footer": {
             "developed": "Developed with ☕ by Pedro Braga",
             "rights": "All rights reserved"
+        },
+        "legal": {
+            "header": {
+                "back": "Back"
+            },
+            "hero": {
+                "title": "Institutional & Legal Information",
+                "subtitle": "This page brings together the general terms of use, privacy guidelines, and policies applicable to the PB Digital brand.",
+                "updated": "Last updated: January 16, 2026"
+            },
+            "terms": {
+                "title": "Terms of use",
+                "body": "The content on this site is informational and institutional. By accessing it, you agree to use the information lawfully and respectfully, in compliance with applicable laws.",
+                "item1": "Content reproduction is not allowed without authorization.",
+                "item2": "Information may be updated without prior notice.",
+                "item3": "The site may contain links to third parties, subject to their policies.",
+                "item4": "These terms also apply to the use of the RastreIAGastos and CadastraFacil software, governing the license granted to users of these tools.",
+                "note": "For commercial requests or partnerships, contact us via the email below."
+            },
+            "privacy": {
+                "title": "Privacy",
+                "body": "We respect visitors' privacy. We collect only essential information for contact and support when voluntarily provided, in compliance with LGPD and security best practices.",
+                "item1": "Data submitted via the form is used only to respond to contact requests.",
+                "item2": "We do not share personal information with third parties without consent.",
+                "item3": "You may request deletion of your data at any time.",
+                "saas_title": "Data Use in Our Applications (SaaS)",
+                "saas_intro": "PB Digital develops and operates the RastreIAGastos and CadastraFacil software. When using \"Sign in with Google\" in these services, we strictly collect and process:",
+                "saas": {
+                    "item1": "Email address: for single account creation and transactional communication.",
+                    "item2": "Name and profile photo: to personalize the user interface.",
+                    "item3": "This data is used exclusively for authentication and operation of the contracted services. We do not sell user data to ad networks, nor use private data to train AI without explicit consent."
+                }
+            },
+            "cookies": {
+                "title": "Cookies",
+                "body": "This site may use cookies to improve the browsing experience and measure performance. You can manage permissions directly in your browser."
+            },
+            "notice": {
+                "title": "Legal notice",
+                "body": "PB Digital is a professional name and operating brand for digital services. No information published here constitutes a binding public offer.",
+                "item1": "Projects and case studies are illustrative and may vary by context.",
+                "item2": "Results may depend on external factors and the contracted scope."
+            },
+            "contact": {
+                "title": "Institutional contact",
+                "body": "For legal questions, data requests, or institutional matters:",
+                "email_label": "Email:",
+                "whatsapp_label": "WhatsApp:"
+            }
         }
     }
 }
