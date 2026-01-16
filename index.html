@@ -56,6 +56,15 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Prevent theme flash - must be before CSS -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const theme = savedTheme || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
     <!-- Main Stylesheet (Critical) -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -1066,11 +1075,11 @@
                 <div class="footer__links">
                     <span class="footer__title">Institucional</span>
                     <ul class="footer__list">
-                        <li><a class="footer__link" href="institucional.html">Página institucional</a></li>
-                        <li><a class="footer__link" href="institucional.html#termos">Termos de uso</a></li>
-                        <li><a class="footer__link" href="institucional.html#privacidade">Privacidade</a></li>
-                        <li><a class="footer__link" href="institucional.html#cookies">Cookies</a></li>
-                        <li><a class="footer__link" href="institucional.html#aviso-legal">Aviso legal</a></li>
+                        <li><a class="footer__link" href="/institucional">Página institucional</a></li>
+                        <li><a class="footer__link" href="/institucional#termos">Termos de uso</a></li>
+                        <li><a class="footer__link" href="/institucional#privacidade">Privacidade</a></li>
+                        <li><a class="footer__link" href="/institucional#cookies">Cookies</a></li>
+                        <li><a class="footer__link" href="/institucional#aviso-legal">Aviso legal</a></li>
                     </ul>
                 </div>
                 <div class="footer__divider"></div>
