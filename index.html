@@ -56,15 +56,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Theme initialization (prevents flash) -->
-    <script>
-        (function () {
-            const savedTheme = localStorage.getItem('theme');
-            const theme = savedTheme || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-
     <!-- Main Stylesheet (Critical) -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -1042,7 +1033,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__top">
+            <div class="footer__content">
                 <div class="footer__brand">
                     <span class="footer__logo">PB Digital</span>
                     <p class="footer__tagline">SaaS e soluções digitais com foco em performance, automação e
@@ -1072,25 +1063,27 @@
                         </a>
                     </div>
                 </div>
-                <nav class="footer__nav">
+                <div class="footer__links">
                     <span class="footer__title">Institucional</span>
                     <ul class="footer__list">
-                        <li><a href="institucional.html">Página institucional</a></li>
-                        <li><a href="institucional.html#termos">Termos de uso</a></li>
-                        <li><a href="institucional.html#privacidade">Privacidade</a></li>
-                        <li><a href="institucional.html#cookies">Cookies</a></li>
-                        <li><a href="institucional.html#aviso-legal">Aviso legal</a></li>
+                        <li><a class="footer__link" href="institucional.html">Página institucional</a></li>
+                        <li><a class="footer__link" href="institucional.html#termos">Termos de uso</a></li>
+                        <li><a class="footer__link" href="institucional.html#privacidade">Privacidade</a></li>
+                        <li><a class="footer__link" href="institucional.html#cookies">Cookies</a></li>
+                        <li><a class="footer__link" href="institucional.html#aviso-legal">Aviso legal</a></li>
                     </ul>
-                </nav>
-            </div>
-            <div class="footer__divider"></div>
-            <div class="footer__bottom">
-                <p>Desenvolvido com ☕ por Pedro Braga</p>
-                <p>© <span id="year"></span> Todos os direitos reservados</p>
+                </div>
+                <div class="footer__divider"></div>
+                <div class="footer__bottom">
+                    <p>Desenvolvido com ☕ por Pedro Braga</p>
+                    <p>© <span id="year"></span> Todos os direitos reservados</p>
+                </div>
+                <script>
+                    document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
             </div>
         </div>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
     <!-- Case Study Modal -->
     <div class="modal" id="caseStudyModal">
