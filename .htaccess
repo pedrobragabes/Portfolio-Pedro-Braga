@@ -1,0 +1,129 @@
+# =============================================
+# Security Headers
+# =============================================
+
+<IfModule mod_headers.c>
+    # Strict-Transport-Security (HSTS)
+    # Forca o navegador a usar HTTPS por 1 ano, incluindo subdomains
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # X-Frame-Options
+    # Protege contra ataques de clickjacking impedindo que o site seja embutido em iframes
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # X-Content-Type-Options
+    # Impede que o navegador tente adivinhar o tipo MIME dos arquivos
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer-Policy
+    # Controla quanta informacao de referencia e enviada ao navegar para outros sites
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions-Policy
+    # Restringe o acesso a APIs do navegador (camera, microfone, geolocalizacao, etc.)
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+    # Content-Security-Policy
+    # Define quais recursos podem ser carregados pelo navegador
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co https://www.google-analytics.com https://www.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co"
+
+    # X-XSS-Protection (legado, mas ainda util para navegadores antigos)
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Remove o header X-Powered-By (expoe tecnologia do servidor)
+    Header always unset X-Powered-By
+</IfModule>
+
+# =============================================
+# Force HTTPS
+# =============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redireciona HTTP para HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redireciona www para non-www (opcional, manter consistencia)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# =============================================
+# Cache Control (Performance)
+# =============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML - sem cache longo (para atualizacoes rapidas)
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS e JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # Imagens
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Fontes
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+
+    # JSON
+    ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# =============================================
+# Compression (Performance)
+# =============================================
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# =============================================
+# Prevent Directory Listing
+# =============================================
+
+Options -Indexes
+
+# =============================================
+# Block access to sensitive files
+# =============================================
+
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|config|dist|fla|inc|psd|swp|env)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to hidden files (except .well-known for SSL verification)
+<IfModule mod_rewrite.c>
+    RewriteRule "(^|/)\.(?!well-known)" - [F]
+</IfModule>
+
+# =============================================
+# Custom Error Pages
+# =============================================
+
+ErrorDocument 404 /404.html

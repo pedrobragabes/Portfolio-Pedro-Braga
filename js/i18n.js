@@ -20,25 +20,19 @@
         try {
             const response = await fetch(TRANSLATIONS_URL);
             if (!response.ok) {
-                console.warn('Translations not found');
                 return;
             }
 
             translations = await response.json();
 
-            // Get saved language or default
             currentLang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
 
-            // Set up toggle button
             setupToggle();
 
-            // Apply translations
             updateLanguage(currentLang);
 
-            console.log(`✓ i18n initialized (${currentLang.toUpperCase()})`);
-
         } catch (error) {
-            console.warn('Could not load translations:', error.message);
+            // Silent fail - default language content remains
         }
     }
 
@@ -49,7 +43,6 @@
         const toggle = document.getElementById('langToggle');
         if (!toggle) return;
 
-        // Update toggle text
         updateToggleText(toggle);
 
         toggle.addEventListener('click', () => {
@@ -83,35 +76,20 @@
 
         const t = translations[lang];
 
-        // 1. Generic Data-Attribute Based Translation (Robust & Declarative)
+        // 1. Generic Data-Attribute Based Translation
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             const val = resolveKey(t, key);
             if (val) {
-                // If it's a placeholder, update attribute, otherwise textcontent
                 if (el.hasAttribute('placeholder')) {
                     el.setAttribute('placeholder', val);
                 } else {
-                    // Check if we need to keep icon
-                    if (el.children.length > 0 && el.querySelector('svg, i, img')) {
-                        // Simple HTML update preserving icon if it's at end or start?
-                        // For safety, let's just update text node if possible or use complex logic.
-                        // For now, assume simple text replacement unless specifiec classes.
-                        // Actually, let's use a helper for mixed content if needed.
-                        // Most data-i18n will be simple text.
-                        // If it has children, we might want to check if it's just text replacement desired.
-                        // But simple textContent overwrite is safest for now for most labels.
-                        // If specific handling needed, use translateElements logic.
-                        // Let's use innerText for simple cases.
-                        el.textContent = val;
-                    } else {
-                        el.textContent = val;
-                    }
+                    el.textContent = val;
                 }
             }
         });
 
-        // 2. Specific Element Translations (for elements not covered by data-i18n or requiring special handling)
+        // 2. Specific Element Translations
 
         // Navigation
         translateElements('.nav__link[href="#about"]', t.nav.about);
@@ -133,9 +111,9 @@
         // About section
         translateElements('#about .section-label', t.about.label);
         translateElements('#about .section-title', t.about.title);
-        translateElements('#about .about__text:nth-of-type(1)', t.about.text1, { asHTML: true });
-        translateElements('#about .about__text:nth-of-type(2)', t.about.text2, { asHTML: true });
-        translateElements('#about .about__text:nth-of-type(3)', t.about.text3, { asHTML: true });
+        translateElements('#about .about__text:nth-of-type(1)', t.about.text1);
+        translateElements('#about .about__text:nth-of-type(2)', t.about.text2);
+        translateElements('#about .about__text:nth-of-type(3)', t.about.text3);
 
         // Services section
         translateElements('#servicos .section-label', t.services.label);
@@ -169,7 +147,6 @@
         translateElements('#education .section-title', t.education.title);
         translateElements('.education__item--degree h3', t.education.degree_title);
         translateElements('.education__university', t.education.degree_university);
-        // translateElements('.education__item--degree .education__badge', t.education.degree_status);
         translateElements('.education__detail-expected span', t.education.degree_expected);
 
         translateElements('.education__detail-semester span', t.education.degree_semester);
@@ -181,18 +158,6 @@
         // Testimonials section
         translateElements('#testimonials .section-label', t.testimonials.label);
         translateElements('#testimonials .section-title', t.testimonials.title);
-
-        // Blog section (Handled by data-i18n if active, or hidden)
-        /*
-        translateElements('#blog .section-label', t.blog?.label);
-        translateElements('#blog .section-title', t.blog?.title);
-        translateElements('.blog__posts .blog__section-title', t.blog?.articles_title, { keepIcon: true });
-        translateElements('.blog__coming-badge', t.blog?.coming_soon);
-        translateElements('.blog__coming-soon > p:first-of-type', t.blog?.coming_soon_text);
-        translateElements('.blog__cta-hint', t.blog?.follow_cta, { asHTML: true });
-        translateElements('.blog__github .blog__section-title', t.blog?.github_title, { keepIcon: true });
-        translateElements('.blog__wakatime .blog__section-title', t.blog?.wakatime_title, { keepIcon: true });
-        */
 
 
         // Contact section
@@ -211,9 +176,6 @@
         updatePlaceholder('#subject', t.contact.subject_placeholder);
         updatePlaceholder('#message', t.contact.message_placeholder);
         updatePlaceholder('#details', t.contact.details_placeholder);
-
-        // Update credential badges (Handled by data-i18n now)
-        // updateCredentialBadges(t.credentials?.in_progress);
 
         // Footer
         translateElements('.footer__bottom p:first-child', t.footer.developed);
@@ -238,19 +200,6 @@
         if (el) el.setAttribute('placeholder', text);
     }
 
-    /**
-     * Update credential "in progress" badges (Handled by data-i18n now)
-     */
-    /*
-    function updateCredentialBadges(text) {
-        if (!text) return;
-        document.querySelectorAll('.credential-badge').forEach(badge => {
-            badge.textContent = text;
-        });
-    }
-    */
-
-
 
     /**
      * Update CV download link based on language
@@ -268,7 +217,7 @@
 
 
     /**
-     * Translate elements matching selector
+     * Translate elements matching selector (safe - no innerHTML)
      * @param {string} selector - CSS selector
      * @param {string} text - Text to apply
      * @param {object} options - Additional options
@@ -279,18 +228,21 @@
         const elements = document.querySelectorAll(selector);
         elements.forEach(el => {
             if (options.keepIcon) {
-                // Keep SVG icons, only replace text
+                // Keep SVG icons, only replace text safely
                 const svg = el.querySelector('svg');
                 if (svg) {
-                    el.innerHTML = text + ' ';
-                    el.appendChild(svg);
+                    // Remove all child nodes except the SVG
+                    const svgClone = svg.cloneNode(true);
+                    while (el.firstChild) {
+                        el.removeChild(el.firstChild);
+                    }
+                    el.appendChild(document.createTextNode(text + ' '));
+                    el.appendChild(svgClone);
                 } else {
                     el.textContent = text;
                 }
             } else if (options['data-words']) {
                 el.setAttribute('data-words', options['data-words']);
-            } else if (options.asHTML) {
-                el.innerHTML = text;
             } else {
                 el.textContent = text;
             }
@@ -304,11 +256,6 @@
         init();
     }
 
-    // Expose for debugging
-    // Expose for debugging
-    window.i18n = { setLang: (lang) => { currentLang = lang; updateLanguage(lang); } };
-
-
     /**
      * Resolve nested object path string (e.g. 'footer.rights')
      */
@@ -316,4 +263,3 @@
         return key.split('.').reduce((acc, part) => acc && acc[part], obj);
     }
 })();
-

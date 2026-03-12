@@ -18,14 +18,14 @@
     <meta property="og:title" content="Pedro Braga | Full Stack & Infraestrutura">
     <meta property="og:description"
         content="Engenheiro de Computação e Desenvolvedor Full Stack. Especialista em e-commerce, automação e infraestrutura.">
-    <meta property="og:image" content="assets/Pedro Braga.webp">
+    <meta property="og:image" content="https://pedrobragabes.com/assets/profile/Pedro Braga.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Pedro Braga | Full Stack & Infraestrutura">
     <meta property="twitter:description"
         content="Engenheiro de Computação e Desenvolvedor Full Stack. Especialista em e-commerce, automação e infraestrutura.">
-    <meta property="twitter:image" content="assets/Pedro Braga.webp">
+    <meta property="twitter:image" content="https://pedrobragabes.com/assets/profile/Pedro Braga.webp">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -35,7 +35,7 @@
       "name": "Pedro Braga",
       "jobTitle": "Full Stack Developer",
       "description": "Engenheiro de Computação em formação e especialista em infraestrutura e automação.",
-      "image": "assets/Pedro Braga.webp",
+      "image": "https://pedrobragabes.com/assets/profile/Pedro Braga.webp",
       "sameAs": [
         "https://github.com/pedrobragabes",
         "https://www.linkedin.com/in/pedrobragabes/"
@@ -44,36 +44,24 @@
     </script>
 
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/playfair-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Preload LCP Image (Critical for performance) -->
     <link rel="preload" as="image" href="assets/profile/Pedro Braga.webp" fetchpriority="high">
 
-    <!-- Google Fonts with display=swap -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
-
     <!-- Main Stylesheet (Critical) -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Devicon - Loaded async to not block render -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    </noscript>
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
     <!-- Google Analytics - Deferred -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7M61DXD7W"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-C7M61DXD7W');
-    </script>
+    <script src="js/analytics.js"></script>
 </head>
 
 <body>
@@ -688,7 +676,7 @@
                             <!-- Progress Bar (dynamically updated) -->
                             <div class="education__progress-wrapper">
                                 <div class="education__progress">
-                                    <div class="education__progress-bar" style="width: 20%"></div>
+                                    <div class="education__progress-bar" data-width="20"></div>
                                 </div>
                                 <span class="education__progress-label" data-i18n="education.progress_label">20%
                                     concluído</span>
@@ -816,7 +804,7 @@
                     <span class="section-label">Depoimentos</span>
                     <h2 class="section-title">O que dizem</h2>
                 </div>
-                <div class="testimonials__grid reveal" style="display: flex; justify-content: center;">
+                <div class="testimonials__grid testimonials__grid--centered reveal">
                     <article class="testimonial-card">
                         <div class="testimonial-card__content">
                             <div class="testimonial-card__quote">
@@ -951,7 +939,8 @@
 
                 <form class="contact__form reveal" action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Novo contato via Portfolio">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
 
                     <div class="contact__row">
                         <div class="contact__field">
@@ -1061,9 +1050,7 @@
                     <p>Desenvolvido com ☕ por Pedro Braga</p>
                     <p>© <span id="year"></span> Todos os direitos reservados</p>
                 </div>
-                <script>
-                    document.getElementById('year').textContent = new Date().getFullYear();
-                </script>
+                <script src="js/year.js"></script>
             </div>
         </div>
     </footer>
@@ -1074,7 +1061,7 @@
             <div class="modal__header">
                 <div>
                     <span class="project-card__tag" id="modalTag">Categoria</span>
-                    <h2 class="section-title" id="modalTitle" style="margin-bottom: 0;">Título do Projeto</h2>
+                    <h2 class="section-title" id="modalTitle">Título do Projeto</h2>
                 </div>
                 <button class="modal__close" id="modalClose" aria-label="Fechar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"

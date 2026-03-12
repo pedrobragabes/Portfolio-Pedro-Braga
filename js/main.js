@@ -445,7 +445,6 @@
     function openModal(projectName) {
         const data = caseStudies[projectName];
         if (!data || !modal) {
-            console.warn(`Case study data not found for "${projectName}"`);
             return;
         }
 
@@ -458,7 +457,9 @@
         // Gallery Logic
         const galleryContainer = document.getElementById('modalImages');
         if (galleryContainer) {
-            galleryContainer.innerHTML = '';
+            while (galleryContainer.firstChild) {
+                galleryContainer.removeChild(galleryContainer.firstChild);
+            }
 
             if (data.images && data.images.length > 0) {
                 data.images.forEach(imgSrc => {
@@ -588,7 +589,7 @@
         if (!video) return;
 
         card.addEventListener('mouseenter', () => {
-            video.play().catch(e => console.log('Video play error:', e));
+            video.play().catch(() => {});
         });
 
         card.addEventListener('mouseleave', () => {
