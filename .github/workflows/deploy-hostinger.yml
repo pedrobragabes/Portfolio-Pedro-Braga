@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -46,6 +47,7 @@ jobs:
             **/*.md
             **/node_modules/**
             **/scripts/**
+            **/backend/**
             **/blog/posts/**
             **/package.json
             **/package-lock.json

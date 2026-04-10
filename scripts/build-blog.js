@@ -149,6 +149,22 @@ function renderPage({ title, description, canonical, image, bodyClass = '', cont
   <meta property="twitter:description" content="${escapeHtml(description)}">
   <meta property="twitter:image" content="${escapeHtml(image)}">
   <link rel="alternate" type="application/rss+xml" title="RSS Blog Pedro Braga" href="/blog/rss.xml">
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.backgroundColor = '#F5F0E8';
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="/css/blog.css">
   ${extraHead}
   ${jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : ''}
@@ -156,12 +172,14 @@ function renderPage({ title, description, canonical, image, bodyClass = '', cont
   <script src="/js/analytics.min.js"></script>
 </head>
 <body class="${bodyClass}">
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+
   <header class="blog-header">
     <div class="container">
       <a class="blog-logo" href="/">Pedro Braga</a>
       <nav class="blog-nav" aria-label="Navegacao do blog">
-        <a href="/">Inicio</a>
-        <a href="/blog/">Blog</a>
+        <a class="blog-nav__link" href="/">Inicio</a>
+        <a class="blog-nav__link" href="/blog/">Blog</a>
       </nav>
     </div>
   </header>
@@ -188,7 +206,7 @@ function buildListingPage(posts) {
       return `<article class="post-card">
   <h2><a href="${postUrl}">${escapeHtml(post.title)}</a></h2>
   <p class="post-meta">${escapeHtml(formatDatePt(post.date))}</p>
-  <p>${escapeHtml(post.excerpt)}</p>
+  <p class="post-excerpt">${escapeHtml(post.excerpt)}</p>
   <div class="post-tags">${tags}</div>
   <a class="read-more" href="${postUrl}">Ler artigo</a>
 </article>`;
@@ -196,10 +214,14 @@ function buildListingPage(posts) {
     .join('\n');
 
   const pageContent = `<section class="hero">
-  <div class="container">
+  <div class="container hero__surface">
     <p class="eyebrow">Blog Tecnico</p>
     <h1>Artigos sobre engenharia, backend e infraestrutura</h1>
     <p class="hero-text">Conteudo pratico com foco em aprendizado aplicado, arquitetura real e boas praticas de deploy.</p>
+    <div class="hero-actions">
+      <a class="hero-chip" href="/blog/rss.xml">Assinar RSS</a>
+      <a class="hero-chip hero-chip--ghost" href="/">Ver portfolio</a>
+    </div>
   </div>
 </section>
 <section class="posts">

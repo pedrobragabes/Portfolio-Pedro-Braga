@@ -1,6 +1,7 @@
 # Roadmap - Portfolio Pedro Braga
 
 > Ultima atualizacao: 2026-04-10
+> Escopo removido do fluxo ativo (admin/backend/case pages) arquivado em `archive/future-continuation-2026-04-10/`
 
 ---
 
@@ -63,39 +64,40 @@
 - [x] Integracao com sitemap.xml
 
 ### v1.8.0 - Case Studies Dinamicos
-- [ ] Migrar case studies de `main.js` para `data/projects.json`
-- [ ] Galeria de imagens melhorada nos modais
-- [ ] Videos de demonstracao nos projetos
-- [ ] Metricas e resultados por projeto
-- [ ] Links para repositorios e demos ao vivo
+- [x] Migrar case studies de `main.js` para `data/projects.json`
+- [x] Galeria de imagens melhorada nos modais
+- [x] Videos de demonstracao nos projetos
+- [x] Metricas e resultados por projeto
+- [x] Links para repositorios e demos ao vivo
 
-### v2.0.0 - PWA e Experiencia Offline
-- [ ] Service Worker para cache offline
-- [ ] Manifest.json para instalacao como app
-- [ ] Notificacoes push (novos artigos do blog)
-- [ ] Modo offline com conteudo cacheado
-- [ ] Icones de app para iOS e Android
+### v2.0.0 - PWA e Experiencia Offline (Opcional / Pausado)
+- [ ] (Opcional) Service Worker para cache offline
+- [ ] (Opcional) Manifest.json para instalacao como app
+- [ ] (Opcional) Notificacoes push (novos artigos do blog)
+- [ ] (Opcional) Modo offline com conteudo cacheado
+- [ ] (Opcional) Icones de app para iOS e Android
+- [ ] Decisao de retomada apenas se houver demanda real de app instalavel
 
 ---
 
-## Novos Projetos Planejados
+## Novos Projetos Planejados //????? API login e admin?
 
 ### Landing Pages de Projetos
-- [ ] AquaFlora AgroShop - Landing page dedicada (Prioridade alta)
-- [ ] JoysticKnights - Portal de noticias gaming (Prioridade media)
-- [ ] Kingdom of Aen - Pagina do jogo (Prioridade media)
-- [ ] Florescer Garden - Loja agricultura online (Prioridade media)
-- [ ] ComercioBes - Vitrine e vendas da cidade Boa Esperanca do Sul (Prioridade alta)
+- [x] AquaFlora AgroShop - Landing page dedicada (Prioridade alta)
+- [x] JoysticKnights - Portal de noticias gaming (Prioridade media)
+- [x] Kingdom of Aen - Pagina do jogo (Prioridade media)
+- [x] Florescer Garden - Loja agricultura online (Prioridade media)
+- [x] ComercioBes - Vitrine e vendas da cidade Boa Esperanca do Sul (Prioridade alta)
 
 ### Dashboard Admin
-- [ ] Painel para gerenciar conteudo do portfolio
-- [ ] Editor de certificacoes e depoimentos
-- [ ] Preview ao vivo das alteracoes
-- [ ] Integracao com GitHub API para deploy
+- [x] Painel para gerenciar conteudo do portfolio
+- [x] Editor de certificacoes e depoimentos
+- [x] Preview ao vivo das alteracoes
+- [x] Integracao com GitHub API para deploy
 
 ### API Backend
-- [ ] API Node.js/Express para servir conteudo
-- [ ] Substituir FormSubmit.co por backend proprio
+- [x] API Node.js/Express para servir conteudo
+- [x] Endpoint proprio para formulario de contato (`/api/contact`) com fallback controlado
 - [ ] Sistema de autenticacao para admin
 - [ ] Database para artigos do blog
 
@@ -103,10 +105,10 @@
 
 ## Prioridades
 
-1. **Imediato**: v1.6.0 (melhorias tecnicas + deploy automatico)
-2. **Curto prazo**: v1.7.0 (blog tecnico)
-3. **Medio prazo**: v1.8.0 (case studies) + Landing pages
-4. **Longo prazo**: v2.0.0 (PWA) + Dashboard + API
+1. **Imediato**: Landing pages prioritarias (AquaFlora + ComercioBes)
+2. **Curto prazo**: Landing pages restantes + padrao reutilizavel + metricas
+3. **Medio prazo**: Dashboard Admin (MVP de gestao de conteudo)
+4. **Longo prazo**: API Backend (auth admin, banco de dados e consolidacao de servicos)
 
 ---
 
@@ -138,9 +140,25 @@ Entregavel: release `v1.6.0` com checklist tecnico concluido.
 Entregavel: 1 artigo tecnico publicado com SEO completo.
 
 ### Sprint 3 - Landing Pages Prioritarias (2 semanas)
-- [ ] Publicar landing page do AquaFlora AgroShop
-- [ ] Publicar landing page do ComercioBes
-- [ ] Padronizar template reutilizavel para os 3 projetos restantes
-- [ ] Definir metricas de sucesso (CTR, tempo na pagina, contato)
+- [x] Publicar landing page do AquaFlora AgroShop
+- [x] Publicar landing page do ComercioBes
+- [x] Padronizar template reutilizavel para os 3 projetos restantes
+- [x] Definir metricas de sucesso (CTR, tempo na pagina, contato)
 
 Entregavel: base pronta para escalar as 5 landing pages planejadas.
+
+### Sprint 4 - Dashboard Admin MVP (2 semanas)
+- [x] Definir stack do painel (frontend, backend e auth)
+- [x] Implementar CRUD inicial de certificacoes e depoimentos
+- [x] Criar preview ao vivo das alteracoes
+- [x] Integrar disparo de deploy via GitHub API
+
+Entregavel: painel funcional para manutencao de conteudo sem editar JSON manualmente. (Concluido em 2026-04-10)
+
+### Sprint 5 - API Backend Foundation (2 semanas)
+- [x] Estruturar API Node.js/Express com arquitetura base
+- [x] Implementar endpoint seguro para formulario de contato
+- [x] Criar endpoints de leitura para projetos e posts
+- [x] Preparar camada de persistencia para artigos do blog
+
+Entregavel: base de backend pronta para evoluir para um portfolio orientado a API. (Concluido em 2026-04-10, foundation v0)

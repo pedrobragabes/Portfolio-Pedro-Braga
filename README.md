@@ -31,6 +31,10 @@ O projeto demonstra práticas modernas de desenvolvimento web ("Clean Code"), se
 - **Lazy Loading**: Imagens e recursos pesados carregam apenas quando necessários.
 - **Recursos**: Uso de WebP (recomendado) e fontes otimizadas.
 
+### 🧩 Conteudo & Operacao
+- **Mini-CMS JSON**: Conteudo principal desacoplado em `data/content.json`.
+- **Escopo Futuro Arquivado**: Admin, backend e case pages detalhadas foram separados em `archive/future-continuation-2026-04-10/` para retomada futura sem impactar o site ativo.
+
 ### 🔍 SEO & Técnico
 - **SEO On-Page**: Metadados completos, Open Graph (WhatsApp/LinkedIn) e Twitter Cards.
 - **Dados Estruturados**: JSON-LD implementado (`Schema.org/Person`) para Google Rich Results.
@@ -62,7 +66,7 @@ portfolio-pedro-braga/
 ├── robots.txt             # Diretrizes para crawlers
 ├── sitemap.xml            # Mapa do site para buscadores
 ├── css/
-│   └── style.css          # Design System e estilos componentizados
+│   ├── style.css          # Design System e estilos componentizados
 │   └── blog.css           # Estilos da area de blog
 ├── blog/
 │   ├── posts/             # Fonte dos artigos em Markdown
@@ -77,6 +81,8 @@ portfolio-pedro-braga/
 ├── data/
 │   ├── content.json       # Mini-CMS: credenciais, depoimentos, contato
 │   └── translations.json  # Traduções EN/PT para todo o site
+├── archive/
+│   └── future-continuation-2026-04-10/  # Escopo removido do fluxo ativo
 ├── assets/
 │   ├── profile/           # Foto de perfil
 │   ├── resume/            # CV em PDF

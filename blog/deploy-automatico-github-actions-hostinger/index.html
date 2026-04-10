@@ -18,6 +18,22 @@
   <meta property="twitter:description" content="Como publicar site estático automaticamente na Hostinger usando GitHub Actions com segurança e rollback simples.">
   <meta property="twitter:image" content="https://pedrobragabes.com/assets/profile/Pedro Braga.webp">
   <link rel="alternate" type="application/rss+xml" title="RSS Blog Pedro Braga" href="/blog/rss.xml">
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.backgroundColor = '#F5F0E8';
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="/css/blog.css">
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Deploy automático com GitHub Actions e Hostinger (FTP)","datePublished":"2026-04-10","dateModified":"2026-04-10","description":"Como publicar site estático automaticamente na Hostinger usando GitHub Actions com segurança e rollback simples.","image":"https://pedrobragabes.com/assets/profile/Pedro Braga.webp","mainEntityOfPage":"https://pedrobragabes.com/blog/deploy-automatico-github-actions-hostinger/","author":{"@type":"Person","name":"Pedro Braga"},"publisher":{"@type":"Person","name":"Pedro Braga"}}</script>
@@ -25,12 +41,14 @@
   <script src="/js/analytics.min.js"></script>
 </head>
 <body class="blog-article">
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+
   <header class="blog-header">
     <div class="container">
       <a class="blog-logo" href="/">Pedro Braga</a>
       <nav class="blog-nav" aria-label="Navegacao do blog">
-        <a href="/">Inicio</a>
-        <a href="/blog/">Blog</a>
+        <a class="blog-nav__link" href="/">Inicio</a>
+        <a class="blog-nav__link" href="/blog/">Blog</a>
       </nav>
     </div>
   </header>

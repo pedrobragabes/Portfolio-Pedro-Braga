@@ -18,6 +18,22 @@
   <meta property="twitter:description" content="Artigos tecnicos sobre infraestrutura, automacao, backend e engenharia de software.">
   <meta property="twitter:image" content="https://pedrobragabes.com/assets/profile/Pedro Braga.webp">
   <link rel="alternate" type="application/rss+xml" title="RSS Blog Pedro Braga" href="/blog/rss.xml">
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.backgroundColor = '#F5F0E8';
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="/css/blog.css">
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Pedro Braga - Blog Tecnico","url":"https://pedrobragabes.com/blog/","description":"Artigos tecnicos sobre infraestrutura, automacao, backend e engenharia de software.","publisher":{"@type":"Person","name":"Pedro Braga"}}</script>
@@ -25,22 +41,28 @@
   <script src="/js/analytics.min.js"></script>
 </head>
 <body class="blog-listing">
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+
   <header class="blog-header">
     <div class="container">
       <a class="blog-logo" href="/">Pedro Braga</a>
       <nav class="blog-nav" aria-label="Navegacao do blog">
-        <a href="/">Inicio</a>
-        <a href="/blog/">Blog</a>
+        <a class="blog-nav__link" href="/">Inicio</a>
+        <a class="blog-nav__link" href="/blog/">Blog</a>
       </nav>
     </div>
   </header>
 
   <main class="blog-main" id="main-content">
     <section class="hero">
-  <div class="container">
+  <div class="container hero__surface">
     <p class="eyebrow">Blog Tecnico</p>
     <h1>Artigos sobre engenharia, backend e infraestrutura</h1>
     <p class="hero-text">Conteudo pratico com foco em aprendizado aplicado, arquitetura real e boas praticas de deploy.</p>
+    <div class="hero-actions">
+      <a class="hero-chip" href="/blog/rss.xml">Assinar RSS</a>
+      <a class="hero-chip hero-chip--ghost" href="/">Ver portfolio</a>
+    </div>
   </div>
 </section>
 <section class="posts">
@@ -48,14 +70,14 @@
     <article class="post-card">
   <h2><a href="/blog/deploy-automatico-github-actions-hostinger/">Deploy automático com GitHub Actions e Hostinger (FTP)</a></h2>
   <p class="post-meta">10 de abril de 2026</p>
-  <p>Como publicar site estático automaticamente na Hostinger usando GitHub Actions com segurança e rollback simples.</p>
+  <p class="post-excerpt">Como publicar site estático automaticamente na Hostinger usando GitHub Actions com segurança e rollback simples.</p>
   <div class="post-tags"><span class="tag">DevOps</span><span class="tag">GitHub Actions</span><span class="tag">Deploy</span></div>
   <a class="read-more" href="/blog/deploy-automatico-github-actions-hostinger/">Ler artigo</a>
 </article>
 <article class="post-card">
   <h2><a href="/blog/homelab-proxmox-guia-pratico/">Home Lab com Proxmox: guia prático para começar</a></h2>
   <p class="post-meta">10 de abril de 2026</p>
-  <p>Passo a passo real para montar um home lab com Proxmox, organizar VMs e containers e evitar erros comuns no primeiro setup.</p>
+  <p class="post-excerpt">Passo a passo real para montar um home lab com Proxmox, organizar VMs e containers e evitar erros comuns no primeiro setup.</p>
   <div class="post-tags"><span class="tag">Infraestrutura</span><span class="tag">Proxmox</span><span class="tag">Linux</span></div>
   <a class="read-more" href="/blog/homelab-proxmox-guia-pratico/">Ler artigo</a>
 </article>

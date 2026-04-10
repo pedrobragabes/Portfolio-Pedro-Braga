@@ -448,7 +448,7 @@
                 </div>
                 <div class="projects__grid">
                     <!-- AquaFlora AgroShop -->
-                    <article class="project-card reveal reveal-delay-1">
+                    <article class="project-card reveal reveal-delay-1" data-project="aquaflora-agroshop">
                         <div class="project-card__preview">
                             <img src="assets/AquaFlora/AquaFlora Home.webp" alt="AquaFlora AgroShop"
                                 class="project-card__image" loading="lazy">
@@ -470,7 +470,7 @@
                             </div>
                             <div class="project-card__links">
                                 <a href="https://aquafloragroshop.com.br/" target="_blank" rel="noopener noreferrer"
-                                    class="project-card__btn project-card__btn--primary">
+                                    class="project-card__btn project-card__btn--primary" data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -481,7 +481,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary">
+                                <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -495,7 +496,7 @@
                     </article>
 
                     <!-- Home Lab -->
-                    <article class="project-card reveal reveal-delay-2">
+                    <article class="project-card reveal reveal-delay-2" data-project="home-lab-hardware">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--blue"></div>
                             <div class="project-card__overlay">
@@ -515,7 +516,7 @@
                                 <span class="tech-badge">Linux</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary">
+                                <a href="/blog/homelab-proxmox-guia-pratico/" class="project-card__btn project-card__btn--primary" data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -526,7 +527,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary">
+                                <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -540,7 +542,7 @@
                     </article>
 
                     <!-- Kingdom of Aen -->
-                    <article class="project-card reveal reveal-delay-3">
+                    <article class="project-card reveal reveal-delay-3" data-project="kingdom-of-aen">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--amber"></div>
                             <div class="project-card__overlay">
@@ -560,7 +562,7 @@
                                 <span class="tech-badge">CSS3</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary">
+                                <a href="#" class="project-card__btn project-card__btn--primary" data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -572,7 +574,55 @@
                                     Ver Site
                                 </a>
                                 <a href="https://github.com/pedrobragabes/Kingdom-of-Aen" target="_blank"
-                                    rel="noopener noreferrer" class="project-card__btn project-card__btn--secondary">
+                                    rel="noopener noreferrer" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Florescer Garden -->
+                    <article class="project-card reveal reveal-delay-4" data-project="florescer-garden">
+                        <div class="project-card__preview">
+                            <div class="project-card__gradient project-card__gradient--green"></div>
+                            <div class="project-card__overlay">
+                                <span class="project-card__cta">Ver Case Study →</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__tag">E-commerce Agricultura</span>
+                            <h3 class="project-card__title">Florescer Garden</h3>
+                            <p class="project-card__description">
+                                Estrutura de loja digital com foco em descoberta de produtos, confianca e jornada de
+                                compra orientada a conversao.
+                            </p>
+                            <div class="project-card__tech">
+                                <span class="tech-badge">UX Conversao</span>
+                                <span class="tech-badge">Catalogo</span>
+                                <span class="tech-badge">SEO</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__btn project-card__btn--primary"
+                                    data-project-link="live">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    Ver Site
+                                </a>
+                                <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -586,7 +636,7 @@
                     </article>
 
                     <!-- JoysticKnights -->
-                    <article class="project-card reveal reveal-delay-4">
+                    <article class="project-card reveal reveal-delay-4" data-project="joysticknights">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--purple"></div>
                             <div class="project-card__overlay">
@@ -607,7 +657,7 @@
                             </div>
                             <div class="project-card__links">
                                 <a href="https://joysticknights.com.br/" target="_blank" rel="noopener noreferrer"
-                                    class="project-card__btn project-card__btn--primary">
+                                    class="project-card__btn project-card__btn--primary" data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -618,7 +668,55 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary">
+                                <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ComercioBes -->
+                    <article class="project-card reveal reveal-delay-4" data-project="comerciobes">
+                        <div class="project-card__preview">
+                            <div class="project-card__gradient project-card__gradient--green"></div>
+                            <div class="project-card__overlay">
+                                <span class="project-card__cta">Ver Case Study →</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__tag">Vitrine Local</span>
+                            <h3 class="project-card__title">ComercioBes</h3>
+                            <p class="project-card__description">
+                                Plataforma local para conectar negocios da cidade com novos clientes, com foco em
+                                descoberta mobile e geracao de leads.
+                            </p>
+                            <div class="project-card__tech">
+                                <span class="tech-badge">SEO Local</span>
+                                <span class="tech-badge">UX Mobile</span>
+                                <span class="tech-badge">Conteudo</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__btn project-card__btn--primary"
+                                    data-project-link="live">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    Ver Site
+                                </a>
+                                <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -947,7 +1045,7 @@
                     </p>
                 </div>
 
-                <form class="contact__form reveal" action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" method="POST">
+                <form class="contact__form reveal" action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" data-api-action="/api/contact" data-fallback-action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Novo contato via Portfolio">
                     <input type="hidden" name="_captcha" value="true">
                     <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
@@ -1101,6 +1199,21 @@
                 <p class="modal__text" id="modalResult">
                     Métricas e impacto do projeto.
                 </p>
+            </div>
+
+            <div class="modal__section">
+                <h3 class="modal__section-title">Metricas</h3>
+                <div class="modal__metrics" id="modalMetrics"></div>
+            </div>
+
+            <div class="modal__section">
+                <h3 class="modal__section-title">Videos e demos</h3>
+                <div class="modal__videos" id="modalVideos"></div>
+            </div>
+
+            <div class="modal__section">
+                <h3 class="modal__section-title">Links do projeto</h3>
+                <div class="modal__links" id="modalLinks"></div>
             </div>
 
             <div class="modal__section">

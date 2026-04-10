@@ -1,0 +1,164 @@
+{
+  "projects": [
+    {
+      "id": "aquaflora-agroshop",
+      "title": "AquaFlora AgroShop",
+      "tag": "E-commerce",
+      "problem": "Gestao de multiplos canais com 3000+ produtos gerava gargalos operacionais: controle de estoque manual arriscado, perda de vendas por falta de agilidade e atendimento descentralizado.",
+      "solution": "Lideranca tecnica na criacao de um ecossistema digital completo. Orquestracao de stack WordPress/WooCommerce de alta performance. Desenvolvimento de aplicacao web interna para gestao de estoque mobile com scanner e automacao de atendimento via IA com Node.js + whatsapp-web.js.",
+      "result": "Reducao de 80% no SLA de resposta ao cliente com automacao. Atualizacao de estoque em tempo real eliminando rupturas. Scripts Python/JS para importacao massiva economizaram centenas de horas de trabalho manual.",
+      "metrics": [
+        { "label": "SLA de resposta", "value": "-80%" },
+        { "label": "Produtos no catalogo", "value": "3000+" },
+        { "label": "Tempo poupado", "value": "100h+/mes" }
+      ],
+      "images": [
+        "assets/AquaFlora/AquaFlora Home.webp",
+        "assets/AquaFlora/AquaFlora Loja.webp",
+        "assets/AquaFlora/Estoque AquaFlora.webp"
+      ],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Demo funcional da loja",
+          "url": "https://aquafloragroshop.com.br/"
+        }
+      ],
+      "links": {
+        "live": "https://aquafloragroshop.com.br/",
+        "repo": "",
+        "demo": "/projects/aquaflora/"
+      }
+    },
+    {
+      "id": "home-lab-hardware",
+      "title": "Home Lab & Hardware",
+      "tag": "Infraestrutura",
+      "problem": "Necessidade de hospedar multiplos servicos pessoais e de negocio sem custos recorrentes de cloud e com total controle operacional.",
+      "solution": "Servidor fisico com Proxmox VE rodando containers e VMs para automacoes, servicos internos e observabilidade. Estrutura com VPN, DNS interno, backup e monitoramento.",
+      "result": "Uptime consistente e infraestrutura escalavel para novos projetos, com reducao de dependencia de terceiros e melhor previsibilidade de custo.",
+      "metrics": [
+        { "label": "Servicos em execucao", "value": "15+" },
+        { "label": "Uptime", "value": "99.9%" },
+        { "label": "Economia estimada", "value": "R$500/mes" }
+      ],
+      "images": [],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Arquitetura e setup (artigo tecnico)",
+          "url": "/blog/homelab-proxmox-guia-pratico/"
+        }
+      ],
+      "links": {
+        "live": "",
+        "repo": "",
+        "demo": "/blog/homelab-proxmox-guia-pratico/"
+      }
+    },
+    {
+      "id": "kingdom-of-aen",
+      "title": "Kingdom of Aen",
+      "tag": "Game Development",
+      "problem": "Projeto pessoal para aprender JavaScript avancado: criar um card game completo com IA adversaria e persistencia de estado.",
+      "solution": "Engine desenvolvida em JavaScript puro sem frameworks, com sistema de turnos, IA em niveis de dificuldade e salvamento local com localStorage.",
+      "result": "Projeto robusto para portfolio, com logica de jogo extensa e arquitetura clara para evolucao de funcionalidades.",
+      "metrics": [
+        { "label": "Linhas de logica", "value": "2000+" },
+        { "label": "Stack", "value": "JS + HTML + CSS" },
+        { "label": "Foco", "value": "Arquitetura de jogo" }
+      ],
+      "images": [],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Repositorio com demo e codigo",
+          "url": "https://github.com/pedrobragabes/Kingdom-of-Aen"
+        }
+      ],
+      "links": {
+        "live": "/projects/kingdom-of-aen/",
+        "repo": "https://github.com/pedrobragabes/Kingdom-of-Aen",
+        "demo": "/projects/kingdom-of-aen/"
+      }
+    },
+    {
+      "id": "joysticknights",
+      "title": "JoysticKnights",
+      "tag": "Portal de Noticias",
+      "problem": "O site anterior tinha tempo de carregamento lento e SEO fraco, resultando em baixo trafego organico e alta taxa de rejeicao.",
+      "solution": "Arquitetura WordPress otimizada com lazy loading, cache estrategico e melhorias de estrutura semantica para SEO tecnico.",
+      "result": "Reducao significativa do tempo de carregamento e ganho de performance para indexacao e experiencia de leitura.",
+      "metrics": [
+        { "label": "Tempo de carregamento", "value": "-60%" },
+        { "label": "Core Web Vitals", "value": "Melhorados" },
+        { "label": "Canal", "value": "Noticias gaming" }
+      ],
+      "images": [],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Demo funcional do portal",
+          "url": "https://joysticknights.com.br/"
+        }
+      ],
+      "links": {
+        "live": "https://joysticknights.com.br/",
+        "repo": "",
+        "demo": "/projects/joysticknights/"
+      }
+    },
+    {
+      "id": "florescer-garden",
+      "title": "Florescer Garden",
+      "tag": "E-commerce Agricultura",
+      "problem": "Negocio sem estrutura digital consolidada para apresentar catalogo, proposta de valor e jornada de compra com foco em conversao.",
+      "solution": "Landing orientada a e-commerce com vitrine por categoria, CTA claros e fluxo mobile-first para descoberta e contato comercial.",
+      "result": "Base pronta para validar oferta, captar leads e evoluir para operacao de vendas digital orientada por dados.",
+      "metrics": [
+        { "label": "CTR de vitrine", "value": "Em medicao" },
+        { "label": "Taxa de contato", "value": "Em medicao" },
+        { "label": "Tempo de sessao", "value": "Em medicao" }
+      ],
+      "images": [],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Case page do projeto",
+          "url": "/projects/florescer-garden/"
+        }
+      ],
+      "links": {
+        "live": "/projects/florescer-garden/",
+        "repo": "",
+        "demo": "/projects/florescer-garden/"
+      }
+    },
+    {
+      "id": "comerciobes",
+      "title": "ComercioBes",
+      "tag": "Vitrine Local",
+      "problem": "Comercios locais com baixa presenca digital e dificuldade de descoberta por moradores da regiao.",
+      "solution": "Estrutura de vitrine digital local com jornadas de descoberta, contato rapido e foco em experiencia mobile-first.",
+      "result": "Base pronta para ampliar alcance local e gerar mais leads qualificados por negocio participante.",
+      "metrics": [
+        { "label": "CTR local", "value": "Em medicao" },
+        { "label": "Tempo na pagina", "value": "Em medicao" },
+        { "label": "Leads por negocio", "value": "Em medicao" }
+      ],
+      "images": [],
+      "videos": [
+        {
+          "type": "external",
+          "title": "Case page do projeto",
+          "url": "/projects/comerciobes/"
+        }
+      ],
+      "links": {
+        "live": "/projects/comerciobes/",
+        "repo": "",
+        "demo": "/projects/comerciobes/"
+      }
+    }
+  ]
+}

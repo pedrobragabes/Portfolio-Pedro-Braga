@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | Pedro Braga</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description"
+        content="Dashboard admin para editar certificacoes e depoimentos com preview ao vivo e publicacao via GitHub API.">
+    <link rel="icon" type="image/png" href="/assets/favicon/PB.png">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div>
+                <p class="admin-header__eyebrow">Dashboard Admin MVP</p>
+                <h1>Conteudo do portfolio</h1>
+                <p class="admin-header__subtitle">
+                    CRUD de certificacoes e depoimentos com preview ao vivo e publicacao em
+                    <strong>data/content.json</strong>.
+                </p>
+            </div>
+            <nav class="admin-header__nav" aria-label="Navegacao admin">
+                <a href="/">Voltar ao site</a>
+                <a href="/docs/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-main container">
+        <section class="panel panel--full">
+            <h2>Publicacao e deploy</h2>
+            <div class="config-grid">
+                <label>
+                    GitHub owner
+                    <input id="repoOwner" type="text" value="pedrobragabes" autocomplete="off">
+                </label>
+                <label>
+                    Repositorio
+                    <input id="repoName" type="text" value="Portfolio-Pedro-Braga" autocomplete="off">
+                </label>
+                <label>
+                    Branch
+                    <input id="repoBranch" type="text" value="main" autocomplete="off">
+                </label>
+                <label>
+                    Workflow deploy
+                    <input id="workflowFile" type="text" value="deploy-hostinger.yml" autocomplete="off">
+                </label>
+                <label class="config-grid__token">
+                    GitHub token (repo + workflow)
+                    <input id="githubToken" type="password" placeholder="ghp_..." autocomplete="off">
+                </label>
+                <label>
+                    Commit message
+                    <input id="commitMessage" type="text" value="chore(admin): update content.json" autocomplete="off">
+                </label>
+            </div>
+
+            <div class="action-row">
+                <button id="reloadButton" type="button" class="btn btn--secondary">Recarregar arquivo local</button>
+                <button id="downloadButton" type="button" class="btn btn--secondary">Baixar content.json</button>
+                <button id="copyButton" type="button" class="btn btn--secondary">Copiar JSON</button>
+                <button id="publishButton" type="button" class="btn btn--primary">Publicar no GitHub</button>
+                <button id="publishDeployButton" type="button" class="btn btn--accent">Publicar + Deploy</button>
+                <button id="deployOnlyButton" type="button" class="btn btn--secondary">Disparar deploy</button>
+            </div>
+
+            <p class="hint">
+                O token nao e salvo no navegador. A publicacao envia apenas
+                <strong>data/content.json</strong> para o repositorio configurado.
+            </p>
+            <p id="statusMessage" class="status" aria-live="polite">Carregando dados...</p>
+        </section>
+
+        <section class="editor-grid">
+            <article class="panel">
+                <div class="panel__head">
+                    <h2>Certificacoes</h2>
+                    <div class="inline-actions">
+                        <button id="addCertificationButton" type="button" class="btn btn--secondary btn--small">Adicionar</button>
+                        <button id="deleteCertificationButton" type="button" class="btn btn--danger btn--small">Remover</button>
+                    </div>
+                </div>
+
+                <div id="certificationsList" class="item-list" role="listbox" aria-label="Lista de certificacoes"></div>
+
+                <form id="certificationForm" class="form-grid" autocomplete="off">
+                    <label>
+                        Titulo
+                        <input id="certTitle" type="text">
+                    </label>
+                    <label>
+                        Instituicao
+                        <input id="certInstitution" type="text">
+                    </label>
+                    <label class="form-grid__full">
+                        URL da credencial
+                        <input id="certCredentialUrl" type="url">
+                    </label>
+                    <label>
+                        Status
+                        <select id="certStatus">
+                            <option value="completed">completed</option>
+                            <option value="in-progress">in-progress</option>
+                        </select>
+                    </label>
+                    <label>
+                        Carga horaria
+                        <input id="certHours" type="text">
+                    </label>
+                    <label>
+                        Logo
+                        <select id="certLogo">
+                            <option value="alura">alura</option>
+                            <option value="efset">efset</option>
+                        </select>
+                    </label>
+                    <label class="form-grid__checkbox">
+                        <input id="certHighlight" type="checkbox">
+                        Destacar certificacao
+                    </label>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel__head">
+                    <h2>Depoimentos</h2>
+                    <div class="inline-actions">
+                        <button id="addTestimonialButton" type="button" class="btn btn--secondary btn--small">Adicionar</button>
+                        <button id="deleteTestimonialButton" type="button" class="btn btn--danger btn--small">Remover</button>
+                    </div>
+                </div>
+
+                <div id="testimonialsList" class="item-list" role="listbox" aria-label="Lista de depoimentos"></div>
+
+                <form id="testimonialForm" class="form-grid" autocomplete="off">
+                    <label class="form-grid__full">
+                        Texto
+                        <textarea id="testimonialText" rows="5"></textarea>
+                    </label>
+                    <label>
+                        Nome do autor
+                        <input id="testimonialAuthorName" type="text">
+                    </label>
+                    <label>
+                        Cargo/descricao
+                        <input id="testimonialAuthorRole" type="text">
+                    </label>
+                    <label class="form-grid__full">
+                        Foto (assets/...)
+                        <input id="testimonialAuthorPhoto" type="text">
+                    </label>
+                    <label>
+                        Inicial fallback
+                        <input id="testimonialAuthorInitial" type="text" maxlength="2">
+                    </label>
+                </form>
+            </article>
+        </section>
+
+        <section class="panel panel--full">
+            <h2>Preview ao vivo</h2>
+            <div class="preview-grid">
+                <article class="preview-card">
+                    <h3>Credenciais</h3>
+                    <ul id="previewCredentials" class="preview-credentials"></ul>
+                </article>
+
+                <article class="preview-card">
+                    <h3>Depoimentos</h3>
+                    <div id="previewTestimonials" class="preview-testimonials"></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

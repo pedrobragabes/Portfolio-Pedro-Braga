@@ -8,6 +8,8 @@ O portfolio e um site estatico (HTML, CSS, JS) com duas opcoes de hospedagem ati
 - **Vercel** (CDN global, deploy automatico via GitHub)
 - **Hostinger** (hospedagem tradicional, deploy automatico via GitHub Actions + FTP)
 
+Foundation de API backend disponivel em `backend/` para execucao dedicada (Node.js/Express).
+
 ---
 
 ## 1. Preparacao dos Arquivos
@@ -23,11 +25,16 @@ Antes de subir, garanta que:
 ## 2. Deploy Automatico (GitHub -> Hostinger)
 
 O deploy para Hostinger e feito automaticamente via **GitHub Actions** a cada push na branch `main`.
+Tambem e possivel disparar deploy manual pelo Dashboard Admin (`/admin/`) via `workflow_dispatch`.
 
 ### Como funciona
 
 ```
 Push na main -> GitHub Actions -> FTP Upload -> Hostinger (public_html/)
+
+ou
+
+Dashboard Admin -> GitHub API (`workflow_dispatch`) -> GitHub Actions -> FTP Upload -> Hostinger
 ```
 
 ### Configuracao dos Secrets no GitHub
@@ -58,6 +65,15 @@ O workflow exclui automaticamente:
 ### Workflow
 
 O arquivo `.github/workflows/deploy-hostinger.yml` contem toda a configuracao. Para verificar o status dos deploys, va em **Actions** no repositorio GitHub.
+
+### Deploy manual pelo Dashboard Admin
+
+1. Acesse `/admin/`
+2. Preencha `owner`, `repositorio`, `branch` e `workflow`
+3. Informe um token GitHub com escopo `repo` + `workflow`
+4. Clique em `Disparar deploy` (ou `Publicar + Deploy`)
+
+Observacao: o token e usado apenas na sessao do navegador e nao e salvo.
 
 ---
 
@@ -134,7 +150,7 @@ CNAME   www     pedrobragabes.github.io
 
 - [ ] Acessar `https://pedrobragabes.com` e verificar carregamento
 - [ ] Confirmar cadeado HTTPS/SSL ativo
-- [ ] Testar formulario de contato (FormSubmit.co)
+- [ ] Testar formulario de contato (`/api/contact` quando disponivel, com fallback FormSubmit)
 - [ ] Testar toggle de tema (dark/light)
 - [ ] Testar toggle de idioma (PT/EN)
 - [ ] Enviar link no WhatsApp para testar Open Graph
@@ -162,6 +178,22 @@ CNAME   www     pedrobragabes.github.io
 - Verifique se o `.htaccess` tem o redirect HTTP -> HTTPS ativo
 
 ### Formulario nao envia
-- Verifique se o CSP permite `connect-src https://formsubmit.co`
-- Confirme que o `form-action` no CSP inclui `https://formsubmit.co`
-- Teste no console do navegador por erros de CORS
+- Se houver backend ativo, verifique se `POST /api/contact` responde `201` ou `202`
+- Verifique se o fallback para FormSubmit continua permitido no CSP (`connect-src` e `form-action`)
+- Teste no console do navegador por erros de CORS na API e no fallback
+
+---
+
+## 9. API Backend Foundation (Local)
+
+### Rodando localmente
+1. Instale as dependencias no root do projeto: `npm install`
+2. Suba a API: `npm run api:dev`
+3. Endpoint de health: `http://localhost:8787/api/health`
+
+### Endpoints da Foundation
+- `POST /api/contact`
+- `GET /api/projects`
+- `GET /api/projects/:id`
+- `GET /api/blog/posts`
+- `GET /api/blog/posts/:id`

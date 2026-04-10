@@ -23,43 +23,66 @@
     const revealElements = document.querySelectorAll('.reveal');
     const sections = document.querySelectorAll('section[id]');
     const scrollProgress = document.getElementById('scrollProgress');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    // Project case study data (Moved to top for better organization)
-    const caseStudies = {
-        'JoysticKnights': {
-            tag: 'Portal de Notícias',
-            title: 'JoysticKnights',
-            problem: 'O site anterior tinha tempo de carregamento lento (>5s) e péssimo SEO, resultando em baixo tráfego orgânico e alta taxa de rejeição.',
-            solution: 'Implementei arquitetura WordPress otimizada com lazy loading de imagens, cache estratégico com WP Rocket, e CDN. Reestruturei o HTML semântico para melhorar o SEO técnico.',
-            result: 'Tempo de carregamento reduzido em 60% (de 5s para 2s). Melhoria significativa no Core Web Vitals e aumento no tráfego orgânico.'
-        },
-        'AquaFlora AgroShop': {
-            tag: 'E-commerce',
-            title: 'AquaFlora AgroShop',
-            problem: 'Gestão de múltiplos canais com 3000+ produtos gerava gargalos operacionais: controle de estoque manual arriscado, perda de vendas por falta de agilidade e atendimento descentralizado.',
-            solution: 'Liderança técnica na criação de um ecossistema digital completo. Orquestração de stack WordPress/WooCommerce de alta performance. Desenvolvimento de aplicação web interna para gestão de estoque mobile (scanner de código de barras) e arquitetura de automação de atendimento via IA com Node.js + whatsapp-web.js.',
-            result: 'Redução de 80% no SLA de resposta ao cliente com automação. Atualização de estoque em tempo real eliminando rupturas. Scripts Python/JS para importação massiva economizaram centenas de horas de trabalho manual.',
-            images: [
-                'assets/AquaFlora/AquaFlora Home.webp',
-                'assets/AquaFlora/AquaFlora Loja.webp',
-                'assets/AquaFlora/Estoque AquaFlora.webp'
-            ]
-        },
-        'Kingdom of Aen': {
-            tag: 'Game Development',
-            title: 'Kingdom of Aen',
-            problem: 'Projeto pessoal para aprender JavaScript avançado: criar um jogo de cartas completo com IA adversária e persistência de estado.',
-            solution: 'Engine desenvolvida em JavaScript puro sem frameworks. Sistema de turnos, IA com diferentes níveis de dificuldade, e salvamento local usando localStorage.',
-            result: '2000+ linhas de lógica de jogo bem estruturada. Projeto de portfólio que demonstra capacidade de resolver problemas complexos.'
-        },
-        'Home Lab & Hardware': {
-            tag: 'Infraestrutura',
-            title: 'Home Lab & Hardware',
-            problem: 'Necessidade de hospedar múltiplos serviços pessoais e de negócio (AquaFlora) sem custos recorrentes de cloud.',
-            solution: 'Montei servidor físico com Proxmox VE rodando 15+ containers e VMs. Implementei VPN, DNS interno, monitoramento com Grafana, e backup automatizado.',
-            result: 'Uptime de 99.9% ao longo do ano. Economia mensal vs cloud estimada em R$500+. Infraestrutura escalável para novos projetos.'
+    const caseStudies = {};
+
+    function isValidProjectUrl(url) {
+        return typeof url === 'string' && url.trim() !== '' && url.trim() !== '#';
+    }
+
+    function applyProjectLink(button, url) {
+        if (!button) {
+            return;
         }
-    };
+
+        if (!isValidProjectUrl(url)) {
+            button.removeAttribute('href');
+            button.classList.add('is-disabled');
+            button.setAttribute('aria-disabled', 'true');
+            button.setAttribute('tabindex', '-1');
+            button.removeAttribute('target');
+            button.removeAttribute('rel');
+            return;
+        }
+
+        const normalizedUrl = url.trim();
+        button.setAttribute('href', normalizedUrl);
+        button.classList.remove('is-disabled');
+        button.removeAttribute('aria-disabled');
+        button.removeAttribute('tabindex');
+
+        if (/^https?:\/\//i.test(normalizedUrl)) {
+            button.setAttribute('target', '_blank');
+            button.setAttribute('rel', 'noopener noreferrer');
+        } else {
+            button.removeAttribute('target');
+            button.removeAttribute('rel');
+        }
+    }
+
+    function initializeProjectLinksFromMarkup() {
+        projectCards.forEach((card) => {
+            const liveButton = card.querySelector('[data-project-link="live"]');
+            const repoButton = card.querySelector('[data-project-link="repo"]');
+
+            [liveButton, repoButton].forEach((button) => {
+                if (!button) {
+                    return;
+                }
+
+                const initialHref = button.getAttribute('href');
+                if (isValidProjectUrl(initialHref)) {
+                    applyProjectLink(button, initialHref);
+                    return;
+                }
+
+                applyProjectLink(button, '');
+            });
+        });
+    }
+
+    initializeProjectLinksFromMarkup();
 
     // Helper: Throttle function for performance
     function throttle(func, limit) {
@@ -317,6 +340,43 @@
     // 8. CONTACT FORM HANDLING
     // ==========================================================================
 
+    function formDataToJson(formData) {
+        const payload = {};
+
+        formData.forEach((value, key) => {
+            if (typeof value === 'string') {
+                payload[key] = value;
+            }
+        });
+
+        return payload;
+    }
+
+    async function submitContactToApi(apiEndpoint, formData) {
+        const response = await fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formDataToJson(formData))
+        });
+
+        const result = await response.json().catch(() => null);
+        return response.ok && (result?.success === true || result?.success === 'true');
+    }
+
+    async function submitContactToFallback(fallbackEndpoint, formData) {
+        const response = await fetch(fallbackEndpoint, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        const result = await response.json().catch(() => null);
+        return response.ok && (result?.success === true || result?.success === 'true');
+    }
+
     const contactForm = document.querySelector('.contact__form');
 
     if (contactForm) {
@@ -365,16 +425,24 @@
                 if (!formData.get('_replyto') && formData.get('email')) {
                     formData.append('_replyto', formData.get('email'));
                 }
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
+                const apiEndpoint = (form.dataset.apiAction || '').trim();
+                const fallbackEndpoint = (form.dataset.fallbackAction || form.action || '').trim();
+                const shouldTryApi = apiEndpoint
+                    && !(window.location.protocol === 'file:' && apiEndpoint.startsWith('/'));
 
-                const result = await response.json().catch(() => null);
-                const isSuccess = response.ok && (result?.success === true || result?.success === 'true');
+                let isSuccess = false;
 
-                form.classList.remove('submitting');
+                if (shouldTryApi) {
+                    try {
+                        isSuccess = await submitContactToApi(apiEndpoint, formData);
+                    } catch (apiError) {
+                        console.warn('Falha ao enviar para API interna, tentando fallback.', apiError);
+                    }
+                }
+
+                if (!isSuccess && fallbackEndpoint) {
+                    isSuccess = await submitContactToFallback(fallbackEndpoint, formData);
+                }
 
                 if (isSuccess) {
                     // Success feedback
@@ -383,19 +451,18 @@
                     successDiv.textContent = '✓ Mensagem enviada com sucesso!';
                     form.appendChild(successDiv);
                     form.reset();
-                    submitBtn.textContent = originalText;
                 } else {
                     throw new Error('Erro no envio');
                 }
             } catch (error) {
-                form.classList.remove('submitting');
-                submitBtn.textContent = originalText;
-
                 // Error feedback
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'form-error';
                 errorDiv.textContent = '✗ Erro ao enviar. Tente novamente.';
                 form.appendChild(errorDiv);
+            } finally {
+                form.classList.remove('submitting');
+                submitBtn.textContent = originalText;
             }
         });
     }
@@ -458,10 +525,220 @@
     const modalClose = document.getElementById('modalClose');
     const caseStudyButtons = document.querySelectorAll('.project-card__cta');
 
-    // Case Studies Data moved to top of file
+    function clearChildren(element) {
+        if (!element) {
+            return;
+        }
 
-    function openModal(projectName) {
-        const data = caseStudies[projectName];
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+    }
+
+    function createModalEmptyState(text) {
+        const state = document.createElement('div');
+        state.className = 'modal__empty';
+        state.textContent = text;
+        return state;
+    }
+
+    function renderModalMetrics(metrics) {
+        const metricsContainer = document.getElementById('modalMetrics');
+        clearChildren(metricsContainer);
+
+        if (!metricsContainer) {
+            return;
+        }
+
+        if (!Array.isArray(metrics) || metrics.length === 0) {
+            metricsContainer.appendChild(createModalEmptyState('Metricas detalhadas em breve.'));
+            return;
+        }
+
+        metrics.forEach((metric) => {
+            const metricCard = document.createElement('article');
+            metricCard.className = 'modal__metric';
+
+            const value = document.createElement('strong');
+            value.className = 'modal__metric-value';
+            value.textContent = metric.value || '--';
+
+            const label = document.createElement('span');
+            label.className = 'modal__metric-label';
+            label.textContent = metric.label || 'Metrica';
+
+            metricCard.appendChild(value);
+            metricCard.appendChild(label);
+            metricsContainer.appendChild(metricCard);
+        });
+    }
+
+    function renderModalVideos(videos) {
+        const videosContainer = document.getElementById('modalVideos');
+        clearChildren(videosContainer);
+
+        if (!videosContainer) {
+            return;
+        }
+
+        if (!Array.isArray(videos) || videos.length === 0) {
+            videosContainer.appendChild(createModalEmptyState('Video de demonstracao em breve.'));
+            return;
+        }
+
+        videos.forEach((videoData) => {
+            const card = document.createElement('article');
+            card.className = 'modal__video-card';
+
+            const title = document.createElement('h4');
+            title.className = 'modal__video-title';
+            title.textContent = videoData.title || 'Demonstracao';
+            card.appendChild(title);
+
+            if (videoData.type === 'embed' && isValidProjectUrl(videoData.url)) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'modal__video-embed';
+                iframe.src = videoData.url;
+                iframe.title = videoData.title || 'Video de demonstracao';
+                iframe.loading = 'lazy';
+                iframe.allowFullscreen = true;
+                card.appendChild(iframe);
+            } else if (videoData.type === 'mp4' && isValidProjectUrl(videoData.url)) {
+                const video = document.createElement('video');
+                video.className = 'modal__video-player';
+                video.controls = true;
+                video.preload = 'metadata';
+                video.src = videoData.url;
+                if (isValidProjectUrl(videoData.poster)) {
+                    video.poster = videoData.poster;
+                }
+                card.appendChild(video);
+            } else if (isValidProjectUrl(videoData.url)) {
+                const link = document.createElement('a');
+                link.className = 'modal__video-link';
+                const normalizedUrl = videoData.url.trim();
+                link.href = normalizedUrl;
+                if (/^https?:\/\//i.test(normalizedUrl)) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+                link.textContent = 'Abrir demonstracao';
+                card.appendChild(link);
+            } else {
+                card.appendChild(createModalEmptyState('Demonstracao indisponivel no momento.'));
+            }
+
+            videosContainer.appendChild(card);
+        });
+    }
+
+    function renderModalLinks(links) {
+        const linksContainer = document.getElementById('modalLinks');
+        clearChildren(linksContainer);
+
+        if (!linksContainer) {
+            return;
+        }
+
+        const entries = [
+            { key: 'live', label: 'Site ao vivo' },
+            { key: 'repo', label: 'Repositorio' },
+            { key: 'demo', label: 'Demo' }
+        ];
+
+        const availableLinks = entries.filter((entry) => isValidProjectUrl(links && links[entry.key]));
+
+        if (availableLinks.length === 0) {
+            linksContainer.appendChild(createModalEmptyState('Links publicos em breve.'));
+            return;
+        }
+
+        availableLinks.forEach((entry) => {
+            const anchor = document.createElement('a');
+            anchor.className = 'modal__action-link';
+            const normalizedUrl = links[entry.key].trim();
+            anchor.href = normalizedUrl;
+            if (/^https?:\/\//i.test(normalizedUrl)) {
+                anchor.target = '_blank';
+                anchor.rel = 'noopener noreferrer';
+            }
+            anchor.textContent = entry.label;
+            linksContainer.appendChild(anchor);
+        });
+    }
+
+    function renderModalGallery(images, title) {
+        const galleryContainer = document.getElementById('modalImages');
+        clearChildren(galleryContainer);
+
+        if (!galleryContainer) {
+            return;
+        }
+
+        if (!Array.isArray(images) || images.length === 0) {
+            galleryContainer.appendChild(createModalEmptyState('Galeria em breve.'));
+            return;
+        }
+
+        const gallery = document.createElement('div');
+        gallery.className = 'modal__gallery';
+
+        const mainButton = document.createElement('button');
+        mainButton.type = 'button';
+        mainButton.className = 'modal__gallery-main-btn';
+
+        const mainImage = document.createElement('img');
+        mainImage.className = 'modal__image';
+        mainImage.loading = 'lazy';
+        mainImage.alt = `${title} screenshot principal`;
+
+        mainButton.appendChild(mainImage);
+        gallery.appendChild(mainButton);
+
+        const thumbs = document.createElement('div');
+        thumbs.className = 'modal__thumbs';
+        gallery.appendChild(thumbs);
+
+        let activeSrc = images[0];
+
+        const thumbButtons = images.map((src, index) => {
+            const thumbButton = document.createElement('button');
+            thumbButton.type = 'button';
+            thumbButton.className = 'modal__thumb';
+
+            const thumbImage = document.createElement('img');
+            thumbImage.className = 'modal__thumb-image';
+            thumbImage.src = src;
+            thumbImage.alt = `${title} screenshot ${index + 1}`;
+            thumbImage.loading = 'lazy';
+
+            thumbButton.appendChild(thumbImage);
+            thumbs.appendChild(thumbButton);
+            return thumbButton;
+        });
+
+        function setActiveImage(index) {
+            activeSrc = images[index];
+            mainImage.src = activeSrc;
+            mainImage.alt = `${title} screenshot ${index + 1}`;
+
+            thumbButtons.forEach((button, buttonIndex) => {
+                button.classList.toggle('is-active', buttonIndex === index);
+            });
+        }
+
+        thumbButtons.forEach((button, index) => {
+            button.addEventListener('click', () => setActiveImage(index));
+        });
+
+        mainButton.addEventListener('click', () => openLightbox(activeSrc));
+
+        setActiveImage(0);
+        galleryContainer.appendChild(gallery);
+    }
+
+    function openModal(projectKey) {
+        const data = caseStudies[projectKey];
         if (!data || !modal) {
             return;
         }
@@ -471,31 +748,10 @@
         document.getElementById('modalProblem').textContent = data.problem;
         document.getElementById('modalSolution').textContent = data.solution;
         document.getElementById('modalResult').textContent = data.result;
-
-        // Gallery Logic
-        const galleryContainer = document.getElementById('modalImages');
-        if (galleryContainer) {
-            while (galleryContainer.firstChild) {
-                galleryContainer.removeChild(galleryContainer.firstChild);
-            }
-
-            if (data.images && data.images.length > 0) {
-                data.images.forEach(imgSrc => {
-                    const img = document.createElement('img');
-                    img.src = imgSrc;
-                    img.alt = `${data.title} Screenshot`;
-                    img.className = 'modal__image';
-                    img.loading = 'lazy';
-                    img.onclick = () => openLightbox(imgSrc);
-                    galleryContainer.appendChild(img);
-                });
-            } else {
-                const placeholder = document.createElement('div');
-                placeholder.className = 'modal__image-placeholder';
-                placeholder.textContent = 'Galeria em breve';
-                galleryContainer.appendChild(placeholder);
-            }
-        }
+        renderModalMetrics(data.metrics);
+        renderModalVideos(data.videos);
+        renderModalLinks(data.links);
+        renderModalGallery(data.images, data.title);
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -544,11 +800,36 @@
     // Attach click handlers to case study buttons
     caseStudyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
             const card = btn.closest('.project-card');
-            const title = card.querySelector('.project-card__title').textContent;
-            openModal(title);
+            if (!card) {
+                return;
+            }
+
+            const projectId = card.dataset.project;
+            const fallbackTitle = card.querySelector('.project-card__title')?.textContent.trim();
+            const projectKey = projectId || fallbackTitle;
+
+            if (caseStudies[projectKey]) {
+                e.preventDefault();
+                e.stopPropagation();
+                openModal(projectKey);
+                return;
+            }
+
+            const liveButton = card.querySelector('[data-project-link="live"]');
+            const liveUrl = liveButton ? liveButton.getAttribute('href') : '';
+
+            if (!isValidProjectUrl(liveUrl)) {
+                e.preventDefault();
+                return;
+            }
+
+            const normalizedUrl = liveUrl.trim();
+            if (/^https?:\/\//i.test(normalizedUrl)) {
+                window.open(normalizedUrl, '_blank', 'noopener,noreferrer');
+            } else {
+                window.location.assign(normalizedUrl);
+            }
         });
     });
 
@@ -599,8 +880,6 @@
     // ==========================================================================
     // 13. PROJECT VIDEO HOVER
     // ==========================================================================
-
-    const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
         const video = card.querySelector('video');

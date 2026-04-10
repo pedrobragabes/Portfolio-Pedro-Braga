@@ -65,7 +65,7 @@ portfolio-pedro-braga/
 | **Fontes** | Inter (body) + Playfair Display (headings) - Self-hosted WOFF2 |
 | **Icones** | Devicon CDN + SVGs customizados |
 | **Analytics** | Google Analytics 4 (G-C7M61DXD7W) |
-| **Formulario** | FormSubmit.co (POST handler) |
+| **Formulario** | API interna (`/api/contact`) com fallback FormSubmit.co |
 | **Deploy** | Vercel (CDN) + Hostinger (FTP via GitHub Actions) |
 | **Versionamento** | Git/GitHub |
 
@@ -84,7 +84,7 @@ Logica de interface completa:
 - Smooth scrolling (ancora com behavior: smooth)
 - Scroll progress indicator
 - Button ripple effects (Material Design)
-- Contact form handling (validacao + FormSubmit POST)
+- Contact form handling (validacao + API-first POST com fallback FormSubmit)
 - Animated counters (requestAnimationFrame)
 - Case study modal (objeto `caseStudies` com 4 projetos)
 

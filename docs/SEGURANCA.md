@@ -41,10 +41,10 @@ form-action 'self' https://formsubmit.co
 - `style-src`: Permite estilos do dominio + Devicon CDN (jsdelivr)
 - `font-src`: Permite fontes do dominio + CDN
 - `img-src`: Permite imagens do dominio + data URIs + qualquer HTTPS
-- `connect-src`: Permite conexoes para FormSubmit e Google Analytics
+- `connect-src`: Permite conexoes para API local/propria, fallback FormSubmit e Google Analytics
 - `frame-src 'none'`: Nenhum iframe permitido
 - `object-src 'none'`: Nenhum plugin (Flash, Java) permitido
-- `form-action`: Formularios so podem enviar para o dominio ou FormSubmit
+- `form-action`: Formularios so podem enviar para o dominio (API) ou fallback FormSubmit
 
 ---
 
@@ -99,6 +99,7 @@ O header HSTS com `preload` permite inclusao na lista de preload dos navegadores
 
 | Servico | Uso | Risco |
 |---------|-----|-------|
+| API Backend (`/api/contact`) | Envio principal de formulario | Baixo - validacao + honeypot + rate-limit |
 | Google Analytics 4 | Tracking de visitantes | Baixo - dados anonimizados |
 | FormSubmit.co | Envio de formulario | Baixo - POST sem dados sensiveis |
 | jsdelivr CDN | Icones Devicon | Baixo - protegido com SRI SHA-384 |
@@ -161,7 +162,7 @@ Antes de cada deploy, verifique:
 ### Se o site for comprometido
 1. Desabilite o deploy automatico (pause no Vercel ou desative a Action)
 2. Reverta para o ultimo commit seguro: `git revert` ou rollback na Vercel
-3. Mude TODAS as senhas: FTP, GitHub, Hostinger, FormSubmit
+3. Mude TODAS as senhas: FTP, GitHub, Hostinger e quaisquer integracoes externas (incluindo FormSubmit, se fallback ativo)
 4. Verifique o `.htaccess` por injecoes (redirects maliciosos)
 5. Escaneie os arquivos por codigo malicioso
 6. Reative o deploy apos confirmar que esta limpo

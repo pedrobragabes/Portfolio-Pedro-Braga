@@ -1073,11 +1073,173 @@ ol {
     line-height: 1.7;
 }
 
-.modal__images {
+.modal__empty {
+    padding: 0.85rem 1rem;
+    border: 1px dashed var(--border-light);
+    border-radius: 8px;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+}
+
+.modal__metrics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+}
+
+.modal__metric {
+    background: var(--bg-cream);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+}
+
+.modal__metric-value {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.modal__metric-label {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-medium);
+    font-size: 0.82rem;
+}
+
+.modal__videos {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.modal__video-card {
+    background: var(--bg-cream);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 0.9rem;
+}
+
+.modal__video-title {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.modal__video-embed,
+.modal__video-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+    border-radius: 8px;
+    background: #111;
+}
+
+.modal__video-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: var(--bg-cream);
+    transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.modal__video-link:hover {
+    border-color: var(--accent-brown);
+    color: var(--bg-darker);
+    background: var(--accent-brown);
+    transform: translateY(-1px);
+}
+
+.modal__video-link:focus-visible {
+    border-color: var(--accent-brown);
+    color: var(--bg-darker);
+    background: var(--accent-brown);
+}
+
+.modal__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.modal__action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: var(--bg-cream);
+    transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.modal__action-link:hover {
+    border-color: var(--accent-brown);
+    color: var(--bg-darker);
+    background: var(--accent-brown);
+    transform: translateY(-1px);
+}
+
+.modal__action-link:focus-visible {
+    border-color: var(--accent-brown);
+    color: var(--bg-darker);
+    background: var(--accent-brown);
+}
+
+.modal__images {
+    margin-top: 1rem;
+}
+
+.modal__gallery {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.modal__gallery-main-btn {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.modal__thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    gap: 0.5rem;
+}
+
+.modal__thumb {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.modal__thumb.is-active {
+    border-color: var(--accent-brown);
+    opacity: 1;
+}
+
+.modal__thumb-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
 }
 
 .modal__image-placeholder {
@@ -1486,6 +1648,13 @@ ol {
 .project-card__btn svg {
     width: 14px;
     height: 14px;
+}
+
+.project-card__btn.is-disabled {
+    opacity: 0.6;
+    filter: saturate(0.7);
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 /* Education Section
