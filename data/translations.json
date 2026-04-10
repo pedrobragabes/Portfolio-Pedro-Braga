@@ -9,6 +9,9 @@
             "blog": "Blog",
             "contact": "Contato"
         },
+        "a11y": {
+            "skip_to_content": "Pular para o conteúdo principal"
+        },
         "hero": {
             "badge": "Aberto para oportunidades",
             "greeting": "Olá, eu sou",
@@ -174,6 +177,9 @@
             "education": "Education",
             "blog": "Blog",
             "contact": "Contact"
+        },
+        "a11y": {
+            "skip_to_content": "Skip to main content"
         },
         "hero": {
             "badge": "Open to opportunities",

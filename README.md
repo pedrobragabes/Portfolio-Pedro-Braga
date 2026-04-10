@@ -63,10 +63,17 @@ portfolio-pedro-braga/
 ├── sitemap.xml            # Mapa do site para buscadores
 ├── css/
 │   └── style.css          # Design System e estilos componentizados
+│   └── blog.css           # Estilos da area de blog
+├── blog/
+│   ├── posts/             # Fonte dos artigos em Markdown
+│   ├── index.html         # Listagem de artigos (gerada no build)
+│   └── <slug>/index.html  # Pagina individual de artigo (gerada no build)
 ├── js/
 │   ├── main.js            # Lógica de interface, scroll e tema
 │   ├── content-loader.js  # Mini-CMS: carrega dados do JSON
 │   └── i18n.js            # Sistema de internacionalização (EN/PT)
+├── scripts/
+│   └── build-blog.js      # Conversor Markdown -> HTML + RSS + Sitemap
 ├── data/
 │   ├── content.json       # Mini-CMS: credenciais, depoimentos, contato
 │   └── translations.json  # Traduções EN/PT para todo o site
@@ -82,46 +89,49 @@ portfolio-pedro-braga/
 
 ---
 
-## 📈 Roadmap & Atualizações
+## Documentacao
 
-### v1.1.0 (Polimento e Novas Features)
-- [x] **Skills Marquee**: Carrossel infinito "Dual-Track" com ícones SVG e Devicon.
-- [x] **Testimonials Section**: Seção ativa com depoimentos reais de clientes e avatar pronto para foto.
-- [x] **UI Refinement**: Reorganização de seções para fluxo de navegação perfeito e melhorias no frame do formulário.
-- [x] **Otimização**: Refatoração do scroll para eliminar repetições visíveis (jumps).
+A documentacao completa esta organizada na pasta [`docs/`](docs/):
 
-### v1.2.0 (Credenciais e Mini-CMS)
-- [x] **LinkedIn-Style Credentials**: Lista clicável de certificações com "Exibir credencial" e hover interativo.
-- [x] **Photo-Ready Avatars**: Estrutura de avatar preparada para fotos reais com fallback para iniciais.
-- [x] **Contact CTA Improvement**: Título e subtítulo mais persuasivos ("Vamos construir sua solução?").
-- [x] **JSON Data Layer**: Arquivo `data/content.json` como base para Headless CMS simplificado.
+| Documento | Descricao |
+|-----------|-----------|
+| [DEPLOY.md](docs/DEPLOY.md) | Guia de deploy (Vercel, Hostinger, GitHub Actions) |
+| [ROADMAP.md](docs/ROADMAP.md) | Historico de versoes e roadmap futuro |
+| [SEGURANCA.md](docs/SEGURANCA.md) | Headers de seguranca, CSP, checklist |
+| [CONTEXTO.md](docs/CONTEXTO.md) | Arquitetura, design system, padroes de codigo |
+| [PLANOS.md](docs/PLANOS.md) | Novos projetos, melhorias e visao estrategica |
 
-### v1.3.0 (Internacionalização e Widgets)
-- [x] **i18n (EN/PT)**: Toggle de idioma no header com traduções completas via `translations.json`.
-- [x] **Blog & Stats Section**: Nova seção com placeholder para artigos técnicos.
-- [x] **GitHub Activity Widget**: Estatísticas de GitHub integradas via GitHub Readme Stats.
-- [x] **WakaTime Integration**: Widget mostrando tempo de código das últimas semanas.
-- [x] **Download CV**: Botão para download de currículo em PDF na Hero section.
-- [x] **Education Card Expanded**: Card da faculdade expandido com semestre, previsão e áreas de foco.
-### v1.4.0 (Refinamento e i18n Robusto)
-- [x] **Universal i18n**: Sistema de tradução atualizado com atributo `data-i18n` para detecção automática e manutenção simplificada.
-- [x] **Credential Layout Fix**: Correção no alinhamento dos cards de certificação (Logos e Textos perfeitamente alinhados).
-- [x] **Full Translation Coverage**: "Sobre mim", "Soluções" e todos os badges dinâmicos (Em andamento) agora 100% traduzidos.
-- [x] **Blog Hidden**: Seção de Blog temporariamente oculta (com código preservado) para focar nas funcionalidades principais.
+## Deploy Automatico
 
-### v1.5.0 (Refinamento de Conteúdo e Foco em Carreira)
-- [x] **Hero Text Profissional**: Descrição reescrita para refletir experiência real (removido texto com promessas impossíveis).
-- [x] **Formulário de Contato Reformulado**: Agora focado em atrair vagas de programação (Freelance/Emprego/Parceria/Networking).
-- [x] **Opção de Mentoria Removida**: Ajustado para perfil de desenvolvedor em início de carreira.
-- [x] **Bug Fixes**: Corrigido typo `??`, hero badge com i18n, link GitHub unificado para `pedrobragabes`.
-- [x] **Documentação**: Criado arquivo `contexto.md` para contextualizar futuras edições.
+O projeto faz deploy automatico para **Vercel** (CDN) e **Hostinger** (FTP via GitHub Actions) a cada push na branch `main`. Veja detalhes em [docs/DEPLOY.md](docs/DEPLOY.md).
 
-### Ideias para o Futuro (Roadmap)
-- [ ] **Blog Técnico Funcional**: Artigos reais em Markdown com conversão estática.
-- [ ] **Case Study Modals Dinâmicos**: Carregar conteúdo dos case studies via JSON/API.
+## Build de Performance (Minificacao)
 
+Para regenerar os assets de producao:
 
+- `npm run minify:css` gera `css/style.min.css`
+- `npm run minify:js` gera `js/*.min.js`
+- `npm run build:minify` executa os dois passos
 
+Resultados atuais:
+
+- CSS: `71KB -> 47KB`
+- JS total: `45KB -> 19KB`
+
+## Build do Blog (v1.7.0)
+
+Para gerar as paginas do blog, feed RSS e atualizar o sitemap:
+
+- `npm run build:blog`
+- `npm run build` (blog + minificacao)
+
+Pipeline do blog:
+
+1. Lê arquivos Markdown em `blog/posts/*.md`
+2. Converte para HTML estatico
+3. Gera `blog/index.html` e `blog/<slug>/index.html`
+4. Gera `blog/rss.xml`
+5. Atualiza `sitemap.xml` com URLs do blog
 
 ---
 

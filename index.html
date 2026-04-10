@@ -53,18 +53,38 @@
     <!-- Preload LCP Image (Critical for performance) -->
     <link rel="preload" as="image" href="assets/profile/Pedro Braga.webp" fetchpriority="high">
 
+    <!-- Apply theme before CSS to avoid flash on reload -->
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.style.backgroundColor = '#F5F0E8';
+            }
+        })();
+    </script>
+
     <!-- Main Stylesheet (Critical) -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
 
     <!-- Devicon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"
+        integrity="sha384-DjehTlU5SubGD1zUGe78SkwLgw+q2y9DXnmy3EaDbXA9nvFMPW3LP5verNrWr9rW"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Google Analytics - Deferred -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7M61DXD7W"></script>
-    <script src="js/analytics.js"></script>
+    <script src="js/analytics.min.js"></script>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link" data-i18n="a11y.skip_to_content">Pular para o conteúdo principal</a>
+
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Progresso de leitura"
         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
@@ -80,7 +100,7 @@
                     <li><a href="#skills" class="nav__link">Competências</a></li>
                     <li><a href="#projects" class="nav__link">Projetos</a></li>
                     <li><a href="#education" class="nav__link">Formação</a></li>
-                    <!-- <li><a href="#blog" class="nav__link">Blog</a></li> -->
+                    <li><a href="/blog/" class="nav__link">Blog</a></li>
 
                     <li><a href="#contact" class="nav__link">Contato</a></li>
                 </ul>
@@ -125,13 +145,11 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero__content">
-                    <a href="#contact" class="hero__badge"><span data-i18n="hero.badge">Aberto para
-                            oportunidades</span></a>
                     <h1 class="hero__title">
                         Software Engineer
                     </h1>
@@ -234,7 +252,7 @@
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="2" y1="12" x2="22" y2="12"></line>
                                 <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10 15.3 15.3 0 0 1 4-10z">
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
                                 </path>
                             </svg>
                         </div>
@@ -434,10 +452,6 @@
                         <div class="project-card__preview">
                             <img src="assets/AquaFlora/AquaFlora Home.webp" alt="AquaFlora AgroShop"
                                 class="project-card__image" loading="lazy">
-                            <!-- Video Hover (Add your .mp4 file here) -->
-                            <video class="project-card__video" loop muted playsinline preload="none">
-                                <!-- <source src="assets/AquaFlora/demo.mp4" type="video/mp4"> -->
-                            </video>
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
@@ -484,8 +498,6 @@
                     <article class="project-card reveal reveal-delay-2">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--blue"></div>
-                            <!-- Video Hover -->
-                            <video class="project-card__video" loop muted playsinline preload="none"></video>
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
@@ -531,8 +543,6 @@
                     <article class="project-card reveal reveal-delay-3">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--amber"></div>
-                            <!-- Video Hover -->
-                            <video class="project-card__video" loop muted playsinline preload="none"></video>
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
@@ -1050,7 +1060,7 @@
                     <p>Desenvolvido com ☕ por Pedro Braga</p>
                     <p>© <span id="year"></span> Todos os direitos reservados</p>
                 </div>
-                <script src="js/year.js"></script>
+                <script src="js/year.min.js"></script>
             </div>
         </div>
     </footer>
@@ -1128,9 +1138,9 @@
     </div>
 
     <!-- Scripts - Deferred for better performance -->
-    <script src="js/content-loader.js" defer></script>
-    <script src="js/i18n.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/content-loader.min.js" defer></script>
+    <script src="js/i18n.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
 
 </body>
 

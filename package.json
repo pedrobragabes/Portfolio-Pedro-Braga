@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-pedro-braga",
+  "version": "1.0.0",
+  "description": "> **Full Stack Developer & Infraestrutura** | E-commerce, Automações em Python e Servidores",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js",
+    "minify:css": "cleancss -O2 -o css/style.min.css css/style.css",
+    "minify:js": "terser js/analytics.js -c -m --comments false -o js/analytics.min.js && terser js/content-loader.js -c -m --comments false -o js/content-loader.min.js && terser js/i18n.js -c -m --comments false -o js/i18n.min.js && terser js/main.js -c -m --comments false -o js/main.min.js && terser js/year.js -c -m --comments false -o js/year.min.js",
+    "build:minify": "npm run minify:css && npm run minify:js",
+    "build": "npm run build:blog && npm run build:minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrobragabes/Portfolio-Pedro-Braga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pedrobragabes/Portfolio-Pedro-Braga/issues"
+  },
+  "homepage": "https://github.com/pedrobragabes/Portfolio-Pedro-Braga#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.4.1",
+    "terser": "^5.46.1"
+  }
+}

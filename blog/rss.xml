@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Pedro Braga - Blog Tecnico</title>
+  <link>https://pedrobragabes.com/blog/</link>
+  <description>Artigos tecnicos sobre infraestrutura, automacao, backend e engenharia de software.</description>
+  <language>pt-BR</language>
+  <lastBuildDate>Fri, 10 Apr 2026 13:41:44 GMT</lastBuildDate>
+  <item>
+  <title>Deploy automático com GitHub Actions e Hostinger (FTP)</title>
+  <link>https://pedrobragabes.com/blog/deploy-automatico-github-actions-hostinger/</link>
+  <guid>https://pedrobragabes.com/blog/deploy-automatico-github-actions-hostinger/</guid>
+  <description>Como publicar site estático automaticamente na Hostinger usando GitHub Actions com segurança e rollback simples.</description>
+  <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Home Lab com Proxmox: guia prático para começar</title>
+  <link>https://pedrobragabes.com/blog/homelab-proxmox-guia-pratico/</link>
+  <guid>https://pedrobragabes.com/blog/homelab-proxmox-guia-pratico/</guid>
+  <description>Passo a passo real para montar um home lab com Proxmox, organizar VMs e containers e evitar erros comuns no primeiro setup.</description>
+  <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -98,6 +98,7 @@
 
     function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
         localStorage.setItem('theme', theme);
     }
 
@@ -238,15 +239,32 @@
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetSelector = this.getAttribute('href');
+            if (!targetSelector || targetSelector === '#') {
+                return;
+            }
 
-            if (target) {
+            const target = document.querySelector(targetSelector);
+
+            if (!target) {
+                return;
+            }
+
+            if (this.classList.contains('skip-link')) {
+                e.preventDefault();
+                target.focus({ preventScroll: true });
                 target.scrollIntoView({
-                    behavior: 'smooth',
+                    behavior: 'auto',
                     block: 'start'
                 });
+                return;
             }
+
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     });
 

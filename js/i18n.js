@@ -97,13 +97,11 @@
         translateElements('.nav__link[href="#skills"]', t.nav.skills);
         translateElements('.nav__link[href="#projects"]', t.nav.projects);
         translateElements('.nav__link[href="#education"]', t.nav.education);
+        translateElements('.nav__link[href="/blog/"]', t.nav.blog);
         translateElements('.nav__link[href="#blog"]', t.nav.blog);
         translateElements('.nav__link[href="#contact"]', t.nav.contact);
 
         // Hero section
-        translateElements('.hero__badge span', t.hero.badge);
-        translateElements('.hero .section-label', t.hero.greeting);
-        translateElements('.hero__title .txt-type', null, { 'data-words': t.hero.role });
         translateElements('.hero__subtitle', t.hero.description);
         translateElements('.hero__cta:not(.hero__cta--secondary)', t.hero.cta_projects, { keepIcon: true });
         translateElements('.hero__cta--secondary', t.hero.cta_cv, { keepIcon: true });
