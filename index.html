@@ -445,10 +445,12 @@
                 <div class="projects__header reveal">
                     <span class="section-label">Portfólio</span>
                     <h2 class="section-title">Projetos em Destaque</h2>
+                    <p class="projects__subtitle">Clique em qualquer card para abrir um resumo estratégico completo.</p>
                 </div>
                 <div class="projects__grid">
                     <!-- AquaFlora AgroShop -->
-                    <article class="project-card reveal reveal-delay-1" data-project="aquaflora-agroshop">
+                    <article class="project-card reveal reveal-delay-1" data-project="aquaflora-agroshop" tabindex="0"
+                        aria-label="Abrir detalhes do projeto AquaFlora AgroShop">
                         <div class="project-card__preview">
                             <img src="assets/AquaFlora/AquaFlora Home.webp" alt="AquaFlora AgroShop"
                                 class="project-card__image" loading="lazy">
@@ -495,28 +497,30 @@
                         </div>
                     </article>
 
-                    <!-- Home Lab -->
-                    <article class="project-card reveal reveal-delay-2" data-project="home-lab-hardware">
+                    <!-- ComercioBes -->
+                    <article class="project-card reveal reveal-delay-2" data-project="comerciobes" tabindex="0"
+                        aria-label="Abrir detalhes do projeto ComercioBes">
                         <div class="project-card__preview">
-                            <div class="project-card__gradient project-card__gradient--blue"></div>
+                            <div class="project-card__gradient project-card__gradient--green"></div>
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
                         </div>
                         <div class="project-card__content">
-                            <span class="project-card__tag">Infraestrutura</span>
-                            <h3 class="project-card__title">Home Lab & Hardware</h3>
+                            <span class="project-card__tag">Vitrine Local</span>
+                            <h3 class="project-card__title">ComercioBes</h3>
                             <p class="project-card__description">
-                                Servidor Proxmox com 15+ serviços em produção: apps de estoque com scanner,
-                                automações e containers Docker. Infraestrutura pessoal que resolve problemas reais.
+                                Plataforma local para conectar negocios da cidade com novos clientes, com foco em
+                                descoberta mobile e geracao de leads.
                             </p>
                             <div class="project-card__tech">
-                                <span class="tech-badge">Proxmox</span>
-                                <span class="tech-badge">Docker</span>
-                                <span class="tech-badge">Linux</span>
+                                <span class="tech-badge">SEO Local</span>
+                                <span class="tech-badge">UX Mobile</span>
+                                <span class="tech-badge">Conteudo</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="/blog/homelab-proxmox-guia-pratico/" class="project-card__btn project-card__btn--primary" data-project-link="live">
+                                <a href="#" class="project-card__btn project-card__btn--primary"
+                                    data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -541,57 +545,12 @@
                         </div>
                     </article>
 
-                    <!-- Kingdom of Aen -->
-                    <article class="project-card reveal reveal-delay-3" data-project="kingdom-of-aen">
-                        <div class="project-card__preview">
-                            <div class="project-card__gradient project-card__gradient--amber"></div>
-                            <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
-                            </div>
-                        </div>
-                        <div class="project-card__content">
-                            <span class="project-card__tag">Game Development</span>
-                            <h3 class="project-card__title">Kingdom of Aen</h3>
-                            <p class="project-card__description">
-                                Engine de card game em JavaScript puro com sistema de turnos, IA adversária e
-                                persistência de estado. 2000+ linhas de lógica de jogo.
-                            </p>
-                            <div class="project-card__tech">
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary" data-project-link="live">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                                        <path
-                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                        </path>
-                                    </svg>
-                                    Ver Site
-                                </a>
-                                <a href="https://github.com/pedrobragabes/Kingdom-of-Aen" target="_blank"
-                                    rel="noopener noreferrer" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
                     <!-- Florescer Garden -->
-                    <article class="project-card reveal reveal-delay-4" data-project="florescer-garden">
+                    <article class="project-card reveal reveal-delay-3" data-project="florescer-garden" tabindex="0"
+                        aria-label="Abrir detalhes do projeto Florescer Garden">
                         <div class="project-card__preview">
-                            <div class="project-card__gradient project-card__gradient--green"></div>
+                            <img src="assets/FlorescerGarden/fachada.png" alt="Preview do projeto Florescer Garden"
+                                class="project-card__image" loading="lazy">
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
@@ -636,9 +595,11 @@
                     </article>
 
                     <!-- JoysticKnights -->
-                    <article class="project-card reveal reveal-delay-4" data-project="joysticknights">
+                    <article class="project-card reveal reveal-delay-4" data-project="joysticknights" tabindex="0"
+                        aria-label="Abrir detalhes do projeto JoysticKnights">
                         <div class="project-card__preview">
-                            <div class="project-card__gradient project-card__gradient--purple"></div>
+                            <img src="assets/JoysticKnights/fachada.webp" alt="Preview do projeto JoysticKnights"
+                                class="project-card__image" loading="lazy">
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
@@ -682,29 +643,30 @@
                         </div>
                     </article>
 
-                    <!-- ComercioBes -->
-                    <article class="project-card reveal reveal-delay-4" data-project="comerciobes">
+                    <!-- Home Lab -->
+                    <article class="project-card reveal reveal-delay-2" data-project="home-lab-hardware" tabindex="0"
+                        aria-label="Abrir detalhes do projeto Home Lab e Hardware">
                         <div class="project-card__preview">
-                            <div class="project-card__gradient project-card__gradient--green"></div>
+                            <div class="project-card__gradient project-card__gradient--blue"></div>
                             <div class="project-card__overlay">
                                 <span class="project-card__cta">Ver Case Study →</span>
                             </div>
                         </div>
                         <div class="project-card__content">
-                            <span class="project-card__tag">Vitrine Local</span>
-                            <h3 class="project-card__title">ComercioBes</h3>
+                            <span class="project-card__tag">Infraestrutura</span>
+                            <h3 class="project-card__title">Home Lab & Hardware</h3>
                             <p class="project-card__description">
-                                Plataforma local para conectar negocios da cidade com novos clientes, com foco em
-                                descoberta mobile e geracao de leads.
+                                Servidor Proxmox com 15+ serviços em produção: apps de estoque com scanner,
+                                automações e containers Docker. Infraestrutura pessoal que resolve problemas reais.
                             </p>
                             <div class="project-card__tech">
-                                <span class="tech-badge">SEO Local</span>
-                                <span class="tech-badge">UX Mobile</span>
-                                <span class="tech-badge">Conteudo</span>
+                                <span class="tech-badge">Proxmox</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">Linux</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary"
-                                    data-project-link="live">
+                                <a href="/blog/homelab-proxmox-guia-pratico/"
+                                    class="project-card__btn project-card__btn--primary" data-project-link="live">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -716,6 +678,54 @@
                                     Ver Site
                                 </a>
                                 <a href="#" class="project-card__btn project-card__btn--secondary"
+                                    data-project-link="repo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kingdom of Aen -->
+                    <article class="project-card reveal reveal-delay-3" data-project="kingdom-of-aen" tabindex="0"
+                        aria-label="Abrir detalhes do projeto Kingdom of Aen">
+                        <div class="project-card__preview">
+                            <div class="project-card__gradient project-card__gradient--amber"></div>
+                            <div class="project-card__overlay">
+                                <span class="project-card__cta">Ver Case Study →</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__tag">Game Development</span>
+                            <h3 class="project-card__title">Kingdom of Aen</h3>
+                            <p class="project-card__description">
+                                Engine de card game em JavaScript puro com sistema de turnos, IA adversária e
+                                persistência de estado. 2000+ linhas de lógica de jogo.
+                            </p>
+                            <div class="project-card__tech">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="#" class="project-card__btn project-card__btn--primary" data-project-link="live">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                    Ver Site
+                                </a>
+                                <a href="https://github.com/pedrobragabes/Kingdom-of-Aen" target="_blank"
+                                    rel="noopener noreferrer" class="project-card__btn project-card__btn--secondary"
                                     data-project-link="repo">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
@@ -837,10 +847,9 @@
                                 </li>
                                 <li class="credential-item">
                                     <a href="https://cursos.alura.com.br/" target="_blank" rel="noopener noreferrer"
-                                        class="credential-link credential-link--progress">
+                                        class="credential-link">
                                         <div class="credential-info">
-                                            <span class="credential-title">Backend Node.js <span
-                                                    class="credential-badge">Em andamento</span></span>
+                                            <span class="credential-title">Backend Node.js</span>
                                             <span class="credential-institution">Alura</span>
                                         </div>
                                         <svg class="credential-icon" xmlns="http://www.w3.org/2000/svg"
@@ -853,10 +862,9 @@
                                 </li>
                                 <li class="credential-item">
                                     <a href="https://cursos.alura.com.br/" target="_blank" rel="noopener noreferrer"
-                                        class="credential-link credential-link--progress">
+                                        class="credential-link">
                                         <div class="credential-info">
-                                            <span class="credential-title">Engenharia de Software <span
-                                                    class="credential-badge">Em andamento</span></span>
+                                            <span class="credential-title">Engenharia de Software</span>
                                             <span class="credential-institution">Alura</span>
                                         </div>
                                         <svg class="credential-icon" xmlns="http://www.w3.org/2000/svg"
@@ -1045,20 +1053,24 @@
                     </p>
                 </div>
 
-                <form class="contact__form reveal" action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" data-api-action="/api/contact" data-fallback-action="https://formsubmit.co/ajax/pedrobraga855@gmail.com" method="POST">
+                <form class="contact__form reveal" action="https://formsubmit.co/ajax/pedrobraga855@gmail.com"
+                    method="POST" novalidate>
                     <input type="hidden" name="_subject" value="Novo contato via Portfolio">
                     <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
                     <input type="text" name="_honey" class="honeypot-field" tabindex="-1" autocomplete="off">
 
                     <div class="contact__row">
                         <div class="contact__field">
                             <label class="contact__label" for="name" data-i18n="contact.name">Nome</label>
-                            <input class="contact__input" type="text" id="name" name="name" required
+                            <input class="contact__input" type="text" id="name" name="name" required maxlength="120"
+                                autocomplete="name"
                                 placeholder="Seu nome">
                         </div>
                         <div class="contact__field">
                             <label class="contact__label" for="email" data-i18n="contact.email">Email</label>
                             <input class="contact__input" type="email" id="email" name="email" required
+                                maxlength="254" autocomplete="email"
                                 placeholder="seu@email.com">
                         </div>
                     </div>
@@ -1095,32 +1107,35 @@
                     </div>
 
                     <div class="contact__field full">
-                        <label class="contact__label" for="details" data-i18n="contact.details_label">Detalhes</label>
-                        <textarea class="contact__textarea" id="details" name="details" required
+                        <label class="contact__label" for="message" data-i18n="contact.message">Mensagem</label>
+                        <textarea class="contact__textarea" id="message" name="message" required minlength="15"
+                            maxlength="2000" data-i18n="contact.message_placeholder"
                             placeholder="Conte mais sobre o projeto, vaga ou ideia..."></textarea>
                     </div>
 
-                    <button class="contact__submit" type="submit">Enviar mensagem</button>
+                    <div class="contact__feedback" role="status" aria-live="polite"></div>
+
+                    <button class="contact__submit" type="submit" data-i18n="contact.submit">Enviar mensagem</button>
                 </form>
                 <div class="contact__methods reveal">
-                    <a href="mailto:pedrobraga855@gmail.com" class="contact__method">
+                    <a href="mailto:pedrobraga855@gmail.com" class="contact__method contact__method--email">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                             </path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
-                        <span>pedrobraga855@gmail.com</span>
+                        <span data-i18n="contact.email_cta">Chamar no Email</span>
                     </a>
                     <a href="https://wa.me/5516996234322?text=Ol%C3%A1%20Pedro%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-                        target="_blank" rel="noopener noreferrer" class="contact__method">
+                        target="_blank" rel="noopener noreferrer" class="contact__method contact__method--whatsapp">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471.148-.67.445-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                             </path>
                         </svg>
-                        <span>Chamar no WhatsApp</span>
+                        <span data-i18n="contact.whatsapp">Chamar no WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -1164,8 +1179,9 @@
     </footer>
 
     <!-- Case Study Modal -->
-    <div class="modal" id="caseStudyModal">
-        <div class="modal__content">
+    <div class="modal" id="caseStudyModal" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-labelledby="modalTitle" aria-describedby="modalProblem">
+        <div class="modal__content" tabindex="-1">
             <div class="modal__header">
                 <div>
                     <span class="project-card__tag" id="modalTag">Categoria</span>
@@ -1181,33 +1197,33 @@
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">O Problema</h3>
+                <h3 class="modal__section-title">Contexto</h3>
                 <p class="modal__text" id="modalProblem">
                     Descrição do problema que precisava ser resolvido.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">A Solução</h3>
+                <h3 class="modal__section-title">Implementação</h3>
                 <p class="modal__text" id="modalSolution">
                     Como o problema foi resolvido tecnicamente.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Resultados</h3>
+                <h3 class="modal__section-title">Impacto</h3>
                 <p class="modal__text" id="modalResult">
                     Métricas e impacto do projeto.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Metricas</h3>
+                <h3 class="modal__section-title">Métricas</h3>
                 <div class="modal__metrics" id="modalMetrics"></div>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Videos e demos</h3>
+                <h3 class="modal__section-title">Demos e referências</h3>
                 <div class="modal__videos" id="modalVideos"></div>
             </div>
 

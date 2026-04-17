@@ -164,16 +164,15 @@
         translateElements('.contact__subtitle', t.contact.subtitle);
         translateElements('.contact__label[for="name"]', t.contact.name);
         translateElements('.contact__label[for="email"]', t.contact.email);
-        translateElements('.contact__label[for="subject"]', t.contact.subject);
         translateElements('.contact__label[for="message"]', t.contact.message);
         translateElements('.contact__submit', t.contact.submit);
+        translateElements('.contact__method--email span', t.contact.email_cta);
+        translateElements('.contact__method--whatsapp span', t.contact.whatsapp);
 
         // Form placeholders
         updatePlaceholder('#name', t.contact.name_placeholder);
         updatePlaceholder('#email', t.contact.email_placeholder);
-        updatePlaceholder('#subject', t.contact.subject_placeholder);
         updatePlaceholder('#message', t.contact.message_placeholder);
-        updatePlaceholder('#details', t.contact.details_placeholder);
 
         // Footer
         translateElements('.footer__bottom p:first-child', t.footer.developed);

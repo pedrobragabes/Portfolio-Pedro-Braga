@@ -25,7 +25,175 @@
     const scrollProgress = document.getElementById('scrollProgress');
     const projectCards = document.querySelectorAll('.project-card');
 
-    const caseStudies = {};
+    const caseStudies = {
+        'aquaflora-agroshop': {
+            title: 'AquaFlora AgroShop',
+            tag: 'E-commerce',
+            problem: 'A operacao tinha gargalos de estoque e atendimento em momentos de pico. O time precisava reduzir friccao na jornada de compra sem perder controle de catalogo.',
+            solution: 'Foi estruturado um ecossistema integrado com WooCommerce, automacoes e fluxos de atendimento. O projeto uniu melhorias de performance, organizacao operacional e comunicacao mais rapida com clientes.',
+            result: 'O ciclo comercial ficou mais enxuto, com resposta mais rapida e operacao mais previsivel para escalar catalogo e campanhas.',
+            metrics: [
+                { label: 'Tempo de resposta', value: '-90%' },
+                { label: 'Produtos gerenciados', value: '3000+' },
+                { label: 'Ganho operacional', value: '100h+/mes' }
+            ],
+            images: [
+                'assets/AquaFlora/AquaFlora Home.webp',
+                'assets/AquaFlora/AquaFlora Loja.webp',
+                'assets/AquaFlora/Estoque AquaFlora.webp'
+            ],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Visitar a loja em producao',
+                    url: 'https://aquafloragroshop.com.br/'
+                }
+            ],
+            links: {
+                live: 'https://aquafloragroshop.com.br/',
+                repo: '',
+                demo: '',
+                blog: ''
+            }
+        },
+        comerciobes: {
+            title: 'ComercioBes',
+            tag: 'Vitrine Local',
+            problem: 'Comercios locais tinham baixa visibilidade digital e pouca conversao de descoberta para contato.',
+            solution: 'A proposta priorizou navegacao mobile-first, blocos de oferta diretos e estrutura de conteudo orientada a descoberta local.',
+            result: 'A base ficou pronta para captacao de leads com foco regional e evolucao gradual para um portal comercial mais robusto.',
+            metrics: [
+                { label: 'Foco principal', value: 'Leads locais' },
+                { label: 'Experiencia', value: 'Mobile-first' },
+                { label: 'Status', value: 'Em evolucao' }
+            ],
+            images: [],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Visao geral do conceito',
+                    url: '/#projects'
+                }
+            ],
+            links: {
+                live: '',
+                repo: '',
+                demo: '',
+                blog: ''
+            }
+        },
+        'florescer-garden': {
+            title: 'Florescer Garden',
+            tag: 'E-commerce Agricultura',
+            problem: 'Era necessario organizar uma vitrine digital com narrativa clara de valor para transformar interesse em contato comercial.',
+            solution: 'O projeto foi desenhado com layout orientado a conversao, categorizacao de produtos e CTA estrategicos para acelerar a tomada de decisao.',
+            result: 'A estrutura permite validar oferta com mais consistencia e preparar terreno para crescimento com dados reais de comportamento.',
+            metrics: [
+                { label: 'Objetivo', value: 'Conversao' },
+                { label: 'Canal', value: 'Catalogo digital' },
+                { label: 'Status', value: 'Em tracao' }
+            ],
+            images: [
+                'assets/FlorescerGarden/fachada.png',
+                'assets/FlorescerGarden/Produtos.png',
+                'assets/FlorescerGarden/Carrinho.png'
+            ],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Visao geral da proposta',
+                    url: '/#projects'
+                }
+            ],
+            links: {
+                live: '',
+                repo: '',
+                demo: '',
+                blog: ''
+            }
+        },
+        joysticknights: {
+            title: 'JoysticKnights',
+            tag: 'Portal de Noticias',
+            problem: 'O portal precisava melhorar velocidade e estrutura tecnica para competir em SEO sem sacrificar experiencia de leitura.',
+            solution: 'A stack foi otimizada com foco em carregamento, organizacao de conteudo e ajustes tecnicos para indexacao mais eficiente.',
+            result: 'O projeto ganhou mais consistencia de performance e melhor base para crescimento organico de audiencia.',
+            metrics: [
+                { label: 'Tempo de carregamento', value: '-60%' },
+                { label: 'SEO tecnico', value: 'Otimizado' },
+                { label: 'Plataforma', value: 'WordPress' }
+            ],
+            images: [
+                'assets/JoysticKnights/fachada.webp',
+                'assets/JoysticKnights/1.webp'
+            ],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Portal online',
+                    url: 'https://joysticknights.com.br/'
+                }
+            ],
+            links: {
+                live: 'https://joysticknights.com.br/',
+                repo: '',
+                demo: '',
+                blog: ''
+            }
+        },
+        'home-lab-hardware': {
+            title: 'Home Lab & Hardware',
+            tag: 'Infraestrutura',
+            problem: 'Manter varios servicos pessoais e de produto com estabilidade exige arquitetura previsivel, observabilidade e boas rotinas operacionais.',
+            solution: 'Foi consolidado um ambiente Proxmox com containers e servicos de apoio para automacao, testes e operacao diaria.',
+            result: 'A infraestrutura hoje acelera validacao de ideias e reduz dependencia de servicos externos para tarefas criticas.',
+            metrics: [
+                { label: 'Servicos ativos', value: '15+' },
+                { label: 'Foco', value: 'Infra produtiva' },
+                { label: 'Beneficio', value: 'Autonomia tecnica' }
+            ],
+            images: [],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Guia pratico completo',
+                    url: '/blog/homelab-proxmox-guia-pratico/'
+                }
+            ],
+            links: {
+                live: '/blog/homelab-proxmox-guia-pratico/',
+                repo: '',
+                demo: '',
+                blog: '/blog/homelab-proxmox-guia-pratico/'
+            }
+        },
+        'kingdom-of-aen': {
+            title: 'Kingdom of Aen',
+            tag: 'Game Development',
+            problem: 'Era preciso construir uma base de logica de jogo consistente para turnos, regras e progressao sem depender de frameworks.',
+            solution: 'A engine foi implementada em JavaScript puro com separacao de responsabilidades e persistencia de estado local.',
+            result: 'Projeto tecnico de referencia para portfolio, demonstrando arquitetura de regras e dominio de logica front-end.',
+            metrics: [
+                { label: 'Logica implementada', value: '2000+ linhas' },
+                { label: 'Stack', value: 'JS/HTML/CSS' },
+                { label: 'Estado', value: 'Persistente' }
+            ],
+            images: [],
+            videos: [
+                {
+                    type: 'external',
+                    title: 'Repositorio do projeto',
+                    url: 'https://github.com/pedrobragabes/Kingdom-of-Aen'
+                }
+            ],
+            links: {
+                live: '',
+                repo: 'https://github.com/pedrobragabes/Kingdom-of-Aen',
+                demo: '',
+                blog: ''
+            }
+        }
+    };
 
     function isValidProjectUrl(url) {
         return typeof url === 'string' && url.trim() !== '' && url.trim() !== '#';
@@ -340,34 +508,8 @@
     // 8. CONTACT FORM HANDLING
     // ==========================================================================
 
-    function formDataToJson(formData) {
-        const payload = {};
-
-        formData.forEach((value, key) => {
-            if (typeof value === 'string') {
-                payload[key] = value;
-            }
-        });
-
-        return payload;
-    }
-
-    async function submitContactToApi(apiEndpoint, formData) {
-        const response = await fetch(apiEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(formDataToJson(formData))
-        });
-
-        const result = await response.json().catch(() => null);
-        return response.ok && (result?.success === true || result?.success === 'true');
-    }
-
-    async function submitContactToFallback(fallbackEndpoint, formData) {
-        const response = await fetch(fallbackEndpoint, {
+    async function submitContactForm(actionEndpoint, formData) {
+        const response = await fetch(actionEndpoint, {
             method: 'POST',
             body: formData,
             headers: { 'Accept': 'application/json' }
@@ -377,14 +519,62 @@
         return response.ok && (result?.success === true || result?.success === 'true');
     }
 
+    function getContactFormMessages() {
+        const lang = (document.documentElement.lang || 'pt').toLowerCase();
+        const isEnglish = lang.startsWith('en');
+
+        if (isEnglish) {
+            return {
+                sending: 'Sending...',
+                success: 'Message sent successfully. I will get back to you soon.',
+                error: 'Could not send right now. Please try again in a few minutes.',
+                invalid: 'Please fill in all required fields before sending.'
+            };
+        }
+
+        return {
+            sending: 'Enviando...',
+            success: 'Mensagem enviada com sucesso. Retorno em breve.',
+            error: 'Nao foi possivel enviar agora. Tente novamente em alguns minutos.',
+            invalid: 'Preencha todos os campos obrigatorios antes de enviar.'
+        };
+    }
+
+    function renderContactFeedback(feedbackContainer, statusClass, message) {
+        if (!feedbackContainer) {
+            return;
+        }
+
+        feedbackContainer.innerHTML = '';
+        if (!message) {
+            return;
+        }
+
+        const feedback = document.createElement('div');
+        feedback.className = statusClass;
+        feedback.textContent = message;
+        feedbackContainer.appendChild(feedback);
+    }
+
     const contactForm = document.querySelector('.contact__form');
 
     if (contactForm) {
-        // Add input event listeners to remove invalid state on typing
-        const inputs = contactForm.querySelectorAll('.contact__input, .contact__textarea');
-        inputs.forEach(input => {
-            input.addEventListener('input', () => {
-                input.classList.remove('invalid');
+        const feedbackContainer = contactForm.querySelector('.contact__feedback');
+
+        // Remove invalid state as soon as user starts fixing each field
+        const fields = contactForm.querySelectorAll('.contact__input, .contact__textarea, .contact__select');
+        fields.forEach(field => {
+            const eventName = field.tagName === 'SELECT' ? 'change' : 'input';
+            field.addEventListener(eventName, () => {
+                field.classList.remove('invalid');
+            });
+            field.addEventListener('blur', () => {
+                if (!field.hasAttribute('required')) {
+                    return;
+                }
+
+                const fieldValue = typeof field.value === 'string' ? field.value.trim() : field.value;
+                field.classList.toggle('invalid', !fieldValue);
             });
         });
 
@@ -394,74 +584,56 @@
             const form = this;
             const submitBtn = form.querySelector('.contact__submit');
             const originalText = submitBtn.textContent;
+            const messages = getContactFormMessages();
 
-            // Validate required fields
             const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
 
             requiredFields.forEach(field => {
-                if (!field.value.trim()) {
+                const fieldValue = typeof field.value === 'string' ? field.value.trim() : field.value;
+                const hasValue = Boolean(fieldValue);
+                field.classList.toggle('invalid', !hasValue);
+                if (!hasValue) {
                     field.classList.add('invalid');
                     isValid = false;
                 }
             });
 
             if (!isValid) {
-                // Focus first invalid field
+                renderContactFeedback(feedbackContainer, 'form-error', messages.invalid);
                 form.querySelector('.invalid')?.focus();
                 return;
             }
 
-            // Remove previous feedback
-            const existingFeedback = form.querySelector('.form-success, .form-error');
-            if (existingFeedback) existingFeedback.remove();
+            renderContactFeedback(feedbackContainer, '', '');
 
-            // Show loading state
             form.classList.add('submitting');
-            submitBtn.textContent = 'Enviando...';
+            form.setAttribute('aria-busy', 'true');
+            submitBtn.disabled = true;
+            submitBtn.textContent = messages.sending;
 
             try {
                 const formData = new FormData(form);
                 if (!formData.get('_replyto') && formData.get('email')) {
                     formData.append('_replyto', formData.get('email'));
                 }
-                const apiEndpoint = (form.dataset.apiAction || '').trim();
-                const fallbackEndpoint = (form.dataset.fallbackAction || form.action || '').trim();
-                const shouldTryApi = apiEndpoint
-                    && !(window.location.protocol === 'file:' && apiEndpoint.startsWith('/'));
 
-                let isSuccess = false;
-
-                if (shouldTryApi) {
-                    try {
-                        isSuccess = await submitContactToApi(apiEndpoint, formData);
-                    } catch (apiError) {
-                        console.warn('Falha ao enviar para API interna, tentando fallback.', apiError);
-                    }
-                }
-
-                if (!isSuccess && fallbackEndpoint) {
-                    isSuccess = await submitContactToFallback(fallbackEndpoint, formData);
-                }
+                const actionEndpoint = (form.action || '').trim();
+                const isSuccess = actionEndpoint ? await submitContactForm(actionEndpoint, formData) : false;
 
                 if (isSuccess) {
-                    // Success feedback
-                    const successDiv = document.createElement('div');
-                    successDiv.className = 'form-success';
-                    successDiv.textContent = '✓ Mensagem enviada com sucesso!';
-                    form.appendChild(successDiv);
+                    renderContactFeedback(feedbackContainer, 'form-success', messages.success);
                     form.reset();
+                    requiredFields.forEach(field => field.classList.remove('invalid'));
                 } else {
                     throw new Error('Erro no envio');
                 }
             } catch (error) {
-                // Error feedback
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'form-error';
-                errorDiv.textContent = '✗ Erro ao enviar. Tente novamente.';
-                form.appendChild(errorDiv);
+                renderContactFeedback(feedbackContainer, 'form-error', messages.error);
             } finally {
                 form.classList.remove('submitting');
+                form.removeAttribute('aria-busy');
+                submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
             }
         });
@@ -523,7 +695,8 @@
 
     const modal = document.getElementById('caseStudyModal');
     const modalClose = document.getElementById('modalClose');
-    const caseStudyButtons = document.querySelectorAll('.project-card__cta');
+    const modalContent = modal ? modal.querySelector('.modal__content') : null;
+    let lastFocusedElement = null;
 
     function clearChildren(element) {
         if (!element) {
@@ -643,7 +816,8 @@
         const entries = [
             { key: 'live', label: 'Site ao vivo' },
             { key: 'repo', label: 'Repositorio' },
-            { key: 'demo', label: 'Demo' }
+            { key: 'demo', label: 'Demo interativa' },
+            { key: 'blog', label: 'Post relacionado' }
         ];
 
         const availableLinks = entries.filter((entry) => isValidProjectUrl(links && links[entry.key]));
@@ -743,18 +917,41 @@
             return;
         }
 
-        document.getElementById('modalTag').textContent = data.tag;
-        document.getElementById('modalTitle').textContent = data.title;
-        document.getElementById('modalProblem').textContent = data.problem;
-        document.getElementById('modalSolution').textContent = data.solution;
-        document.getElementById('modalResult').textContent = data.result;
+        lastFocusedElement = document.activeElement;
+
+        document.getElementById('modalTag').textContent = data.tag || 'Projeto';
+        document.getElementById('modalTitle').textContent = data.title || 'Detalhes do projeto';
+        document.getElementById('modalProblem').textContent = data.problem || 'Contexto em atualizacao.';
+        document.getElementById('modalSolution').textContent = data.solution || 'Implementacao em atualizacao.';
+        document.getElementById('modalResult').textContent = data.result || 'Impacto em atualizacao.';
         renderModalMetrics(data.metrics);
         renderModalVideos(data.videos);
         renderModalLinks(data.links);
         renderModalGallery(data.images, data.title);
 
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        requestAnimationFrame(() => {
+            if (modalClose) {
+                modalClose.focus();
+                return;
+            }
+
+            if (modalContent) {
+                modalContent.focus();
+            }
+        });
+    }
+
+    function getModalFocusableElements() {
+        if (!modal) {
+            return [];
+        }
+
+        return [...modal.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])')]
+            .filter((element) => !element.hasAttribute('disabled') && element.getAttribute('aria-hidden') !== 'true');
     }
 
     // ==========================================================================
@@ -790,46 +987,81 @@
         });
     }
 
-    function closeModal() {
+    function closeModal(options = {}) {
+        const shouldRestoreFocus = options.restoreFocus !== false;
+
         if (modal) {
             modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+        }
+
+        if (shouldRestoreFocus && lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            lastFocusedElement.focus();
+        }
+
+        lastFocusedElement = null;
+    }
+
+    function activateProjectCard(card, event) {
+        if (!card) {
+            return;
+        }
+
+        const projectId = card.dataset.project;
+        const fallbackTitle = card.querySelector('.project-card__title')?.textContent.trim();
+        const projectKey = projectId || fallbackTitle;
+
+        if (caseStudies[projectKey]) {
+            if (event) {
+                event.preventDefault();
+            }
+            openModal(projectKey);
+            return;
+        }
+
+        const liveButton = card.querySelector('[data-project-link="live"]');
+        const liveUrl = liveButton ? liveButton.getAttribute('href') : '';
+
+        if (!isValidProjectUrl(liveUrl)) {
+            if (event) {
+                event.preventDefault();
+            }
+            return;
+        }
+
+        if (event) {
+            event.preventDefault();
+        }
+
+        const normalizedUrl = liveUrl.trim();
+        if (/^https?:\/\//i.test(normalizedUrl)) {
+            window.open(normalizedUrl, '_blank', 'noopener,noreferrer');
+        } else {
+            window.location.assign(normalizedUrl);
         }
     }
 
-    // Attach click handlers to case study buttons
-    caseStudyButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const card = btn.closest('.project-card');
-            if (!card) {
+    projectCards.forEach((card) => {
+        card.addEventListener('click', (event) => {
+            if (event.target.closest('.project-card__btn')) {
                 return;
             }
 
-            const projectId = card.dataset.project;
-            const fallbackTitle = card.querySelector('.project-card__title')?.textContent.trim();
-            const projectKey = projectId || fallbackTitle;
+            activateProjectCard(card, event);
+        });
 
-            if (caseStudies[projectKey]) {
-                e.preventDefault();
-                e.stopPropagation();
-                openModal(projectKey);
+        card.addEventListener('keydown', (event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') {
                 return;
             }
 
-            const liveButton = card.querySelector('[data-project-link="live"]');
-            const liveUrl = liveButton ? liveButton.getAttribute('href') : '';
-
-            if (!isValidProjectUrl(liveUrl)) {
-                e.preventDefault();
+            if (event.target.closest('.project-card__btn')) {
                 return;
             }
 
-            const normalizedUrl = liveUrl.trim();
-            if (/^https?:\/\//i.test(normalizedUrl)) {
-                window.open(normalizedUrl, '_blank', 'noopener,noreferrer');
-            } else {
-                window.location.assign(normalizedUrl);
-            }
+            event.preventDefault();
+            activateProjectCard(card, event);
         });
     });
 
@@ -845,11 +1077,36 @@
         });
     }
 
-    // Close on Escape key
+    // Keyboard support: modal focus trap + Escape close
     document.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab' && modal && modal.classList.contains('active')) {
+            const focusableElements = getModalFocusableElements();
+            if (focusableElements.length === 0) {
+                e.preventDefault();
+                modalContent?.focus();
+                return;
+            }
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+
         if (e.key === 'Escape') {
-            closeModal();
-            closeLightbox();
+            if (lightbox && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+            }
         }
     });
 

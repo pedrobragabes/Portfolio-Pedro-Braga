@@ -1434,23 +1434,35 @@ ol {
 
 .projects__header {
     margin-bottom: 3rem;
+    max-width: 720px;
+}
+
+.projects__subtitle {
+    margin-top: 0.85rem;
+    color: var(--text-medium);
+    font-size: 0.98rem;
+    line-height: 1.6;
 }
 
 .projects__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+    align-items: stretch;
 }
 
 /* Project Card */
 .project-card {
     position: relative;
-    background: var(--card-bg);
-    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(139, 115, 85, 0.06) 0%, transparent 42%), var(--card-bg);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px var(--card-shadow);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 8px 24px var(--card-shadow);
     cursor: pointer;
-    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-fast);
 }
 
 .project-card::before {
@@ -1472,8 +1484,15 @@ ol {
 }
 
 .project-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(139, 115, 85, 0.1);
+    transform: translateY(-10px) scale(1.01);
+    border-color: rgba(139, 115, 85, 0.35);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.18), 0 12px 28px rgba(139, 115, 85, 0.12);
+}
+
+.project-card:focus-visible {
+    outline: none;
+    border-color: var(--accent-brown);
+    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.25), 0 20px 50px rgba(0, 0, 0, 0.16);
 }
 
 .project-card__preview {
@@ -1481,7 +1500,7 @@ ol {
     aspect-ratio: 16/9;
     position: relative;
     overflow: hidden;
-    border-radius: 12px 12px 0 0;
+    border-radius: 16px 16px 0 0;
 }
 
 .project-card__gradient {
@@ -1528,7 +1547,7 @@ ol {
 .project-card__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(26, 26, 26, 0.75);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.78) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1541,12 +1560,14 @@ ol {
 }
 
 .project-card__cta {
-    padding: 0.75rem 1.5rem;
-    background: var(--text-light);
-    color: var(--text-dark);
+    padding: 0.75rem 1.35rem;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--bg-darker);
     font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
     transform: translateY(10px);
     transition: transform 0.3s ease;
 }
@@ -1556,7 +1577,11 @@ ol {
 }
 
 .project-card__content {
-    padding: 1.5rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    flex: 1;
 }
 
 .project-card__tag {
@@ -1584,6 +1609,7 @@ ol {
     font-size: 0.875rem;
     color: var(--text-medium);
     line-height: 1.6;
+    min-height: 4.25rem;
 }
 
 .project-card__tech {
@@ -1608,7 +1634,8 @@ ol {
 .project-card__links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
     flex-wrap: wrap;
 }
 
@@ -1655,6 +1682,24 @@ ol {
     filter: saturate(0.7);
     pointer-events: none;
     cursor: not-allowed;
+}
+
+[data-theme="dark"] .projects__subtitle {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .project-card {
+    background: linear-gradient(180deg, rgba(238, 187, 119, 0.09) 0%, rgba(0, 0, 0, 0.12) 44%), var(--card-bg);
+    border-color: rgba(255, 255, 255, 0.09);
+}
+
+[data-theme="dark"] .project-card:hover {
+    border-color: rgba(238, 187, 119, 0.42);
+}
+
+[data-theme="dark"] .project-card__cta {
+    background: rgba(238, 187, 119, 0.92);
+    color: var(--bg-darker);
 }
 
 /* Education Section
@@ -2170,7 +2215,8 @@ ol {
     background: var(--card-bg);
     border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 8px 30px var(--card-shadow);
+    box-shadow: 0 10px 36px var(--card-shadow);
+    border: 1px solid var(--border-light);
 }
 
 .contact__row {
@@ -2192,7 +2238,8 @@ ol {
 
 .contact__label {
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     color: var(--text-dark);
 }
 
@@ -2217,8 +2264,12 @@ ol {
 }
 
 .contact__textarea {
-    min-height: 140px;
+    min-height: 155px;
     resize: vertical;
+}
+
+.contact__feedback {
+    min-height: 1.5rem;
 }
 
 .contact__select {
@@ -2251,7 +2302,7 @@ ol {
     position: relative;
     overflow: hidden;
     transition: all var(--transition-fast);
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
 .contact__submit:hover {
@@ -2322,6 +2373,25 @@ ol {
     background: var(--accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(238, 187, 119, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contact__form {
+        padding: 1.35rem;
+    }
+
+    .contact__row {
+        grid-template-columns: 1fr;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .projects__subtitle {
+        font-size: 0.92rem;
+    }
 }
 
 /* WhatsApp Float Button */
@@ -2738,6 +2808,7 @@ textarea:focus-visible {
 .contact__form.submitting .contact__submit {
     opacity: 0.7;
     cursor: wait;
+    pointer-events: none;
 }
 
 .contact__form.submitting .contact__submit::after {
@@ -2766,15 +2837,23 @@ textarea:focus-visible {
 
 /* Form Validation States */
 .contact__input.invalid,
-.contact__textarea.invalid {
+.contact__textarea.invalid,
+.contact__select.invalid {
     border-color: #DC2626;
     background: #FEF2F2;
 }
 
 .contact__input.invalid:focus,
-.contact__textarea.invalid:focus {
+.contact__textarea.invalid:focus,
+.contact__select.invalid:focus {
     border-color: #DC2626;
     box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+[data-theme="dark"] .contact__input.invalid,
+[data-theme="dark"] .contact__textarea.invalid,
+[data-theme="dark"] .contact__select.invalid {
+    background: rgba(220, 38, 38, 0.15);
 }
 
 /* ==========================================================================

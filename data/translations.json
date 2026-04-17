@@ -108,6 +108,7 @@
             "budget_grande": "Apenas networking",
             "details_label": "Detalhes",
             "details_placeholder": "Conte mais sobre o projeto, vaga ou ideia...",
+            "email_cta": "Chamar no Email",
             "submit": "Enviar mensagem",
             "whatsapp": "Chamar no WhatsApp"
         },
@@ -277,6 +278,7 @@
             "budget_grande": "Just networking",
             "details_label": "Details",
             "details_placeholder": "Tell me more about the project, position or idea...",
+            "email_cta": "Contact by Email",
             "submit": "Send message",
             "whatsapp": "Chat on WhatsApp"
         },
