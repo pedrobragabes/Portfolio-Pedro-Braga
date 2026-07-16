@@ -32,6 +32,11 @@
 
     # Remove o header X-Powered-By (expoe tecnologia do servidor)
     Header always unset X-Powered-By
+
+    # Assets sem fingerprint precisam revalidar rapidamente após um deploy.
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
 # =============================================
@@ -59,6 +64,10 @@
 # Cache Control (Performance)
 # =============================================
 
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+</IfModule>
+
 <IfModule mod_expires.c>
     ExpiresActive On
 
@@ -68,6 +77,7 @@
     # CSS e JavaScript use stable filenames; keep cache short until fingerprinting exists.
     ExpiresByType text/css "access plus 1 hour"
     ExpiresByType application/javascript "access plus 1 hour"
+    ExpiresByType application/x-javascript "access plus 1 hour"
     ExpiresByType text/javascript "access plus 1 hour"
 
     # Imagens
