@@ -8,7 +8,7 @@ O roadmap prioriza manutenção. Nenhuma feature nova deve anteceder os itens de
 - [x] Corrigir dependências vulneráveis.
 - [x] Corrigir 404, CSP, cache e build reproduzível.
 - [x] Adicionar smoke tests.
-- [ ] Confirmar deploy e remoção remota de `/archive/`.
+- [x] Confirmar deploy e bloquear o legado remoto (`/archive/`, `/backend/` e `default.php`).
 
 ## v1.9.0 — Manutenção
 

@@ -16,7 +16,8 @@ As correções de hardening mais urgentes foram implementadas nesta revisão. O 
 - Widgets de atividade, código comentado, CTAs falsos e métricas não verificáveis removidos.
 - 404, CSP, cache, i18n, lightbox, dependências e build corrigidos.
 - Build, smoke tests, integridade de links e `npm audit` aprovados.
-- Única pendência crítica: publicar e verificar a limpeza da cópia antiga em produção.
+- Deploy automático aprovado e produção verificada em 2026-07-16.
+- `/archive/`, `/backend/` e `default.php` retornam 403; rota inexistente retorna a 404 customizada.
 
 ## Se este projeto fosse meu, eu manteria apenas isso
 
@@ -225,22 +226,22 @@ Epic: melhorar manutenção sem framework.
 7. **Deploy:** ambiente de preview, gate obrigatório e teste pós-deploy.
 8. **Novas funcionalidades:** somente após métricas mostrarem necessidade; backend/admin continuam fora do roadmap.
 
-## Notas
+## Notas após remediação e deploy
 
 | Área | Nota | Justificativa |
 |---|---:|---|
-| Arquitetura | 6,0 | Stack correta, arquivos ativos monolíticos e legado excessivo. |
-| Escalabilidade | 6,0 | CDN estático escala bem; processo de conteúdo ainda frágil. |
-| Legibilidade | 5,5 | Nomes razoáveis, arquivos grandes e duplicação. |
-| Manutenção | 5,5 | Build simples; documentação e fontes de verdade conflitam. |
-| Performance | 7,0 | Site leve; cache foi mitigado, terceiros ainda pesam. |
-| Segurança | 7,0 | Headers e dependências limpos; legado remoto precisa ser retirado. |
-| Qualidade do código | 6,0 | DOM seguro e acessibilidade parcial; testes ainda iniciais. |
-| Organização | 5,0 | Fora do BragaCode e com archive/bancos versionados. |
-| Documentação | 4,0 | Volume existe, precisão não. |
-| Prontidão para produção | 6,5 | Correções locais prontas; depende de deploy e verificação remota. |
+| Arquitetura | 7,5 | Stack adequada e escopo estático claro; JS/CSS continuam monolíticos. |
+| Escalabilidade | 8,0 | Site estático e CDN escalam bem; pipeline é simples e reproduzível. |
+| Legibilidade | 7,0 | Legado e código morto removidos; arquivos principais ainda são grandes. |
+| Manutenção | 7,5 | Build, smoke tests e documentação estão alinhados; falta modularização gradual. |
+| Performance | 8,0 | Site leve, cache corrigido e widgets removidos; CDN de ícones permanece. |
+| Segurança | 8,5 | Headers, CSP, dependências, Actions e caminhos legados verificados em produção. |
+| Qualidade do código | 7,5 | DOM seguro, PT/EN consistente e acessibilidade melhorada; testes ainda são smoke. |
+| Organização | 8,0 | Archive, bancos e documentação conflitante removidos; layout raiz continua por compatibilidade. |
+| Documentação | 8,5 | Arquitetura, deploy, segurança, contribuição e changelog refletem o produto real. |
+| Prontidão para produção | 9,0 | Build e deploy aprovados; home, blog, 404, headers e bloqueios validados remotamente. |
 
-**Nota original: 5,9/10. Nota após remediação local: 7,8/10, ainda condicionada à verificação do deploy.**
+**Nota original: 5,9/10. Nota final após remediação e verificação em produção: 8,0/10.**
 
 ## Veredito técnico
 
@@ -248,8 +249,7 @@ O portfólio tem uma boa fundação visual e escolheu a tecnologia certa, mas te
 
 ## Próximos passos, em ordem
 
-1. Publicar este patch.
-2. Confirmar que `/archive/.../admin/` retorna 403/404 em produção.
-3. Remover manualmente a cópia antiga de `archive/` do servidor se o FTP não a apagar.
-4. Modularizar `main.js` e consolidar `style.css` em mudanças pequenas.
-5. Adicionar validação HTML e acessibilidade mais profunda ao CI.
+1. Modularizar `main.js` e consolidar `style.css` em mudanças pequenas.
+2. Adicionar validação HTML e acessibilidade mais profunda ao CI.
+3. Implementar fingerprint de assets antes de voltar a usar cache imutável para CSS/JS.
+4. Adicionar preview de deploy para mudanças visuais.
