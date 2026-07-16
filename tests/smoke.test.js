@@ -58,7 +58,9 @@ assert.match(notFoundHtml, /href="\/css\/style\.min\.css"/);
 assert.doesNotMatch(notFoundHtml, /js\/main(?:\.min)?\.js/);
 
 assert.match(htaccess, /RewriteRule \^archive\(\?:\/\|\$\) - \[F,L,NC\]/);
-assert.match(workflow, /\*\*\/archive\/\*\*/);
+assert.match(htaccess, /RewriteRule \^backend\(\?:\/\|\$\) - \[F,L,NC\]/);
+assert.match(htaccess, /RewriteRule \^default\\\.php\$ - \[F,L,NC\]/);
+assert.doesNotMatch(workflow, /\*\*\/(?:archive|backend)\/\*\*|\*\*\/default\\\.php/);
 assert.equal(fs.existsSync(path.join(root, '.vercelignore')), true);
 assert.equal(fs.existsSync(path.join(root, 'archive')), false);
 assert.equal(fs.existsSync(path.join(root, 'default.php')), false);

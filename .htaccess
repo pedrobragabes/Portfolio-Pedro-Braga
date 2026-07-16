@@ -43,6 +43,8 @@
 
     # Legacy code must never be publicly reachable.
     RewriteRule ^archive(?:/|$) - [F,L,NC]
+    RewriteRule ^backend(?:/|$) - [F,L,NC]
+    RewriteRule ^default\.php$ - [F,L,NC]
 
     # Redireciona HTTP para HTTPS
     RewriteCond %{HTTPS} off

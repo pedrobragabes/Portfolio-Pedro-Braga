@@ -7,7 +7,7 @@ As mudanças relevantes deste projeto seguem [Semantic Versioning](https://semve
 ### Segurança
 
 - Removido o legado de admin, backend e SQLite do repositório.
-- Bloqueado o acesso a `/archive/` e excluído o diretório dos destinos de deploy.
+- Bloqueado o acesso a `/archive/`, `/backend/` e ao antigo `default.php`; o deploy também remove cópias remotas residuais.
 - Atualizadas dependências; `npm audit` sem vulnerabilidades conhecidas.
 - Extraído o bootstrap de tema para arquivo compatível com a CSP.
 

@@ -55,9 +55,6 @@ jobs:
             **/*.md
             **/node_modules/**
             **/scripts/**
-            **/archive/**
-            **/backend/**
             **/blog/posts/**
             **/package.json
             **/package-lock.json
-            **/default.php
