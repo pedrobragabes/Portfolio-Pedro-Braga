@@ -253,6 +253,14 @@
         init();
     }
 
+    // Reapply the selected language when JSON-backed content finishes loading.
+    // This removes the race between content-loader.js and this module.
+    document.addEventListener('portfolio:content-loaded', () => {
+        if (translations && translations[currentLang]) {
+            updateLanguage(currentLang);
+        }
+    });
+
     /**
      * Resolve nested object path string (e.g. 'footer.rights')
      */

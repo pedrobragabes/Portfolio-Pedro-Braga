@@ -59,6 +59,8 @@
                 populateEducation(data.education);
             }
 
+            document.dispatchEvent(new CustomEvent('portfolio:content-loaded'));
+
         } catch (error) {
             // Silent fail - fallback HTML content remains
         }

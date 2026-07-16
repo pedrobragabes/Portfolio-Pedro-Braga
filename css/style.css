@@ -1678,10 +1678,7 @@ ol {
 }
 
 .project-card__btn.is-disabled {
-    opacity: 0.6;
-    filter: saturate(0.7);
-    pointer-events: none;
-    cursor: not-allowed;
+    display: none;
 }
 
 [data-theme="dark"] .projects__subtitle {

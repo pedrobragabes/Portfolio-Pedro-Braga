@@ -10,6 +10,23 @@ const SITE_URL = 'https://pedrobragabes.com';
 const SITE_NAME = 'Pedro Braga - Blog Tecnico';
 const SITE_DESCRIPTION = 'Artigos tecnicos sobre infraestrutura, automacao, backend e engenharia de software.';
 const DEFAULT_IMAGE = `${SITE_URL}/assets/profile/Pedro Braga.webp`;
+let buildDate;
+
+function resolveBuildDate(posts) {
+  if (process.env.SOURCE_DATE_EPOCH) {
+    const epochDate = new Date(Number(process.env.SOURCE_DATE_EPOCH) * 1000);
+    if (!Number.isNaN(epochDate.getTime())) {
+      return epochDate;
+    }
+  }
+
+  const latestDate = posts.reduce((latest, post) => {
+    const candidate = post.updated || post.date;
+    return candidate > latest ? candidate : latest;
+  }, '1970-01-01');
+
+  return new Date(`${latestDate}T00:00:00Z`);
+}
 
 marked.setOptions({
   gfm: true,
@@ -150,20 +167,7 @@ function renderPage({ title, description, canonical, image, bodyClass = '', cont
   <meta property="twitter:image" content="${escapeHtml(image)}">
   <link rel="alternate" type="application/rss+xml" title="RSS Blog Pedro Braga" href="/blog/rss.xml">
 
-  <script>
-    (function () {
-      try {
-        var savedTheme = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = savedTheme || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-        document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.documentElement.style.backgroundColor = '#F5F0E8';
-      }
-    })();
-  </script>
+  <script src="/js/theme-bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="/css/blog.css">
   ${extraHead}
@@ -190,7 +194,7 @@ function renderPage({ title, description, canonical, image, bodyClass = '', cont
 
   <footer class="blog-footer">
     <div class="container">
-      <p>© ${new Date().getUTCFullYear()} Pedro Braga. Todos os direitos reservados.</p>
+      <p>© ${buildDate.getUTCFullYear()} Pedro Braga. Todos os direitos reservados.</p>
       <a href="/blog/rss.xml">RSS do Blog</a>
     </div>
   </footer>
@@ -325,7 +329,7 @@ function buildRss(posts) {
   <link>${SITE_URL}/blog/</link>
   <description>${escapeXml(SITE_DESCRIPTION)}</description>
   <language>pt-BR</language>
-  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+  <lastBuildDate>${buildDate.toUTCString()}</lastBuildDate>
   ${items}
 </channel>
 </rss>`;
@@ -339,7 +343,7 @@ function buildSitemap(posts) {
   const existingUrls = Array.from(existing.matchAll(/<loc>(.*?)<\/loc>/g)).map((match) => match[1]);
 
   const urls = new Map();
-  const today = new Date().toISOString().slice(0, 10);
+  const today = buildDate.toISOString().slice(0, 10);
 
   existingUrls.forEach((url) => {
     urls.set(url, { lastmod: today, changefreq: 'monthly', priority: '0.8' });
@@ -383,6 +387,8 @@ function run() {
   if (posts.length === 0) {
     throw new Error('Nenhum post encontrado em blog/posts/*.md');
   }
+
+  buildDate = resolveBuildDate(posts);
 
   buildListingPage(posts);
   buildArticlePages(posts);

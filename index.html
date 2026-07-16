@@ -53,21 +53,8 @@
     <!-- Preload LCP Image (Critical for performance) -->
     <link rel="preload" as="image" href="assets/profile/Pedro Braga.webp" fetchpriority="high">
 
-    <!-- Apply theme before CSS to avoid flash on reload -->
-    <script>
-        (function () {
-            try {
-                var savedTheme = localStorage.getItem('theme');
-                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var theme = savedTheme || (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-                document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#F5F0E8';
-            } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.documentElement.style.backgroundColor = '#F5F0E8';
-            }
-        })();
-    </script>
+    <!-- Apply theme before CSS to avoid flash on reload. External file keeps CSP strict. -->
+    <script src="js/theme-bootstrap.min.js"></script>
 
     <!-- Main Stylesheet (Critical) -->
     <link rel="stylesheet" href="css/style.min.css">
@@ -445,7 +432,7 @@
                 <div class="projects__header reveal">
                     <span class="section-label">Portfólio</span>
                     <h2 class="section-title">Projetos em Destaque</h2>
-                    <p class="projects__subtitle">Clique em qualquer card para abrir um resumo estratégico completo.</p>
+                    <p class="projects__subtitle">Clique em qualquer card para abrir um resumo estratégico.</p>
                 </div>
                 <div class="projects__grid">
                     <!-- AquaFlora AgroShop -->

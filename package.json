@@ -8,10 +8,11 @@
   },
   "scripts": {
     "build:blog": "node scripts/build-blog.js",
+    "test": "node tests/smoke.test.js",
     "minify:css": "cleancss -O2 -o css/style.min.css css/style.css",
-    "minify:js": "terser js/analytics.js -c -m --comments false -o js/analytics.min.js && terser js/content-loader.js -c -m --comments false -o js/content-loader.min.js && terser js/i18n.js -c -m --comments false -o js/i18n.min.js && terser js/main.js -c -m --comments false -o js/main.min.js && terser js/year.js -c -m --comments false -o js/year.min.js",
+    "minify:js": "terser js/analytics.js -c -m --comments false -o js/analytics.min.js && terser js/theme-bootstrap.js -c -m --comments false -o js/theme-bootstrap.min.js && terser js/content-loader.js -c -m --comments false -o js/content-loader.min.js && terser js/i18n.js -c -m --comments false -o js/i18n.min.js && terser js/main.js -c -m --comments false -o js/main.min.js && terser js/year.js -c -m --comments false -o js/year.min.js",
     "build:minify": "npm run minify:css && npm run minify:js",
-    "build": "npm run build:blog && npm run build:minify"
+    "build": "npm run build:blog && npm run build:minify && npm test"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,6 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "marked": "^18.0.0"
+    "marked": "^18.0.6"
   }
 }
