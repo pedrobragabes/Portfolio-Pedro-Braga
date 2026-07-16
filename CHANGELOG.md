@@ -23,6 +23,7 @@ As mudanças relevantes deste projeto seguem [Semantic Versioning](https://semve
 
 - Build tornado reproduzível.
 - Adicionados smoke tests ao build.
+- Actions atualizadas para runtimes Node.js 24 e fixadas por commit.
 - Reduzido cache de CSS/JS sem fingerprint e normalizado o MIME de JavaScript na Hostinger.
 - Removidos widgets, código comentado e métricas não verificáveis.
 - Documentação consolidada para refletir a arquitetura real.
