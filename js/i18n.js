@@ -89,6 +89,22 @@
             }
         });
 
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+            const key = el.getAttribute('data-i18n-aria-label');
+            const val = resolveKey(t, key);
+            if (val) {
+                el.setAttribute('aria-label', val);
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+            const key = el.getAttribute('data-i18n-alt');
+            const val = resolveKey(t, key);
+            if (val) {
+                el.setAttribute('alt', val);
+            }
+        });
+
         // 2. Specific Element Translations
 
         // Navigation
@@ -134,9 +150,14 @@
         // Projects section
         translateElements('#projects .section-label', t.projects.label);
         translateElements('#projects .section-title', t.projects.title);
+        translateElements('#projects .projects__subtitle', t.projects.subtitle);
         translateElements('.project-card__cta', t.projects.view_case);
         translateElements('.project-card__btn--primary', t.projects.btn_site, { keepIcon: true });
         translateElements('.project-card__btn--secondary', t.projects.btn_code, { keepIcon: true });
+        for (let index = 1; index <= 6; index += 1) {
+            translateElements(`.project-card:nth-child(${index}) .project-card__tag`, t.projects[`tag_${index}`]);
+            translateElements(`.project-card:nth-child(${index}) .project-card__description`, t.projects[`description_${index}`]);
+        }
 
 
 
@@ -156,6 +177,7 @@
         // Testimonials section
         translateElements('#testimonials .section-label', t.testimonials.label);
         translateElements('#testimonials .section-title', t.testimonials.title);
+        translateElements('#testimonials .testimonial-card__role', t.testimonials.role);
 
 
         // Contact section
@@ -183,6 +205,7 @@
 
         // Update CV download link based on language
         updateCVLink(lang);
+        updateWhatsAppLinks(lang);
 
         // Update progress bar label
         translateElements('.education__progress-label', t.education?.progress_label);
@@ -210,6 +233,17 @@
                 : 'assets/resume/Resume_Pedro_Braga_Software_Engineer.pdf';
             cvLink.setAttribute('href', cvPath);
         }
+    }
+
+    function updateWhatsAppLinks(lang) {
+        const message = lang === 'pt'
+            ? 'Olá Pedro, vi seu portfólio e gostaria de conversar sobre um projeto.'
+            : 'Hello Pedro, I saw your portfolio and would like to talk about a project.';
+        const href = `https://wa.me/5516996234322?text=${encodeURIComponent(message)}`;
+
+        document.querySelectorAll('a[href^="https://wa.me/5516996234322"]').forEach(link => {
+            link.setAttribute('href', href);
+        });
     }
 
 

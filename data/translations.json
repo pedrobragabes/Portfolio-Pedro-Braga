@@ -10,7 +10,16 @@
             "contact": "Contato"
         },
         "a11y": {
-            "skip_to_content": "Pular para o conteúdo principal"
+            "skip_to_content": "Pular para o conteúdo principal",
+            "reading_progress": "Progresso de leitura",
+            "back_to_top": "Voltar ao topo",
+            "main_menu": "Menu principal",
+            "toggle_theme": "Alternar tema de cores",
+            "open_menu": "Abrir menu",
+            "profile_image": "Pedro Braga - Engenheiro de Software",
+            "whatsapp_contact": "Conversar no WhatsApp",
+            "enlarged_project_image": "Visualização ampliada do projeto",
+            "close_zoom": "Fechar zoom"
         },
         "hero": {
             "badge": "Aberto para oportunidades",
@@ -46,9 +55,32 @@
         "projects": {
             "label": "Portfólio",
             "title": "Projetos em Destaque",
+            "subtitle": "Clique em qualquer card para abrir um resumo estratégico.",
             "view_case": "Ver Case Study →",
             "btn_site": "Ver Site",
-            "btn_code": "GitHub"
+            "btn_code": "GitHub",
+            "tag_1": "E-commerce",
+            "tag_2": "Vitrine Local",
+            "tag_3": "E-commerce agrícola",
+            "tag_4": "Portal de Notícias",
+            "tag_5": "Infraestrutura",
+            "tag_6": "Game Development",
+            "description_1": "Gestão manual causava perdas em produtos perecíveis. Desenvolvi ecossistema Python + Web com automação de chatbot e integração de rotinas operacionais.",
+            "description_2": "Plataforma local para conectar negócios da cidade com novos clientes, com foco em descoberta mobile e geração de leads.",
+            "description_3": "Estrutura de loja digital com foco em descoberta de produtos, confiança e jornada de compra orientada à conversão.",
+            "description_4": "WordPress otimizado para SEO, leitura e carregamento com lazy loading e cache.",
+            "description_5": "Servidor Proxmox com aplicações de estoque, automações e containers Docker. Infraestrutura pessoal usada para resolver problemas reais.",
+            "description_6": "Engine de card game em JavaScript puro com sistema de turnos, IA adversária, persistência de estado e regras de domínio sem dependência de frameworks."
+        },
+        "project_modal": {
+            "close": "Fechar",
+            "context": "Contexto",
+            "implementation": "Implementação",
+            "impact": "Impacto",
+            "metrics": "Métricas",
+            "demos": "Demos e referências",
+            "links": "Links do projeto",
+            "gallery": "Galeria"
         },
         "education": {
             "label": "Formação",
@@ -64,22 +96,8 @@
         },
         "testimonials": {
             "label": "Depoimentos",
-            "title": "O que dizem"
-        },
-        "blog": {
-            "label": "Blog & Stats",
-            "title": "Últimos Artigos & Atividade",
-            "articles_title": "Artigos Técnicos",
-            "coming_soon": "Em breve",
-            "coming_soon_text": "Tutoriais hands-on sobre infraestrutura e desenvolvimento.",
-            "github_title": "GitHub Activity",
-            "wakatime_title": "Tempo de Código",
-            "wakatime_note": "Estatísticas das últimas semanas via",
-            "follow_cta": "Me siga no GitHub para não perder!",
-            "topic_1": "🖥️ Self-Hosting com Proxmox",
-            "topic_2": "🐳 Docker para Iniciantes",
-            "topic_3": "🐍 Automações com Python",
-            "topic_4": "⚡ Node.js + APIs REST"
+            "title": "O que dizem",
+            "role": "Dono @ AquaFlora AgroShop"
         },
         "contact": {
             "label": "Contato",
@@ -180,7 +198,16 @@
             "contact": "Contact"
         },
         "a11y": {
-            "skip_to_content": "Skip to main content"
+            "skip_to_content": "Skip to main content",
+            "reading_progress": "Reading progress",
+            "back_to_top": "Back to top",
+            "main_menu": "Main navigation",
+            "toggle_theme": "Toggle color theme",
+            "open_menu": "Open menu",
+            "profile_image": "Pedro Braga - Software Engineer",
+            "whatsapp_contact": "Contact me on WhatsApp",
+            "enlarged_project_image": "Enlarged project image",
+            "close_zoom": "Close zoom"
         },
         "hero": {
             "badge": "Open to opportunities",
@@ -216,9 +243,32 @@
         "projects": {
             "label": "Portfolio",
             "title": "Featured Projects",
+            "subtitle": "Select any card to open a concise case study.",
             "view_case": "View Case Study →",
             "btn_site": "View Site",
-            "btn_code": "GitHub"
+            "btn_code": "GitHub",
+            "tag_1": "E-commerce",
+            "tag_2": "Local Discovery",
+            "tag_3": "Agricultural E-commerce",
+            "tag_4": "News Portal",
+            "tag_5": "Infrastructure",
+            "tag_6": "Game Development",
+            "description_1": "Manual inventory work caused losses in perishable products. I built a Python + Web ecosystem with chatbot automation and integrated operating routines.",
+            "description_2": "A local platform that connects city businesses with new customers, focused on mobile discovery and lead generation.",
+            "description_3": "A digital storefront designed for product discovery, trust and a conversion-oriented purchase journey.",
+            "description_4": "A WordPress portal optimized for search, reading performance, lazy loading and caching.",
+            "description_5": "A Proxmox server running inventory applications, automation and Docker containers to solve real operating needs.",
+            "description_6": "A vanilla JavaScript card-game engine with turn management, opponent AI, persistent state and framework-free domain rules."
+        },
+        "project_modal": {
+            "close": "Close",
+            "context": "Context",
+            "implementation": "Implementation",
+            "impact": "Impact",
+            "metrics": "Signals",
+            "demos": "Demos and references",
+            "links": "Project links",
+            "gallery": "Gallery"
         },
         "education": {
             "label": "Education",
@@ -234,22 +284,8 @@
         },
         "testimonials": {
             "label": "Testimonials",
-            "title": "What they say"
-        },
-        "blog": {
-            "label": "Blog & Stats",
-            "title": "Latest Articles & Activity",
-            "articles_title": "Technical Articles",
-            "coming_soon": "Coming Soon",
-            "coming_soon_text": "Hands-on tutorials about infrastructure and development.",
-            "github_title": "GitHub Activity",
-            "wakatime_title": "Coding Time",
-            "wakatime_note": "Last weeks stats via",
-            "follow_cta": "Follow me on GitHub to stay tuned!",
-            "topic_1": "🖥️ Self-Hosting with Proxmox",
-            "topic_2": "🐳 Docker for Beginners",
-            "topic_3": "🐍 Python Automations",
-            "topic_4": "⚡ Node.js + REST APIs"
+            "title": "What they say",
+            "role": "Owner @ AquaFlora AgroShop"
         },
         "contact": {
             "label": "Contact",

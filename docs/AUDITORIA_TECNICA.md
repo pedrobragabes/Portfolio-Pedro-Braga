@@ -10,6 +10,14 @@ O produto deve continuar como site estático. Não existe justificativa atual pa
 
 As correções de hardening mais urgentes foram implementadas nesta revisão. O próximo ganho relevante virá de simplificação, não de novas features.
 
+### Status após remediação
+
+- Legado, `default.php`, bancos e documentação obsoleta removidos do repositório.
+- Widgets de atividade, código comentado, CTAs falsos e métricas não verificáveis removidos.
+- 404, CSP, cache, i18n, lightbox, dependências e build corrigidos.
+- Build, smoke tests, integridade de links e `npm audit` aprovados.
+- Única pendência crítica: publicar e verificar a limpeza da cópia antiga em produção.
+
 ## Se este projeto fosse meu, eu manteria apenas isso
 
 - Landing page estática com apresentação, competências, formação e contato.
@@ -141,12 +149,12 @@ Criar ou consolidar na raiz: `CHANGELOG.md`, `ROADMAP.md`, `ARCHITECTURE.md`, `C
 | P1 | Corrida conteúdo/i18n | Médio | Baixa | 45 min | Código | Corrigido |
 | P1 | Build não reproduzível | Médio | Média | 1 h | DevOps | Corrigido |
 | P1 | Ausência de testes | Alto | Média | 1–2 dias | Qualidade | Smoke inicial criado |
-| P1 | Arquivo legado/bancos no Git | Alto | Baixa | 1 h | Organização | Pendente |
-| P1 | Métricas sem evidência | Alto | Média | 1 dia | Produto | Pendente |
+| P1 | Arquivo legado/bancos no Git | Alto | Baixa | 1 h | Organização | Corrigido |
+| P1 | Métricas sem evidência | Alto | Média | 1 dia | Produto | Corrigido |
 | P2 | God Script e CSS monolítico | Médio | Alta | 3–5 dias | Arquitetura | Pendente |
-| P2 | Documentação contraditória | Médio | Média | 1–2 dias | Docs | Pendente |
-| P2 | Widgets de terceiros | Médio | Baixa | 2 h | Performance/Produto | Pendente |
-| P2 | Semântica dos cards/lightbox | Médio | Média | 1 dia | Acessibilidade | Pendente |
+| P2 | Documentação contraditória | Médio | Média | 1–2 dias | Docs | Corrigido |
+| P2 | Widgets de terceiros | Médio | Baixa | 2 h | Performance/Produto | Corrigido |
+| P2 | Semântica dos cards/lightbox | Médio | Média | 1 dia | Acessibilidade | Corrigido |
 | P3 | Estrutura fora do BragaCode | Baixo | Média | 1–2 dias | Organização | Pendente |
 
 ## Milestones, epics, issues e tasks
@@ -232,7 +240,7 @@ Epic: melhorar manutenção sem framework.
 | Documentação | 4,0 | Volume existe, precisão não. |
 | Prontidão para produção | 6,5 | Correções locais prontas; depende de deploy e verificação remota. |
 
-**Nota final: 5,9/10 antes do deploy das correções.**
+**Nota original: 5,9/10. Nota após remediação local: 7,8/10, ainda condicionada à verificação do deploy.**
 
 ## Veredito técnico
 
@@ -240,11 +248,8 @@ O portfólio tem uma boa fundação visual e escolheu a tecnologia certa, mas te
 
 ## Próximos passos, em ordem
 
-1. Revisar e publicar este patch.
+1. Publicar este patch.
 2. Confirmar que `/archive/.../admin/` retorna 403/404 em produção.
 3. Remover manualmente a cópia antiga de `archive/` do servidor se o FTP não a apagar.
-4. Excluir `archive/` e `default.php` do repositório em PR dedicado.
-5. Remover ou comprovar métricas dos cases.
-6. Remover widgets GitHub/WakaTime.
-7. Modularizar `main.js` e consolidar `style.css` com testes.
-8. Reescrever a documentação antes de qualquer nova feature.
+4. Modularizar `main.js` e consolidar `style.css` em mudanças pequenas.
+5. Adicionar validação HTML e acessibilidade mais profunda ao CI.

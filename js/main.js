@@ -29,13 +29,13 @@
         'aquaflora-agroshop': {
             title: 'AquaFlora AgroShop',
             tag: 'E-commerce',
-            problem: 'A operacao tinha gargalos de estoque e atendimento em momentos de pico. O time precisava reduzir friccao na jornada de compra sem perder controle de catalogo.',
-            solution: 'Foi estruturado um ecossistema integrado com WooCommerce, automacoes e fluxos de atendimento. O projeto uniu melhorias de performance, organizacao operacional e comunicacao mais rapida com clientes.',
-            result: 'O ciclo comercial ficou mais enxuto, com resposta mais rapida e operacao mais previsivel para escalar catalogo e campanhas.',
+            problem: 'A operação tinha gargalos de estoque e atendimento em momentos de pico. O time precisava reduzir fricção na jornada de compra sem perder controle de catálogo.',
+            solution: 'Foi estruturado um ecossistema integrado com WooCommerce, automações e fluxos de atendimento. O projeto uniu melhorias de performance, organização operacional e comunicação mais rápida com clientes.',
+            result: 'O ciclo comercial ficou mais enxuto, com resposta mais rápida e operação mais previsível para escalar catálogo e campanhas.',
             metrics: [
-                { label: 'Tempo de resposta', value: '-90%' },
-                { label: 'Produtos gerenciados', value: '3000+' },
-                { label: 'Ganho operacional', value: '100h+/mes' }
+                { label: 'Atendimento', value: 'Automatizado' },
+                { label: 'Catálogo', value: 'Integrado' },
+                { label: 'Operação', value: 'Centralizada' }
             ],
             images: [
                 'assets/AquaFlora/AquaFlora Home.webp',
@@ -45,7 +45,7 @@
             videos: [
                 {
                     type: 'external',
-                    title: 'Visitar a loja em producao',
+                    title: 'Visitar a loja em produção',
                     url: 'https://aquafloragroshop.com.br/'
                 }
             ],
@@ -59,22 +59,16 @@
         comerciobes: {
             title: 'ComercioBes',
             tag: 'Vitrine Local',
-            problem: 'Comercios locais tinham baixa visibilidade digital e pouca conversao de descoberta para contato.',
-            solution: 'A proposta priorizou navegacao mobile-first, blocos de oferta diretos e estrutura de conteudo orientada a descoberta local.',
-            result: 'A base ficou pronta para captacao de leads com foco regional e evolucao gradual para um portal comercial mais robusto.',
+            problem: 'Comércios locais tinham baixa visibilidade digital e pouca conversão de descoberta para contato.',
+            solution: 'A proposta priorizou navegação mobile-first, blocos de oferta diretos e estrutura de conteúdo orientada a descoberta local.',
+            result: 'A base ficou pronta para captação de leads com foco regional e evolução gradual para um portal comercial mais robusto.',
             metrics: [
                 { label: 'Foco principal', value: 'Leads locais' },
-                { label: 'Experiencia', value: 'Mobile-first' },
-                { label: 'Status', value: 'Em evolucao' }
+                { label: 'Experiência', value: 'Mobile-first' },
+                { label: 'Status', value: 'Em evolução' }
             ],
             images: [],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Visao geral do conceito',
-                    url: '/#projects'
-                }
-            ],
+            videos: [],
             links: {
                 live: '',
                 repo: '',
@@ -84,27 +78,21 @@
         },
         'florescer-garden': {
             title: 'Florescer Garden',
-            tag: 'E-commerce Agricultura',
-            problem: 'Era necessario organizar uma vitrine digital com narrativa clara de valor para transformar interesse em contato comercial.',
-            solution: 'O projeto foi desenhado com layout orientado a conversao, categorizacao de produtos e CTA estrategicos para acelerar a tomada de decisao.',
-            result: 'A estrutura permite validar oferta com mais consistencia e preparar terreno para crescimento com dados reais de comportamento.',
+            tag: 'E-commerce agrícola',
+            problem: 'Era necessário organizar uma vitrine digital com narrativa clara de valor para transformar interesse em contato comercial.',
+            solution: 'O projeto foi desenhado com layout orientado a conversão, categorização de produtos e CTAs estratégicos para acelerar a tomada de decisão.',
+            result: 'A estrutura permite validar a oferta com mais consistência e preparar terreno para crescimento com dados reais de comportamento.',
             metrics: [
-                { label: 'Objetivo', value: 'Conversao' },
-                { label: 'Canal', value: 'Catalogo digital' },
-                { label: 'Status', value: 'Em tracao' }
+                { label: 'Objetivo', value: 'Conversão' },
+                { label: 'Canal', value: 'Catálogo digital' },
+                { label: 'Status', value: 'Em tração' }
             ],
             images: [
                 'assets/FlorescerGarden/fachada.png',
                 'assets/FlorescerGarden/Produtos.png',
                 'assets/FlorescerGarden/Carrinho.png'
             ],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Visao geral da proposta',
-                    url: '/#projects'
-                }
-            ],
+            videos: [],
             links: {
                 live: '',
                 repo: '',
@@ -114,13 +102,13 @@
         },
         joysticknights: {
             title: 'JoysticKnights',
-            tag: 'Portal de Noticias',
-            problem: 'O portal precisava melhorar velocidade e estrutura tecnica para competir em SEO sem sacrificar experiencia de leitura.',
-            solution: 'A stack foi otimizada com foco em carregamento, organizacao de conteudo e ajustes tecnicos para indexacao mais eficiente.',
-            result: 'O projeto ganhou mais consistencia de performance e melhor base para crescimento organico de audiencia.',
+            tag: 'Portal de Notícias',
+            problem: 'O portal precisava melhorar velocidade e estrutura técnica para competir em SEO sem sacrificar a experiência de leitura.',
+            solution: 'A stack foi otimizada com foco em carregamento, organização de conteúdo e ajustes técnicos para indexação mais eficiente.',
+            result: 'O projeto ganhou mais consistência de performance e uma base melhor para crescimento orgânico de audiência.',
             metrics: [
-                { label: 'Tempo de carregamento', value: '-60%' },
-                { label: 'SEO tecnico', value: 'Otimizado' },
+                { label: 'Carregamento', value: 'Otimizado' },
+                { label: 'SEO técnico', value: 'Otimizado' },
                 { label: 'Plataforma', value: 'WordPress' }
             ],
             images: [
@@ -144,19 +132,19 @@
         'home-lab-hardware': {
             title: 'Home Lab & Hardware',
             tag: 'Infraestrutura',
-            problem: 'Manter varios servicos pessoais e de produto com estabilidade exige arquitetura previsivel, observabilidade e boas rotinas operacionais.',
-            solution: 'Foi consolidado um ambiente Proxmox com containers e servicos de apoio para automacao, testes e operacao diaria.',
-            result: 'A infraestrutura hoje acelera validacao de ideias e reduz dependencia de servicos externos para tarefas criticas.',
+            problem: 'Manter vários serviços pessoais e de produto com estabilidade exige arquitetura previsível, observabilidade e boas rotinas operacionais.',
+            solution: 'Foi consolidado um ambiente Proxmox com containers e serviços de apoio para automação, testes e operação diária.',
+            result: 'A infraestrutura hoje acelera a validação de ideias e reduz a dependência de serviços externos para tarefas críticas.',
             metrics: [
-                { label: 'Servicos ativos', value: '15+' },
+                { label: 'Ambiente', value: 'Proxmox' },
                 { label: 'Foco', value: 'Infra produtiva' },
-                { label: 'Beneficio', value: 'Autonomia tecnica' }
+                { label: 'Benefício', value: 'Autonomia técnica' }
             ],
             images: [],
             videos: [
                 {
                     type: 'external',
-                    title: 'Guia pratico completo',
+                    title: 'Guia prático completo',
                     url: '/blog/homelab-proxmox-guia-pratico/'
                 }
             ],
@@ -170,11 +158,11 @@
         'kingdom-of-aen': {
             title: 'Kingdom of Aen',
             tag: 'Game Development',
-            problem: 'Era preciso construir uma base de logica de jogo consistente para turnos, regras e progressao sem depender de frameworks.',
-            solution: 'A engine foi implementada em JavaScript puro com separacao de responsabilidades e persistencia de estado local.',
-            result: 'Projeto tecnico de referencia para portfolio, demonstrando arquitetura de regras e dominio de logica front-end.',
+            problem: 'Era preciso construir uma base de lógica de jogo consistente para turnos, regras e progressão sem depender de frameworks.',
+            solution: 'A engine foi implementada em JavaScript puro com separação de responsabilidades e persistência de estado local.',
+            result: 'Projeto técnico de referência para o portfólio, demonstrando arquitetura de regras e domínio de lógica front-end.',
             metrics: [
-                { label: 'Logica implementada', value: '2000+ linhas' },
+                { label: 'Lógica', value: 'JavaScript puro' },
                 { label: 'Stack', value: 'JS/HTML/CSS' },
                 { label: 'Estado', value: 'Persistente' }
             ],
@@ -182,7 +170,7 @@
             videos: [
                 {
                     type: 'external',
-                    title: 'Repositorio do projeto',
+                    title: 'Repositório do projeto',
                     url: 'https://github.com/pedrobragabes/Kingdom-of-Aen'
                 }
             ],
@@ -194,6 +182,147 @@
             }
         }
     };
+
+    const caseStudyTranslations = {
+        en: {
+            'aquaflora-agroshop': {
+                tag: 'E-commerce',
+                problem: 'The operation had inventory and customer-service bottlenecks during peak periods. The team needed to reduce friction in the purchase journey without losing catalog control.',
+                solution: 'An integrated ecosystem was built with WooCommerce, automation and customer-service workflows. The project combined performance improvements, operational organization and faster communication with customers.',
+                result: 'The sales cycle became leaner, with faster responses and a more predictable operation for scaling the catalog and campaigns.',
+                metrics: [
+                    { label: 'Customer service', value: 'Automated' },
+                    { label: 'Catalog', value: 'Integrated' },
+                    { label: 'Operation', value: 'Centralized' }
+                ],
+                videoTitles: ['Visit the live store']
+            },
+            comerciobes: {
+                tag: 'Local Discovery',
+                problem: 'Local businesses had low digital visibility and struggled to convert discovery into customer contact.',
+                solution: 'The concept prioritized mobile-first navigation, direct offer blocks and a content structure designed for local discovery.',
+                result: 'The foundation is ready to capture regional leads and evolve gradually into a more robust commercial portal.',
+                metrics: [
+                    { label: 'Primary focus', value: 'Local leads' },
+                    { label: 'Experience', value: 'Mobile-first' },
+                    { label: 'Status', value: 'Evolving' }
+                ]
+            },
+            'florescer-garden': {
+                tag: 'Agricultural E-commerce',
+                problem: 'The business needed a digital storefront with a clear value narrative to turn interest into commercial conversations.',
+                solution: 'The project was designed around conversion, product categorization and strategic calls to action that speed up decision-making.',
+                result: 'The structure supports more consistent offer validation and prepares the product for growth based on real behavior data.',
+                metrics: [
+                    { label: 'Goal', value: 'Conversion' },
+                    { label: 'Channel', value: 'Digital catalog' },
+                    { label: 'Status', value: 'Gaining traction' }
+                ]
+            },
+            joysticknights: {
+                tag: 'News Portal',
+                problem: 'The portal needed better speed and technical structure to compete in search without sacrificing the reading experience.',
+                solution: 'The stack was optimized for loading speed, content organization and more efficient technical indexing.',
+                result: 'The project gained more consistent performance and a stronger foundation for organic audience growth.',
+                metrics: [
+                    { label: 'Loading', value: 'Optimized' },
+                    { label: 'Technical SEO', value: 'Optimized' },
+                    { label: 'Platform', value: 'WordPress' }
+                ],
+                videoTitles: ['Visit the live portal']
+            },
+            'home-lab-hardware': {
+                tag: 'Infrastructure',
+                problem: 'Running multiple personal and product services reliably requires predictable architecture, observability and sound operating routines.',
+                solution: 'A Proxmox environment was consolidated with containers and supporting services for automation, testing and daily operations.',
+                result: 'The infrastructure accelerates idea validation and reduces dependence on external services for critical tasks.',
+                metrics: [
+                    { label: 'Environment', value: 'Proxmox' },
+                    { label: 'Focus', value: 'Production infrastructure' },
+                    { label: 'Benefit', value: 'Technical autonomy' }
+                ],
+                videoTitles: ['Read the complete practical guide']
+            },
+            'kingdom-of-aen': {
+                tag: 'Game Development',
+                problem: 'The project needed a consistent game-logic foundation for turns, rules and progression without relying on frameworks.',
+                solution: 'The engine was implemented in vanilla JavaScript with separated responsibilities and local state persistence.',
+                result: 'A technical portfolio reference that demonstrates rules architecture and front-end logic design.',
+                metrics: [
+                    { label: 'Logic', value: 'Vanilla JavaScript' },
+                    { label: 'Stack', value: 'JS/HTML/CSS' },
+                    { label: 'State', value: 'Persistent' }
+                ],
+                videoTitles: ['Open the project repository']
+            }
+        }
+    };
+
+    const modalUiTranslations = {
+        pt: {
+            metricFallback: 'Métrica',
+            metricsPending: 'Métricas detalhadas em breve.',
+            demoFallback: 'Demonstração',
+            demoVideoFallback: 'Vídeo de demonstração',
+            openDemo: 'Abrir demonstração',
+            demoUnavailable: 'Demonstração indisponível no momento.',
+            linkLabels: {
+                live: 'Site ao vivo',
+                repo: 'Repositório',
+                demo: 'Demo interativa',
+                blog: 'Post relacionado'
+            },
+            mainImageAlt: (title, index) => `${title}: imagem ${index} selecionada`,
+            thumbImageAlt: (title, index) => `${title}: imagem ${index}`
+        },
+        en: {
+            metricFallback: 'Metric',
+            metricsPending: 'Detailed metrics coming soon.',
+            demoFallback: 'Demo',
+            demoVideoFallback: 'Project demonstration video',
+            openDemo: 'Open demo',
+            demoUnavailable: 'Demo currently unavailable.',
+            linkLabels: {
+                live: 'Live site',
+                repo: 'Repository',
+                demo: 'Interactive demo',
+                blog: 'Related post'
+            },
+            mainImageAlt: (title, index) => `${title}: selected image ${index}`,
+            thumbImageAlt: (title, index) => `${title}: image ${index}`
+        }
+    };
+
+    function getCurrentLanguage() {
+        return document.documentElement.lang === 'en' ? 'en' : 'pt';
+    }
+
+    function getCaseStudy(projectKey) {
+        const base = caseStudies[projectKey];
+        if (!base) {
+            return null;
+        }
+
+        const localized = caseStudyTranslations[getCurrentLanguage()]?.[projectKey];
+        if (!localized) {
+            return base;
+        }
+
+        const videos = base.videos.map((video, index) => ({
+            ...video,
+            title: localized.videoTitles?.[index] || video.title
+        }));
+
+        return {
+            ...base,
+            ...localized,
+            videos
+        };
+    }
+
+    function getModalUiText() {
+        return modalUiTranslations[getCurrentLanguage()];
+    }
 
     function isValidProjectUrl(url) {
         return typeof url === 'string' && url.trim() !== '' && url.trim() !== '#';
@@ -361,15 +490,26 @@
     // 2. MOBILE NAVIGATION
     // ==========================================================================
 
+    function updateMobileMenuLabel(isExpanded) {
+        const isEnglish = getCurrentLanguage() === 'en';
+        const label = isExpanded
+            ? (isEnglish ? 'Close menu' : 'Fechar menu')
+            : (isEnglish ? 'Open menu' : 'Abrir menu');
+        menuToggle.setAttribute('aria-label', label);
+    }
+
     function toggleMobileMenu() {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        const nextExpanded = !isExpanded;
+        menuToggle.setAttribute('aria-expanded', nextExpanded);
+        updateMobileMenuLabel(nextExpanded);
         menuToggle.classList.toggle('active');
         navList.classList.toggle('active');
     }
 
     function closeMobileMenu() {
         menuToggle.setAttribute('aria-expanded', 'false');
+        updateMobileMenuLabel(false);
         menuToggle.classList.remove('active');
         navList.classList.remove('active');
     }
@@ -640,56 +780,6 @@
     }
 
     // ==========================================================================
-    // 9. ANIMATED COUNTERS
-    // ==========================================================================
-
-    const counters = document.querySelectorAll('.stats__number');
-    let countersAnimated = false;
-
-    function animateCounters() {
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const start = 0;
-            const startTime = performance.now();
-
-            function updateCounter(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Easing function (ease-out)
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(start + (target - start) * easeOut);
-
-                counter.textContent = current;
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target;
-                }
-            }
-
-            requestAnimationFrame(updateCounter);
-        });
-    }
-
-    // Trigger counters when stats section is visible
-    const statsSection = document.querySelector('.stats');
-    if (statsSection) {
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersAnimated) {
-                    countersAnimated = true;
-                    animateCounters();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        statsObserver.observe(statsSection);
-    }
-
-    // ==========================================================================
     // 10. CASE STUDY MODAL
     // ==========================================================================
 
@@ -715,8 +805,16 @@
         return state;
     }
 
+    function setModalSectionVisible(container, visible) {
+        const section = container?.closest('.modal__section');
+        if (section) {
+            section.hidden = !visible;
+        }
+    }
+
     function renderModalMetrics(metrics) {
         const metricsContainer = document.getElementById('modalMetrics');
+        const ui = getModalUiText();
         clearChildren(metricsContainer);
 
         if (!metricsContainer) {
@@ -724,7 +822,7 @@
         }
 
         if (!Array.isArray(metrics) || metrics.length === 0) {
-            metricsContainer.appendChild(createModalEmptyState('Metricas detalhadas em breve.'));
+            metricsContainer.appendChild(createModalEmptyState(ui.metricsPending));
             return;
         }
 
@@ -738,7 +836,7 @@
 
             const label = document.createElement('span');
             label.className = 'modal__metric-label';
-            label.textContent = metric.label || 'Metrica';
+            label.textContent = metric.label || ui.metricFallback;
 
             metricCard.appendChild(value);
             metricCard.appendChild(label);
@@ -748,14 +846,17 @@
 
     function renderModalVideos(videos) {
         const videosContainer = document.getElementById('modalVideos');
+        const ui = getModalUiText();
         clearChildren(videosContainer);
 
         if (!videosContainer) {
             return;
         }
 
-        if (!Array.isArray(videos) || videos.length === 0) {
-            videosContainer.appendChild(createModalEmptyState('Video de demonstracao em breve.'));
+        const hasVideos = Array.isArray(videos) && videos.length > 0;
+        setModalSectionVisible(videosContainer, hasVideos);
+
+        if (!hasVideos) {
             return;
         }
 
@@ -765,14 +866,14 @@
 
             const title = document.createElement('h4');
             title.className = 'modal__video-title';
-            title.textContent = videoData.title || 'Demonstracao';
+            title.textContent = videoData.title || ui.demoFallback;
             card.appendChild(title);
 
             if (videoData.type === 'embed' && isValidProjectUrl(videoData.url)) {
                 const iframe = document.createElement('iframe');
                 iframe.className = 'modal__video-embed';
                 iframe.src = videoData.url;
-                iframe.title = videoData.title || 'Video de demonstracao';
+                iframe.title = videoData.title || ui.demoVideoFallback;
                 iframe.loading = 'lazy';
                 iframe.allowFullscreen = true;
                 card.appendChild(iframe);
@@ -795,10 +896,10 @@
                     link.target = '_blank';
                     link.rel = 'noopener noreferrer';
                 }
-                link.textContent = 'Abrir demonstracao';
+                link.textContent = ui.openDemo;
                 card.appendChild(link);
             } else {
-                card.appendChild(createModalEmptyState('Demonstracao indisponivel no momento.'));
+                card.appendChild(createModalEmptyState(ui.demoUnavailable));
             }
 
             videosContainer.appendChild(card);
@@ -807,6 +908,7 @@
 
     function renderModalLinks(links) {
         const linksContainer = document.getElementById('modalLinks');
+        const ui = getModalUiText();
         clearChildren(linksContainer);
 
         if (!linksContainer) {
@@ -814,16 +916,16 @@
         }
 
         const entries = [
-            { key: 'live', label: 'Site ao vivo' },
-            { key: 'repo', label: 'Repositorio' },
-            { key: 'demo', label: 'Demo interativa' },
-            { key: 'blog', label: 'Post relacionado' }
+            { key: 'live', label: ui.linkLabels.live },
+            { key: 'repo', label: ui.linkLabels.repo },
+            { key: 'demo', label: ui.linkLabels.demo },
+            { key: 'blog', label: ui.linkLabels.blog }
         ];
 
         const availableLinks = entries.filter((entry) => isValidProjectUrl(links && links[entry.key]));
+        setModalSectionVisible(linksContainer, availableLinks.length > 0);
 
         if (availableLinks.length === 0) {
-            linksContainer.appendChild(createModalEmptyState('Links publicos em breve.'));
             return;
         }
 
@@ -843,14 +945,17 @@
 
     function renderModalGallery(images, title) {
         const galleryContainer = document.getElementById('modalImages');
+        const ui = getModalUiText();
         clearChildren(galleryContainer);
 
         if (!galleryContainer) {
             return;
         }
 
-        if (!Array.isArray(images) || images.length === 0) {
-            galleryContainer.appendChild(createModalEmptyState('Galeria em breve.'));
+        const hasImages = Array.isArray(images) && images.length > 0;
+        setModalSectionVisible(galleryContainer, hasImages);
+
+        if (!hasImages) {
             return;
         }
 
@@ -864,7 +969,7 @@
         const mainImage = document.createElement('img');
         mainImage.className = 'modal__image';
         mainImage.loading = 'lazy';
-        mainImage.alt = `${title} screenshot principal`;
+        mainImage.alt = ui.mainImageAlt(title, 1);
 
         mainButton.appendChild(mainImage);
         gallery.appendChild(mainButton);
@@ -883,7 +988,7 @@
             const thumbImage = document.createElement('img');
             thumbImage.className = 'modal__thumb-image';
             thumbImage.src = src;
-            thumbImage.alt = `${title} screenshot ${index + 1}`;
+            thumbImage.alt = ui.thumbImageAlt(title, index + 1);
             thumbImage.loading = 'lazy';
 
             thumbButton.appendChild(thumbImage);
@@ -894,7 +999,7 @@
         function setActiveImage(index) {
             activeSrc = images[index];
             mainImage.src = activeSrc;
-            mainImage.alt = `${title} screenshot ${index + 1}`;
+            mainImage.alt = ui.mainImageAlt(title, index + 1);
 
             thumbButtons.forEach((button, buttonIndex) => {
                 button.classList.toggle('is-active', buttonIndex === index);
@@ -905,14 +1010,14 @@
             button.addEventListener('click', () => setActiveImage(index));
         });
 
-        mainButton.addEventListener('click', () => openLightbox(activeSrc));
+        mainButton.addEventListener('click', () => openLightbox(activeSrc, mainImage.alt));
 
         setActiveImage(0);
         galleryContainer.appendChild(gallery);
     }
 
     function openModal(projectKey) {
-        const data = caseStudies[projectKey];
+        const data = getCaseStudy(projectKey);
         if (!data || !modal) {
             return;
         }
@@ -961,17 +1066,26 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImage');
     const lightboxClose = document.getElementById('lightboxClose');
+    let lastLightboxFocusedElement = null;
 
-    function openLightbox(src) {
+    function openLightbox(src, alt) {
         if (lightbox && lightboxImg) {
+            lastLightboxFocusedElement = document.activeElement;
             lightboxImg.src = src;
+            lightboxImg.alt = alt || getModalUiText().mainImageAlt('Project', 1);
             lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            requestAnimationFrame(() => lightboxClose?.focus());
         }
     }
 
     function closeLightbox() {
         if (lightbox) {
             lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImg?.removeAttribute('src');
+            lastLightboxFocusedElement?.focus();
+            lastLightboxFocusedElement = null;
         }
     }
 
@@ -981,7 +1095,7 @@
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
+            if (e.target === lightbox) {
                 closeLightbox();
             }
         });
@@ -1051,18 +1165,6 @@
             activateProjectCard(card, event);
         });
 
-        card.addEventListener('keydown', (event) => {
-            if (event.key !== 'Enter' && event.key !== ' ') {
-                return;
-            }
-
-            if (event.target.closest('.project-card__btn')) {
-                return;
-            }
-
-            event.preventDefault();
-            activateProjectCard(card, event);
-        });
     });
 
     if (modalClose) {

@@ -8,6 +8,18 @@ Desktop.ini
 
 # Environment variables
 .env
+.env.*
+!.env.example
+
+# Local databases and private keys
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.p12
+*.pfx
 
 # Editor directories
 .vscode/

@@ -74,13 +74,13 @@
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Progresso de leitura"
-        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        data-i18n-aria-label="a11y.reading_progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="#" class="logo" aria-label="Voltar ao topo">Pedro Braga</a>
-            <nav class="nav" role="navigation" aria-label="Menu principal">
+            <a href="#home" class="logo" aria-label="Voltar ao topo" data-i18n-aria-label="a11y.back_to_top">Pedro Braga</a>
+            <nav class="nav" role="navigation" aria-label="Menu principal" data-i18n-aria-label="a11y.main_menu">
                 <ul class="nav__list">
                     <li><a href="#about" class="nav__link">Sobre</a></li>
                     <li><a href="#servicos" class="nav__link">Soluções</a></li>
@@ -104,7 +104,8 @@
                     <span>EN</span>
                 </button>
                 <!-- Theme Toggle -->
-                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema"
+                    data-i18n-aria-label="a11y.toggle_theme">
                     <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -122,7 +123,8 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <button class="menu-toggle" aria-label="Abrir menu" data-i18n-aria-label="a11y.open_menu"
+                    aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -168,7 +170,8 @@
                 <div class="hero__photo">
                     <div class="hero__photo-wrapper animate-fade-in-up">
                         <img src="assets/profile/Pedro Braga.webp" alt="Pedro Braga - Engenheiro de Software"
-                            width="320" height="427" fetchpriority="high" decoding="async">
+                            data-i18n-alt="a11y.profile_image" width="320" height="427" fetchpriority="high"
+                            decoding="async">
                     </div>
                 </div>
             </div>
@@ -200,27 +203,6 @@
                 <span class="about__signature">— Pedro Braga</span>
             </div>
         </section>
-
-        <!-- Stats Section (Hidden) -->
-        <!--
-        <section class="stats">
-            <div class="container">
-                <div class="stats__grid reveal">
-                    <div class="stats__item">
-                        <span class="stats__number" data-target="15">0</span>
-                        <span class="stats__plus">+</span>
-                        <span class="stats__label">Serviços em Produção</span>
-                    </div>
-                    <div class="stats__item">
-                        <span class="stats__number" data-target="90">0</span>
-                        <span class="stats__plus">%</span>
-                        <span class="stats__label">Economia de Tempo</span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        -->
 
         <!-- Services Section -->
         <section class="services" id="servicos">
@@ -436,13 +418,12 @@
                 </div>
                 <div class="projects__grid">
                     <!-- AquaFlora AgroShop -->
-                    <article class="project-card reveal reveal-delay-1" data-project="aquaflora-agroshop" tabindex="0"
-                        aria-label="Abrir detalhes do projeto AquaFlora AgroShop">
+                    <article class="project-card reveal reveal-delay-1" data-project="aquaflora-agroshop">
                         <div class="project-card__preview">
                             <img src="assets/AquaFlora/AquaFlora Home.webp" alt="AquaFlora AgroShop"
                                 class="project-card__image" loading="lazy">
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
@@ -450,7 +431,7 @@
                             <h3 class="project-card__title">AquaFlora AgroShop</h3>
                             <p class="project-card__description">
                                 Gestão manual causava perdas em produtos perecíveis. Desenvolvi ecossistema
-                                Python + Web com automação de chatbot. Resultado: 90% menos tempo de atendimento.
+                                Python + Web com automação de chatbot e integração de rotinas operacionais.
                             </p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">Python</span>
@@ -470,8 +451,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
+                                <a class="project-card__btn project-card__btn--secondary is-disabled"
+                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -485,29 +466,28 @@
                     </article>
 
                     <!-- ComercioBes -->
-                    <article class="project-card reveal reveal-delay-2" data-project="comerciobes" tabindex="0"
-                        aria-label="Abrir detalhes do projeto ComercioBes">
+                    <article class="project-card reveal reveal-delay-2" data-project="comerciobes">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--green"></div>
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
                             <span class="project-card__tag">Vitrine Local</span>
                             <h3 class="project-card__title">ComercioBes</h3>
                             <p class="project-card__description">
-                                Plataforma local para conectar negocios da cidade com novos clientes, com foco em
-                                descoberta mobile e geracao de leads.
+                                Plataforma local para conectar negócios da cidade com novos clientes, com foco em
+                                descoberta mobile e geração de leads.
                             </p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">SEO Local</span>
                                 <span class="tech-badge">UX Mobile</span>
-                                <span class="tech-badge">Conteudo</span>
+                                <span class="tech-badge">Conteúdo</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary"
-                                    data-project-link="live">
+                                <a class="project-card__btn project-card__btn--primary is-disabled"
+                                    data-project-link="live" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -518,8 +498,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
+                                <a class="project-card__btn project-card__btn--secondary is-disabled"
+                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -533,30 +513,29 @@
                     </article>
 
                     <!-- Florescer Garden -->
-                    <article class="project-card reveal reveal-delay-3" data-project="florescer-garden" tabindex="0"
-                        aria-label="Abrir detalhes do projeto Florescer Garden">
+                    <article class="project-card reveal reveal-delay-3" data-project="florescer-garden">
                         <div class="project-card__preview">
                             <img src="assets/FlorescerGarden/fachada.png" alt="Preview do projeto Florescer Garden"
                                 class="project-card__image" loading="lazy">
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
-                            <span class="project-card__tag">E-commerce Agricultura</span>
+                            <span class="project-card__tag">E-commerce agrícola</span>
                             <h3 class="project-card__title">Florescer Garden</h3>
                             <p class="project-card__description">
-                                Estrutura de loja digital com foco em descoberta de produtos, confianca e jornada de
-                                compra orientada a conversao.
+                                Estrutura de loja digital com foco em descoberta de produtos, confiança e jornada de
+                                compra orientada à conversão.
                             </p>
                             <div class="project-card__tech">
-                                <span class="tech-badge">UX Conversao</span>
-                                <span class="tech-badge">Catalogo</span>
+                                <span class="tech-badge">UX Conversão</span>
+                                <span class="tech-badge">Catálogo</span>
                                 <span class="tech-badge">SEO</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary"
-                                    data-project-link="live">
+                                <a class="project-card__btn project-card__btn--primary is-disabled"
+                                    data-project-link="live" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -567,8 +546,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
+                                <a class="project-card__btn project-card__btn--secondary is-disabled"
+                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -582,21 +561,19 @@
                     </article>
 
                     <!-- JoysticKnights -->
-                    <article class="project-card reveal reveal-delay-4" data-project="joysticknights" tabindex="0"
-                        aria-label="Abrir detalhes do projeto JoysticKnights">
+                    <article class="project-card reveal reveal-delay-4" data-project="joysticknights">
                         <div class="project-card__preview">
                             <img src="assets/JoysticKnights/fachada.webp" alt="Preview do projeto JoysticKnights"
                                 class="project-card__image" loading="lazy">
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
                             <span class="project-card__tag">Portal de Notícias</span>
                             <h3 class="project-card__title">JoysticKnights</h3>
                             <p class="project-card__description">
-                                WordPress com arquitetura headless otimizada para SEO. Tempo de carregamento
-                                reduzido em 60% com lazy loading e cache estratégico.
+                                WordPress otimizado para SEO, leitura e carregamento com lazy loading e cache.
                             </p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">WordPress</span>
@@ -616,8 +593,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
+                                <a class="project-card__btn project-card__btn--secondary is-disabled"
+                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -631,20 +608,19 @@
                     </article>
 
                     <!-- Home Lab -->
-                    <article class="project-card reveal reveal-delay-2" data-project="home-lab-hardware" tabindex="0"
-                        aria-label="Abrir detalhes do projeto Home Lab e Hardware">
+                    <article class="project-card reveal reveal-delay-2" data-project="home-lab-hardware">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--blue"></div>
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
                             <span class="project-card__tag">Infraestrutura</span>
                             <h3 class="project-card__title">Home Lab & Hardware</h3>
                             <p class="project-card__description">
-                                Servidor Proxmox com 15+ serviços em produção: apps de estoque com scanner,
-                                automações e containers Docker. Infraestrutura pessoal que resolve problemas reais.
+                                Servidor Proxmox com aplicações de estoque, automações e containers Docker.
+                                Infraestrutura pessoal usada para resolver problemas reais.
                             </p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">Proxmox</span>
@@ -664,8 +640,8 @@
                                     </svg>
                                     Ver Site
                                 </a>
-                                <a href="#" class="project-card__btn project-card__btn--secondary"
-                                    data-project-link="repo">
+                                <a class="project-card__btn project-card__btn--secondary is-disabled"
+                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <path
@@ -679,12 +655,11 @@
                     </article>
 
                     <!-- Kingdom of Aen -->
-                    <article class="project-card reveal reveal-delay-3" data-project="kingdom-of-aen" tabindex="0"
-                        aria-label="Abrir detalhes do projeto Kingdom of Aen">
+                    <article class="project-card reveal reveal-delay-3" data-project="kingdom-of-aen">
                         <div class="project-card__preview">
                             <div class="project-card__gradient project-card__gradient--amber"></div>
                             <div class="project-card__overlay">
-                                <span class="project-card__cta">Ver Case Study →</span>
+                                <button type="button" class="project-card__cta">Ver Case Study →</button>
                             </div>
                         </div>
                         <div class="project-card__content">
@@ -692,7 +667,7 @@
                             <h3 class="project-card__title">Kingdom of Aen</h3>
                             <p class="project-card__description">
                                 Engine de card game em JavaScript puro com sistema de turnos, IA adversária e
-                                persistência de estado. 2000+ linhas de lógica de jogo.
+                                persistência de estado e regras de domínio sem dependência de frameworks.
                             </p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">JavaScript</span>
@@ -700,7 +675,8 @@
                                 <span class="tech-badge">CSS3</span>
                             </div>
                             <div class="project-card__links">
-                                <a href="#" class="project-card__btn project-card__btn--primary" data-project-link="live">
+                                <a class="project-card__btn project-card__btn--primary is-disabled"
+                                    data-project-link="live" aria-disabled="true" tabindex="-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="12" r="10"></circle>
@@ -929,7 +905,8 @@
                                     <!-- Fallback initial when no photo -->
                                     <span class="avatar-initial">D</span>
                                     <!-- Uncomment and add src when photo is available:
-                                    <img src="assets/testimonials/diego.webp" alt="Diego - AquaFlora" class="avatar-image">
+                                    <img src="assets/testimonials/Diego Crente.jpg" alt="Diego - AquaFlora"
+                                        class="avatar-image">
                                     -->
                                 </div>
                                 <div class="testimonial-card__info">
@@ -942,91 +919,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Blog & Stats Section (Temporary hidden) -->
-        <!--
-        <section class="blog" id="blog">
-            <div class="container">
-                <div class="blog__header reveal">
-                    <span class="section-label">Blog & Stats</span>
-                    <h2 class="section-title">Últimos Artigos & Atividade</h2>
-                </div>
-
-                <div class="blog__grid">
-                    <!- - Blog Posts (Coming Soon) - ->
-                    <article class="blog__posts reveal reveal-delay-1">
-                        <h3 class="blog__section-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                            </svg>
-                            Artigos Técnicos
-                        </h3>
-                        <div class="blog__coming-soon">
-                            <div class="blog__coming-badge">Em breve</div>
-                            <p>Tutoriais hands-on sobre infraestrutura e desenvolvimento.</p>
-                            <ul class="blog__topics">
-                                <li>️ Self-Hosting com Proxmox</li>
-                                <li> Docker para Iniciantes</li>
-                                <li>🐍 Automações com Python</li>
-                                <li>⚡ Node.js + APIs REST</li>
-                            </ul>
-                            <p class="blog__cta-hint">Me siga no <a href="https://github.com/pedrobragabes"
-                                    target="_blank" rel="noopener noreferrer">GitHub</a> para não perder!</p>
-                        </div>
-                    </article>
-
-
-                    <!- - GitHub Activity - ->
-                    <article class="blog__github reveal reveal-delay-2">
-                        <h3 class="blog__section-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                            GitHub Activity
-                        </h3>
-                        <div class="github-stats">
-                            <a href="https://github.com/pedrobragabes" target="_blank" rel="noopener noreferrer"
-                                class="github-profile">
-                                <img src="https://github-readme-stats.vercel.app/api?username=pedrobragabes&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&title_color=C9A66B&icon_color=C9A66B&text_color=ffffff"
-                                    alt="GitHub Stats" loading="lazy">
-                            </a>
-                            <a href="https://github.com/pedrobragabes" target="_blank" rel="noopener noreferrer"
-                                class="github-languages">
-                                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pedrobragabes&layout=compact&theme=dark&hide_border=true&bg_color=00000000&title_color=C9A66B&text_color=ffffff"
-                                    alt="Top Languages" loading="lazy">
-                            </a>
-                        </div>
-                    </article>
-
-                    <!- - WakaTime Widget - ->
-                    <article class="blog__wakatime reveal reveal-delay-3">
-                        <h3 class="blog__section-title">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            Tempo de Código
-                        </h3>
-                        <div class="wakatime-stats">
-                            <a href="https://wakatime.com/@pedrobragabes" target="_blank" rel="noopener noreferrer">
-                                <img src="https://github-readme-stats.vercel.app/api/wakatime?username=pedrobragabes&theme=dark&hide_border=true&bg_color=00000000&title_color=C9A66B&text_color=ffffff&layout=compact"
-                                    alt="WakaTime Stats" loading="lazy">
-                            </a>
-                            <p class="wakatime-note">📊 Estatísticas das últimas semanas via <a
-                                    href="https://wakatime.com" target="_blank" rel="noopener noreferrer">WakaTime</a>
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        -->
 
         <!-- Contact Section -->
 
@@ -1158,7 +1050,7 @@
                 <div class="footer__divider"></div>
                 <div class="footer__bottom">
                     <p>Desenvolvido com ☕ por Pedro Braga</p>
-                    <p>© <span id="year"></span> Todos os direitos reservados</p>
+                    <p>© <span id="year"></span> <span data-i18n="footer.rights">Todos os direitos reservados</span></p>
                 </div>
                 <script src="js/year.min.js"></script>
             </div>
@@ -1174,7 +1066,8 @@
                     <span class="project-card__tag" id="modalTag">Categoria</span>
                     <h2 class="section-title" id="modalTitle">Título do Projeto</h2>
                 </div>
-                <button class="modal__close" id="modalClose" aria-label="Fechar">
+                <button class="modal__close" id="modalClose" aria-label="Fechar"
+                    data-i18n-aria-label="project_modal.close">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -1184,43 +1077,43 @@
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Contexto</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.context">Contexto</h3>
                 <p class="modal__text" id="modalProblem">
                     Descrição do problema que precisava ser resolvido.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Implementação</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.implementation">Implementação</h3>
                 <p class="modal__text" id="modalSolution">
                     Como o problema foi resolvido tecnicamente.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Impacto</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.impact">Impacto</h3>
                 <p class="modal__text" id="modalResult">
                     Métricas e impacto do projeto.
                 </p>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Métricas</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.metrics">Métricas</h3>
                 <div class="modal__metrics" id="modalMetrics"></div>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Demos e referências</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.demos">Demos e referências</h3>
                 <div class="modal__videos" id="modalVideos"></div>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Links do projeto</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.links">Links do projeto</h3>
                 <div class="modal__links" id="modalLinks"></div>
             </div>
 
             <div class="modal__section">
-                <h3 class="modal__section-title">Galeria</h3>
+                <h3 class="modal__section-title" data-i18n="project_modal.gallery">Galeria</h3>
                 <div class="modal__images" id="modalImages">
                     <div class="modal__image-placeholder">Screenshot 1</div>
                     <div class="modal__image-placeholder">Screenshot 2</div>
@@ -1231,7 +1124,8 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/5516996234322?text=Ol%C3%A1%20Pedro%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp"
+        data-i18n-aria-label="a11y.whatsapp_contact">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471.148-.67.445-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -1240,8 +1134,10 @@
 
     <!-- Main JavaScript -->
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox__close" id="lightboxClose" aria-label="Fechar Zoom">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true"
+        aria-label="Visualização ampliada do projeto" data-i18n-aria-label="a11y.enlarged_project_image">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Fechar zoom"
+            data-i18n-aria-label="a11y.close_zoom">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -1249,7 +1145,8 @@
             </svg>
         </button>
         <div class="lightbox__content">
-            <img src="" alt="Zoom" class="lightbox__image" id="lightboxImage" width="800" height="600">
+            <img alt="Visualização ampliada do projeto" class="lightbox__image" id="lightboxImage" width="800"
+                height="600">
         </div>
     </div>
 
