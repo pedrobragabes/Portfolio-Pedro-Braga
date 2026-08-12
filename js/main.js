@@ -57,21 +57,21 @@
             }
         },
         comerciobes: {
-            title: 'ComercioBes',
-            tag: 'Vitrine Local',
-            problem: 'Comércios locais tinham baixa visibilidade digital e pouca conversão de descoberta para contato.',
-            solution: 'A proposta priorizou navegação mobile-first, blocos de oferta diretos e estrutura de conteúdo orientada a descoberta local.',
-            result: 'A base ficou pronta para captação de leads com foco regional e evolução gradual para um portal comercial mais robusto.',
+            title: 'Braga Commerce',
+            tag: 'E-commerce',
+            problem: 'Pequenos comércios precisam vender online sem depender de uma operação cara ou de dados críticos enviados pelo navegador.',
+            solution: 'A plataforma reúne catálogo, pedidos, estoque, pagamentos e painel administrativo com validação de preço e permissão no servidor.',
+            result: 'O projeto entrega uma base reproduzível, testada e preparada para deploy incremental em negócios locais.',
             metrics: [
-                { label: 'Foco principal', value: 'Leads locais' },
-                { label: 'Experiência', value: 'Mobile-first' },
-                { label: 'Status', value: 'Em evolução' }
+                { label: 'Frontend', value: 'Next.js' },
+                { label: 'Dados', value: 'PostgreSQL' },
+                { label: 'Qualidade', value: 'CI automatizado' }
             ],
             images: [],
             videos: [],
             links: {
-                live: '',
-                repo: '',
+                live: 'https://braga-commerce.vercel.app',
+                repo: 'https://github.com/pedrobragabes/Braga-Commerce',
                 demo: '',
                 blog: ''
             }
@@ -124,7 +124,7 @@
             ],
             links: {
                 live: 'https://joysticknights.com.br/',
-                repo: '',
+                repo: 'https://github.com/pedrobragabes/JoysticKnights',
                 demo: '',
                 blog: ''
             }
@@ -198,14 +198,14 @@
                 videoTitles: ['Visit the live store']
             },
             comerciobes: {
-                tag: 'Local Discovery',
-                problem: 'Local businesses had low digital visibility and struggled to convert discovery into customer contact.',
-                solution: 'The concept prioritized mobile-first navigation, direct offer blocks and a content structure designed for local discovery.',
-                result: 'The foundation is ready to capture regional leads and evolve gradually into a more robust commercial portal.',
+                tag: 'E-commerce',
+                problem: 'Small businesses need to sell online without an expensive operation or trusting critical data sent by the browser.',
+                solution: 'The platform combines catalog, orders, inventory, payments and an admin panel with server-side price and permission validation.',
+                result: 'The project provides a reproducible, tested foundation prepared for incremental deployment in local businesses.',
                 metrics: [
-                    { label: 'Primary focus', value: 'Local leads' },
-                    { label: 'Experience', value: 'Mobile-first' },
-                    { label: 'Status', value: 'Evolving' }
+                    { label: 'Frontend', value: 'Next.js' },
+                    { label: 'Data', value: 'PostgreSQL' },
+                    { label: 'Quality', value: 'Automated CI' }
                 ]
             },
             'florescer-garden': {

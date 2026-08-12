@@ -37,6 +37,14 @@ npm run build:minify
 npm audit
 ```
 
+Para revisar o resultado localmente sem abrir os arquivos diretamente pelo sistema, sirva a raiz por HTTP:
+
+```bash
+python -m http.server 8000
+```
+
+Depois acesse `http://localhost:8000`.
+
 ## Estrutura
 
 ```text
