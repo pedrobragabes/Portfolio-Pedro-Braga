@@ -26,202 +26,297 @@
     const projectCards = document.querySelectorAll('.project-card');
 
     const caseStudies = {
-        'aquaflora-agroshop': {
-            title: 'AquaFlora AgroShop',
-            tag: 'E-commerce',
-            problem: 'A operação tinha gargalos de estoque e atendimento em momentos de pico. O time precisava reduzir fricção na jornada de compra sem perder controle de catálogo.',
-            solution: 'O trabalho reúne WooCommerce, sincronização de estoque e ferramentas internas. O Commerce Agent está em desenvolvimento; automação de atendimento não é apresentada como produção validada.',
-            result: 'O case documenta a engenharia aplicada à operação. Resultados quantitativos e estado de cada componente serão publicados com evidências verificáveis.',
-            metrics: [
-                { label: 'Commerce Agent', value: 'Em desenvolvimento' },
-                { label: 'Catálogo', value: 'Integrado' },
-                { label: 'E-commerce', value: 'Em produção' }
-            ],
-            images: [
-                'assets/AquaFlora/AquaFlora Home.webp',
-                'assets/AquaFlora/AquaFlora Loja.webp',
-                'assets/AquaFlora/Estoque AquaFlora.webp'
-            ],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Visitar a loja em produção',
-                    url: 'https://aquafloragroshop.com.br/'
-                }
-            ],
-            links: {
-                live: 'https://aquafloragroshop.com.br/',
-                repo: '',
-                demo: '',
-                blog: ''
+    "aquaflora-agroshop": {
+        "title": "AquaFlora AgroShop",
+        "tag": "Experiência profissional",
+        "problem": "Preço e estoque precisam acompanhar o ERP sem sobrescrever descrições, imagens e categorias da loja. A consulta interna de produtos tem requisitos próprios de acesso e implantação.",
+        "solution": "Na AquaFlora, trabalho na loja WooCommerce e na integração Stock Sync LITE: Python lê o CSV do ERP Athos e atualiza estoque e preço dos SKUs existentes. AquaApps e API Fastify têm base validada localmente, com consulta por nome, SKU e EAN; a implantação ainda é uma etapa separada. Commerce Agent permanece em desenvolvimento.",
+        "result": "A atualização operacional fica separada da edição do catálogo. A loja pública está disponível; os aplicativos internos não são apresentados como produção. A captura abaixo foi feita no site público em setembro de 2026.",
+        "metrics": [
+            {
+                "label": "Loja WooCommerce",
+                "value": "Em operação"
+            },
+            {
+                "label": "AquaApps / API",
+                "value": "Validado localmente"
+            },
+            {
+                "label": "Commerce Agent",
+                "value": "Em desenvolvimento"
             }
-        },
-        comerciobes: {
-            title: 'ComercioBes',
-            tag: 'Vitrine Local',
-            problem: 'Comércios locais tinham baixa visibilidade digital e pouca conversão de descoberta para contato.',
-            solution: 'A proposta priorizou navegação mobile-first, blocos de oferta diretos e estrutura de conteúdo orientada a descoberta local.',
-            result: 'A base ficou pronta para captação de leads com foco regional e evolução gradual para um portal comercial mais robusto.',
-            metrics: [
-                { label: 'Foco principal', value: 'Leads locais' },
-                { label: 'Experiência', value: 'Mobile-first' },
-                { label: 'Status', value: 'Em evolução' }
-            ],
-            images: [],
-            videos: [],
-            links: {
-                live: '',
-                repo: '',
-                demo: '',
-                blog: ''
+        ],
+        "images": [
+            "assets/AquaFlora/aquaflora-live.webp"
+        ],
+        "videos": [
+            {
+                "type": "external",
+                "title": "Visitar a loja em produção",
+                "url": "https://aquafloragroshop.com.br/"
             }
-        },
-        joysticknights: {
-            title: 'JoysticKnights',
-            tag: 'Portal de Notícias',
-            problem: 'O portal precisava melhorar velocidade e estrutura técnica para competir em SEO sem sacrificar a experiência de leitura.',
-            solution: 'A stack foi otimizada com foco em carregamento, organização de conteúdo e ajustes técnicos para indexação mais eficiente.',
-            result: 'O projeto ganhou mais consistência de performance e uma base melhor para crescimento orgânico de audiência.',
-            metrics: [
-                { label: 'Carregamento', value: 'Otimizado' },
-                { label: 'SEO técnico', value: 'Otimizado' },
-                { label: 'Plataforma', value: 'WordPress' }
-            ],
-            images: [
-                'assets/JoysticKnights/fachada.webp',
-                'assets/JoysticKnights/1.webp'
-            ],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Portal online',
-                    url: 'https://joysticknights.com.br/'
-                }
-            ],
-            links: {
-                live: 'https://joysticknights.com.br/',
-                repo: '',
-                demo: '',
-                blog: ''
-            }
-        },
-        'home-lab-hardware': {
-            title: 'Home Lab & Hardware',
-            tag: 'Infraestrutura',
-            problem: 'Manter vários serviços pessoais e de produto com estabilidade exige arquitetura previsível, observabilidade e boas rotinas operacionais.',
-            solution: 'Foi consolidado um ambiente Proxmox com containers e serviços de apoio para automação, testes e operação diária.',
-            result: 'A infraestrutura hoje acelera a validação de ideias e reduz a dependência de serviços externos para tarefas críticas.',
-            metrics: [
-                { label: 'Ambiente', value: 'Proxmox' },
-                { label: 'Foco', value: 'Infra produtiva' },
-                { label: 'Benefício', value: 'Autonomia técnica' }
-            ],
-            images: [],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Guia prático completo',
-                    url: '/blog/homelab-proxmox-guia-pratico/'
-                }
-            ],
-            links: {
-                live: '/blog/homelab-proxmox-guia-pratico/',
-                repo: '',
-                demo: '',
-                blog: '/blog/homelab-proxmox-guia-pratico/'
-            }
-        },
-        'kingdom-of-aen': {
-            title: 'Kingdom of Aen',
-            tag: 'Game Development',
-            problem: 'Era preciso construir uma base de lógica de jogo consistente para turnos, regras e progressão sem depender de frameworks.',
-            solution: 'A engine foi implementada em JavaScript puro com separação de responsabilidades e persistência de estado local.',
-            result: 'Projeto técnico de referência para o portfólio, demonstrando arquitetura de regras e domínio de lógica front-end.',
-            metrics: [
-                { label: 'Lógica', value: 'JavaScript puro' },
-                { label: 'Stack', value: 'JS/HTML/CSS' },
-                { label: 'Estado', value: 'Persistente' }
-            ],
-            images: [],
-            videos: [
-                {
-                    type: 'external',
-                    title: 'Repositório do projeto',
-                    url: 'https://github.com/pedrobragabes/Kingdom-of-Aen'
-                }
-            ],
-            links: {
-                live: '',
-                repo: 'https://github.com/pedrobragabes/Kingdom-of-Aen',
-                demo: '',
-                blog: ''
-            }
+        ],
+        "links": {
+            "live": "https://aquafloragroshop.com.br/",
+            "repo": "https://github.com/pedrobragabes/aquaflora-stock-sync",
+            "demo": "",
+            "blog": ""
         }
-    };
+    },
+    "comerciobes": {
+        "title": "Comércio BES",
+        "tag": "Produto próprio · guia local",
+        "problem": "Reunir estabelecimentos de Boa Esperança do Sul em uma experiência de busca e contato acessível pelo celular.",
+        "solution": "PWA em JavaScript com busca por categoria, perfis, horários, fotos e contato. A API usa Node.js, Express, PostgreSQL e Prisma para dados e moderação.",
+        "result": "Produto em evolução. É um guia comercial local; o BragaCommerce é outro projeto, voltado a catálogo transacional, carrinho e checkout.",
+        "metrics": [
+            {
+                "label": "Foco principal",
+                "value": "Leads locais"
+            },
+            {
+                "label": "Experiência",
+                "value": "Mobile-first"
+            },
+            {
+                "label": "Status",
+                "value": "Em evolução"
+            }
+        ],
+        "images": [],
+        "videos": [],
+        "links": {
+            "live": "",
+            "repo": "https://github.com/pedrobragabes/Comercio_BES",
+            "demo": "",
+            "blog": ""
+        }
+    },
+    "joysticknights": {
+        "title": "JoysticKnights",
+        "tag": "Produto próprio · editorial",
+        "problem": "Evoluir a experiência de leitura e a organização do portal preservando o conteúdo e o fluxo editorial do WordPress.",
+        "solution": "O frontend atual usa Next.js, React, TypeScript e Tailwind CSS. O WordPress funciona como CMS desacoplado. O portal reúne notícias, análises e navegação por categorias de games e cultura geek.",
+        "result": "Site público mantido com conteúdo real e responsabilidades separadas entre frontend e CMS. Stack confirmada pelo repositório e interface pública em setembro de 2026.",
+        "metrics": [
+            {
+                "label": "Frontend",
+                "value": "Next.js"
+            },
+            {
+                "label": "CMS",
+                "value": "WordPress headless"
+            },
+            {
+                "label": "Status",
+                "value": "Em operação"
+            }
+        ],
+        "images": [
+            "assets/JoysticKnights/joysticknights-live.webp"
+        ],
+        "videos": [
+            {
+                "type": "external",
+                "title": "Portal online",
+                "url": "https://joysticknights.com.br/"
+            }
+        ],
+        "links": {
+            "live": "https://joysticknights.com.br/",
+            "repo": "https://github.com/pedrobragabes/JoysticKnights",
+            "demo": "",
+            "blog": ""
+        }
+    },
+    "home-lab-hardware": {
+        "title": "Home Lab & Hardware",
+        "tag": "Infraestrutura",
+        "problem": "Manter vários serviços pessoais e de produto com estabilidade exige arquitetura previsível, observabilidade e boas rotinas operacionais.",
+        "solution": "Foi consolidado um ambiente Proxmox com containers e serviços de apoio para automação, testes e operação diária.",
+        "result": "A infraestrutura hoje acelera a validação de ideias e reduz a dependência de serviços externos para tarefas críticas.",
+        "metrics": [
+            {
+                "label": "Ambiente",
+                "value": "Proxmox"
+            },
+            {
+                "label": "Foco",
+                "value": "Infra produtiva"
+            },
+            {
+                "label": "Benefício",
+                "value": "Autonomia técnica"
+            }
+        ],
+        "images": [],
+        "videos": [
+            {
+                "type": "external",
+                "title": "Guia prático completo",
+                "url": "/blog/homelab-proxmox-guia-pratico/"
+            }
+        ],
+        "links": {
+            "live": "/blog/homelab-proxmox-guia-pratico/",
+            "repo": "",
+            "demo": "",
+            "blog": "/blog/homelab-proxmox-guia-pratico/"
+        }
+    },
+    "kingdom-of-aen": {
+        "title": "Kingdom of Aen",
+        "tag": "Game Development",
+        "problem": "Era preciso construir uma base de lógica de jogo consistente para turnos, regras e progressão sem depender de frameworks.",
+        "solution": "A engine foi implementada em JavaScript puro com separação de responsabilidades e persistência de estado local.",
+        "result": "Projeto técnico de referência para o portfólio, demonstrando arquitetura de regras e domínio de lógica front-end.",
+        "metrics": [
+            {
+                "label": "Lógica",
+                "value": "JavaScript puro"
+            },
+            {
+                "label": "Stack",
+                "value": "JS/HTML/CSS"
+            },
+            {
+                "label": "Estado",
+                "value": "Persistente"
+            }
+        ],
+        "images": [],
+        "videos": [
+            {
+                "type": "external",
+                "title": "Repositório do projeto",
+                "url": "https://github.com/pedrobragabes/Kingdom-of-Aen"
+            }
+        ],
+        "links": {
+            "live": "",
+            "repo": "https://github.com/pedrobragabes/Kingdom-of-Aen",
+            "demo": "",
+            "blog": ""
+        }
+    }
+};
 
     const caseStudyTranslations = {
-        en: {
-            'aquaflora-agroshop': {
-                tag: 'E-commerce',
-                problem: 'The operation had inventory and customer-service bottlenecks during peak periods. The team needed to reduce friction in the purchase journey without losing catalog control.',
-                solution: 'The work covers WooCommerce, inventory synchronization and internal tools. Commerce Agent is in development; customer-service automation is not presented as verified production.',
-                result: 'This case documents engineering for real operations. Quantitative outcomes and the maturity of each component will be published with verifiable evidence.',
-                metrics: [
-                    { label: 'Commerce Agent', value: 'In development' },
-                    { label: 'Catalog', value: 'Integrated' },
-                    { label: 'E-commerce', value: 'In production' }
-                ],
-                videoTitles: ['Visit the live store']
-            },
-            comerciobes: {
-                tag: 'Local Discovery',
-                problem: 'Local businesses had low digital visibility and struggled to convert discovery into customer contact.',
-                solution: 'The concept prioritized mobile-first navigation, direct offer blocks and a content structure designed for local discovery.',
-                result: 'The foundation is ready to capture regional leads and evolve gradually into a more robust commercial portal.',
-                metrics: [
-                    { label: 'Primary focus', value: 'Local leads' },
-                    { label: 'Experience', value: 'Mobile-first' },
-                    { label: 'Status', value: 'Evolving' }
-                ]
-            },
-            joysticknights: {
-                tag: 'News Portal',
-                problem: 'The portal needed better speed and technical structure to compete in search without sacrificing the reading experience.',
-                solution: 'The stack was optimized for loading speed, content organization and more efficient technical indexing.',
-                result: 'The project gained more consistent performance and a stronger foundation for organic audience growth.',
-                metrics: [
-                    { label: 'Loading', value: 'Optimized' },
-                    { label: 'Technical SEO', value: 'Optimized' },
-                    { label: 'Platform', value: 'WordPress' }
-                ],
-                videoTitles: ['Visit the live portal']
-            },
-            'home-lab-hardware': {
-                tag: 'Infrastructure',
-                problem: 'Running multiple personal and product services reliably requires predictable architecture, observability and sound operating routines.',
-                solution: 'A Proxmox environment was consolidated with containers and supporting services for automation, testing and daily operations.',
-                result: 'The infrastructure accelerates idea validation and reduces dependence on external services for critical tasks.',
-                metrics: [
-                    { label: 'Environment', value: 'Proxmox' },
-                    { label: 'Focus', value: 'Production infrastructure' },
-                    { label: 'Benefit', value: 'Technical autonomy' }
-                ],
-                videoTitles: ['Read the complete practical guide']
-            },
-            'kingdom-of-aen': {
-                tag: 'Game Development',
-                problem: 'The project needed a consistent game-logic foundation for turns, rules and progression without relying on frameworks.',
-                solution: 'The engine was implemented in vanilla JavaScript with separated responsibilities and local state persistence.',
-                result: 'A technical portfolio reference that demonstrates rules architecture and front-end logic design.',
-                metrics: [
-                    { label: 'Logic', value: 'Vanilla JavaScript' },
-                    { label: 'Stack', value: 'JS/HTML/CSS' },
-                    { label: 'State', value: 'Persistent' }
-                ],
-                videoTitles: ['Open the project repository']
-            }
+    "en": {
+        "aquaflora-agroshop": {
+            "tag": "Professional experience",
+            "problem": "Inventory and prices need to follow the ERP without overwriting store descriptions, images or categories. Internal product queries have separate access and deployment requirements.",
+            "solution": "My work covers the WooCommerce store and Stock Sync LITE: Python reads Athos ERP CSV exports and updates inventory and prices for existing SKUs. AquaApps and the Fastify API have a locally validated base; deployment is a separate step. Commerce Agent remains in development.",
+            "result": "Operational updates are separated from catalog editing. The public store is available; the internal apps are not presented as production. The screenshot was captured from the public website in September 2026.",
+            "metrics": [
+                {
+                    "label": "WooCommerce store",
+                    "value": "Live"
+                },
+                {
+                    "label": "AquaApps / API",
+                    "value": "Locally validated"
+                },
+                {
+                    "label": "Commerce Agent",
+                    "value": "In development"
+                }
+            ],
+            "videoTitles": [
+                "Visit the live store"
+            ]
+        },
+        "comerciobes": {
+            "tag": "Independent product · local directory",
+            "problem": "Bring businesses in Boa Esperança do Sul into a mobile-friendly discovery and contact experience.",
+            "solution": "JavaScript PWA with category search, business profiles, hours, photos and contact. The API uses Node.js, Express, PostgreSQL and Prisma.",
+            "result": "An evolving local business directory. BragaCommerce is a separate project for transactional catalog, cart and checkout.",
+            "metrics": [
+                {
+                    "label": "Primary focus",
+                    "value": "Local leads"
+                },
+                {
+                    "label": "Experience",
+                    "value": "Mobile-first"
+                },
+                {
+                    "label": "Status",
+                    "value": "Evolving"
+                }
+            ]
+        },
+        "joysticknights": {
+            "tag": "Independent product · editorial",
+            "problem": "Improve the reading experience while preserving WordPress content and editorial workflows.",
+            "solution": "The current frontend uses Next.js, React, TypeScript and Tailwind CSS. WordPress is the decoupled CMS. The portal covers games and culture through news, reviews and categories.",
+            "result": "A maintained public site with real content and separate frontend and CMS responsibilities. Stack verified from the repository and public interface in September 2026.",
+            "metrics": [
+                {
+                    "label": "Frontend",
+                    "value": "Next.js"
+                },
+                {
+                    "label": "CMS",
+                    "value": "Headless WordPress"
+                },
+                {
+                    "label": "Status",
+                    "value": "Live"
+                }
+            ],
+            "videoTitles": [
+                "Visit the live portal"
+            ]
+        },
+        "home-lab-hardware": {
+            "tag": "Infrastructure",
+            "problem": "Running multiple personal and product services reliably requires predictable architecture, observability and sound operating routines.",
+            "solution": "A Proxmox environment was consolidated with containers and supporting services for automation, testing and daily operations.",
+            "result": "The infrastructure accelerates idea validation and reduces dependence on external services for critical tasks.",
+            "metrics": [
+                {
+                    "label": "Environment",
+                    "value": "Proxmox"
+                },
+                {
+                    "label": "Focus",
+                    "value": "Production infrastructure"
+                },
+                {
+                    "label": "Benefit",
+                    "value": "Technical autonomy"
+                }
+            ],
+            "videoTitles": [
+                "Read the complete practical guide"
+            ]
+        },
+        "kingdom-of-aen": {
+            "tag": "Game Development",
+            "problem": "The project needed a consistent game-logic foundation for turns, rules and progression without relying on frameworks.",
+            "solution": "The engine was implemented in vanilla JavaScript with separated responsibilities and local state persistence.",
+            "result": "A technical portfolio reference that demonstrates rules architecture and front-end logic design.",
+            "metrics": [
+                {
+                    "label": "Logic",
+                    "value": "Vanilla JavaScript"
+                },
+                {
+                    "label": "Stack",
+                    "value": "JS/HTML/CSS"
+                },
+                {
+                    "label": "State",
+                    "value": "Persistent"
+                }
+            ],
+            "videoTitles": [
+                "Open the project repository"
+            ]
         }
-    };
+    }
+};
 
     const modalUiTranslations = {
         pt: {

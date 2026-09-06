@@ -3137,3 +3137,17 @@ textarea:focus-visible {
 .hero__social-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.25rem; font-size: 1rem; }
 .hero__social-links a { text-decoration: underline; text-underline-offset: .25em; }
 .services { padding-block: 3rem; }
+
+/* Curadoria: experiência principal e projetos complementares. */
+.projects__grid--selected { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.projects__grid--selected .project-card__preview { aspect-ratio: 1265 / 712; height: auto; }
+.projects__grid--selected .project-card__image { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.projects__secondary-heading { margin: 64px 0 24px; padding-top: 28px; border-top: 1px solid var(--border-color, #8885); }
+.projects__secondary-heading h3 { font-size: 24px; margin-bottom: 8px; }
+.projects__secondary-heading p { opacity: .75; }
+.projects__grid--secondary { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.project-card--compact .project-card__content { height: 100%; display:flex; flex-direction:column; }
+.project-card--compact .project-card__links { margin-top:auto; flex-wrap:wrap; }
+.project-card--compact .project-card__cta { position:static; transform:none; opacity:1; font:inherit; font-size:14px; border:1px solid currentColor; background:transparent; color:inherit; border-radius:6px; padding:8px 12px; cursor:pointer; }
+@media(max-width:900px){.projects__grid--secondary {grid-template-columns:1fr;} }
+@media(max-width:640px){.projects__grid--selected {grid-template-columns:1fr;} }

@@ -152,6 +152,8 @@
         translateElements('#projects .section-title', t.projects.title);
         translateElements('#projects .projects__subtitle', t.projects.subtitle);
         translateElements('.project-card__cta', t.projects.view_case);
+        translateElements('.projects__secondary-heading h3', t.projects.secondary_title);
+        translateElements('.projects__secondary-heading p', t.projects.secondary_description);
         translateElements('.project-card__btn--primary', t.projects.btn_site, { keepIcon: true });
         translateElements('.project-card__btn--secondary', t.projects.btn_code, { keepIcon: true });
         const projectTranslationKeys = {
