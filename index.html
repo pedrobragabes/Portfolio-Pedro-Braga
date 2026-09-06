@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -83,7 +83,7 @@
             <nav class="nav" role="navigation" aria-label="Menu principal" data-i18n-aria-label="a11y.main_menu">
                 <ul class="nav__list">
                     <li><a href="#about" class="nav__link">Sobre</a></li>
-                    <li><a href="#servicos" class="nav__link">Soluções</a></li>
+                    <li><a href="#servicos" class="nav__link">Atuação</a></li>
                     <li><a href="#skills" class="nav__link">Competências</a></li>
                     <li><a href="#projects" class="nav__link">Projetos</a></li>
                     <li><a href="#education" class="nav__link">Formação</a></li>
@@ -139,13 +139,11 @@
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero__content">
+                    <p class="section-label">Pedro Braga</p>
                     <h1 class="hero__title">
                         Software Engineer
                     </h1>
-                    <p class="hero__subtitle">
-                        Desenvolvedor Full Stack com foco em Backend e Infraestrutura. Experiência em automações Python,
-                        APIs Node.js e arquitetura de e-commerce.
-                    </p>
+                    <p class="hero__subtitle">Backend · Automação · Sistemas de e-commerce · Infraestrutura. Desenvolvo produtos, integrações e sistemas internos que conectam software a operações reais.</p>
                     <div class="hero__cta-group">
                         <a href="#projects" class="hero__cta">
                             Ver Projetos
@@ -166,6 +164,10 @@
                             </svg>
                         </a>
                     </div>
+                    <div class="hero__social-links">
+                        <a href="https://github.com/pedrobragabes" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/pedrobragabes/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    </div>
                 </div>
                 <div class="hero__photo">
                     <div class="hero__photo-wrapper animate-fade-in-up">
@@ -182,92 +184,24 @@
             <div class="container reveal">
                 <span class="section-label">Sobre</span>
                 <h2 class="section-title">Quem sou eu</h2>
-                <p class="about__text">
-                    Cresci dentro de uma loja de computadores. Meu pai, <strong>sargento da PM e técnico
-                        autodidata</strong>, abriu seu próprio negócio de TI no final dos anos 90 - consertando
-                    hardware, instalando software e resolvendo problemas. Foi ali, entre placas-mãe e gabinetes
-                    abertos, que aprendi que <strong>tecnologia é sobre fazer funcionar</strong>.
-                </p>
-                <p class="about__text">
-                    O que começou como hobby virou profissão. Hoje gerencio um <strong>servidor pessoal
-                        com Proxmox</strong> rodando diversos serviços em produção - de apps mobile de estoque com
-                    scanner
-                    até <strong>automações</strong> que economizam horas de trabalho manual.
-                </p>
-                <p class="about__text">
-                    Como cofundador digital da <strong>AquaFlora AgroShop</strong>, lidero a transformação digital
-                    da empresa: e-commerce, chatbots automatizados, apps de gestão. Estudante de
-                    <strong>Engenharia de Computação pela UNIVESP</strong>, busco a mesma coisa que meu pai buscava:
-                    <strong>resolver problemas reais com tecnologia</strong>.
-                </p>
+                <p class="about__text">Cresci dentro de uma loja de computadores. Entre hardware, software e problemas do dia a dia, aprendi a construir tecnologia que funciona para quem precisa dela.</p>
+                <p class="about__text">Hoje trabalho com backend, APIs, automação e infraestrutura. Meu HomeLab com Proxmox é um espaço para estudar, testar e operar serviços próprios.</p>
+                <p class="about__text">Sou Software Engineer na AquaFlora AgroShop, com atuação em e-commerce, integrações e ferramentas internas. Curso Engenharia de Computação na UNIVESP.</p>
                 <span class="about__signature">— Pedro Braga</span>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Areas of work -->
         <section class="services" id="servicos">
             <div class="container">
-                <div class="reveal">
-                    <span class="section-label">Soluções</span>
-                    <h2 class="section-title">Consultoria &amp; Tech</h2>
-                </div>
-
-                <div class="services__grid reveal reveal-delay-1">
-                    <!-- Service 1 -->
-                    <article class="service-card">
-                        <div class="service-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="service-card__title">Logística & Estoque Inteligente</h3>
-                        <p class="service-card__description">Sistemas customizados com leitura de código de barras e
-                            controle em tempo real. Elimine rupturas e perdas com gestão precisa.</p>
-                    </article>
-
-                    <!-- Service 2 -->
-                    <article class="service-card">
-                        <div class="service-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path
-                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="service-card__title">Bots & Automação (RPA)</h3>
-                        <p class="service-card__description">Robôs que trabalham por você 24/7. Chatbots para WhatsApp,
-                            automação de emissão de notas e integração entre sistemas legados.</p>
-                    </article>
-
-                    <!-- Service 3 -->
-                    <article class="service-card">
-                        <div class="service-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <h3 class="service-card__title">E-commerce High-Performance</h3>
-                        <p class="service-card__description">Lojas virtuais otimizadas para performance máxima (Core Web
-                            Vitals). SEO técnico e UX focado em taxa de conversão.</p>
-                    </article>
-                </div>
-
-                <div class="services__cta-wrapper reveal reveal-delay-2">
-                    <a href="#contact" class="btn btn--primary">Solicitar Consultoria Digital</a>
+                <div class="reveal"><span class="section-label">Atuação</span><h2 class="section-title">Áreas em que trabalho</h2></div>
+                <div class="services__grid reveal">
+                    <article class="service-card"><h3 class="service-card__title">Backend &amp; APIs</h3><p class="service-card__description">Integrações entre sistemas, contratos de dados e ferramentas para operações reais.</p></article>
+                    <article class="service-card"><h3 class="service-card__title">Automação &amp; IA aplicada</h3><p class="service-card__description">Rotinas de catálogo, processamento de dados e automação com revisão humana.</p></article>
+                    <article class="service-card"><h3 class="service-card__title">E-commerce &amp; Infraestrutura</h3><p class="service-card__description">WooCommerce, SEO técnico, Docker, Linux e operação de serviços web.</p></article>
                 </div>
             </div>
         </section>
-
-
 
         <!-- Skills Section -->
         <section class="skills" id="skills">
@@ -429,10 +363,7 @@
                         <div class="project-card__content">
                             <span class="project-card__tag">E-commerce</span>
                             <h3 class="project-card__title">AquaFlora AgroShop</h3>
-                            <p class="project-card__description">
-                                Gestão manual causava perdas em produtos perecíveis. Desenvolvi ecossistema
-                                Python + Web com automação de chatbot e integração de rotinas operacionais.
-                            </p>
+                            <p class="project-card__description">E-commerce WooCommerce, integração de estoque e ferramentas internas. Commerce Agent em desenvolvimento.</p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">WooCommerce</span>
@@ -512,54 +443,6 @@
                         </div>
                     </article>
 
-                    <!-- Florescer Garden -->
-                    <article class="project-card reveal reveal-delay-3" data-project="florescer-garden">
-                        <div class="project-card__preview">
-                            <img src="assets/FlorescerGarden/fachada.png" alt="Preview do projeto Florescer Garden"
-                                class="project-card__image" loading="lazy">
-                            <div class="project-card__overlay">
-                                <button type="button" class="project-card__cta">Ver Case Study →</button>
-                            </div>
-                        </div>
-                        <div class="project-card__content">
-                            <span class="project-card__tag">E-commerce agrícola</span>
-                            <h3 class="project-card__title">Florescer Garden</h3>
-                            <p class="project-card__description">
-                                Estrutura de loja digital com foco em descoberta de produtos, confiança e jornada de
-                                compra orientada à conversão.
-                            </p>
-                            <div class="project-card__tech">
-                                <span class="tech-badge">UX Conversão</span>
-                                <span class="tech-badge">Catálogo</span>
-                                <span class="tech-badge">SEO</span>
-                            </div>
-                            <div class="project-card__links">
-                                <a class="project-card__btn project-card__btn--primary is-disabled"
-                                    data-project-link="live" aria-disabled="true" tabindex="-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                                        <path
-                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                        </path>
-                                    </svg>
-                                    Ver Site
-                                </a>
-                                <a class="project-card__btn project-card__btn--secondary is-disabled"
-                                    data-project-link="repo" aria-disabled="true" tabindex="-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path
-                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                        </path>
-                                    </svg>
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
                     <!-- JoysticKnights -->
                     <article class="project-card reveal reveal-delay-4" data-project="joysticknights">
                         <div class="project-card__preview">
@@ -572,9 +455,7 @@
                         <div class="project-card__content">
                             <span class="project-card__tag">Portal de Notícias</span>
                             <h3 class="project-card__title">JoysticKnights</h3>
-                            <p class="project-card__description">
-                                WordPress otimizado para SEO, leitura e carregamento com lazy loading e cache.
-                            </p>
+                            <p class="project-card__description">Plataforma editorial própria com conteúdo real, CMS e SEO. Evolução para Next.js e WordPress headless acompanhada como trabalho em desenvolvimento.</p>
                             <div class="project-card__tech">
                                 <span class="tech-badge">WordPress</span>
                                 <span class="tech-badge">PHP</span>
@@ -730,7 +611,7 @@
                             </div>
                         </div>
                         <div class="education__content">
-                            <h3 data-i18n="education.degree_title">Engenharia de Computação</h3>
+                            <h3 data-i18n="education.degree_title">Bacharelado em Engenharia de Computação</h3>
                             <p class="education__university" data-i18n="education.degree_university">UNIVESP -
                                 Universidade Virtual do Estado de São Paulo</p>
                             <span class="education__badge" data-i18n="education.degree_status">Em andamento</span>
@@ -742,38 +623,10 @@
                                         <circle cx="12" cy="12" r="10"></circle>
                                         <polyline points="12 6 12 12 16 14"></polyline>
                                     </svg>
-                                    <span data-i18n="education.degree_expected">Previsão: 2030</span>
+                                    <span data-i18n="education.degree_expected">2025–2030 · conclusão prevista</span>
                                 </div>
-                                <div class="education__detail-item education__detail-semester">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                                    </svg>
-                                    <span data-i18n="education.degree_semester">2º Semestre</span>
-                                </div>
-                            </div>
 
-                            <!-- Progress Bar (dynamically updated) -->
-                            <div class="education__progress-wrapper">
-                                <div class="education__progress">
-                                    <div class="education__progress-bar" data-width="20"></div>
-                                </div>
-                                <span class="education__progress-label" data-i18n="education.progress_label">20%
-                                    concluído</span>
                             </div>
-
-                            <div class="education__focus">
-                                <span class="education__focus-title" data-i18n="education.degree_focus">Disciplinas
-                                    Atuais:</span>
-                                <div class="education__tags">
-                                    <!-- Populated dynamically from content.json -->
-                                    <span class="education__tag">Algoritmos II</span>
-                                    <span class="education__tag">Cálculo I</span>
-                                    <span class="education__tag">Fundamentos Web</span>
-                                </div>
-                            </div>
-
                         </div>
                     </article>
 
@@ -1063,8 +916,8 @@
         <div class="modal__content" tabindex="-1">
             <div class="modal__header">
                 <div>
-                    <span class="project-card__tag" id="modalTag">Categoria</span>
-                    <h2 class="section-title" id="modalTitle">Título do Projeto</h2>
+                    <span class="project-card__tag" id="modalTag"></span>
+                    <h2 class="section-title" id="modalTitle"></h2>
                 </div>
                 <button class="modal__close" id="modalClose" aria-label="Fechar"
                     data-i18n-aria-label="project_modal.close">
@@ -1078,23 +931,17 @@
 
             <div class="modal__section">
                 <h3 class="modal__section-title" data-i18n="project_modal.context">Contexto</h3>
-                <p class="modal__text" id="modalProblem">
-                    Descrição do problema que precisava ser resolvido.
-                </p>
+                <p class="modal__text" id="modalProblem"></p>
             </div>
 
             <div class="modal__section">
                 <h3 class="modal__section-title" data-i18n="project_modal.implementation">Implementação</h3>
-                <p class="modal__text" id="modalSolution">
-                    Como o problema foi resolvido tecnicamente.
-                </p>
+                <p class="modal__text" id="modalSolution"></p>
             </div>
 
             <div class="modal__section">
                 <h3 class="modal__section-title" data-i18n="project_modal.impact">Impacto</h3>
-                <p class="modal__text" id="modalResult">
-                    Métricas e impacto do projeto.
-                </p>
+                <p class="modal__text" id="modalResult"></p>
             </div>
 
             <div class="modal__section">
@@ -1115,8 +962,6 @@
             <div class="modal__section">
                 <h3 class="modal__section-title" data-i18n="project_modal.gallery">Galeria</h3>
                 <div class="modal__images" id="modalImages">
-                    <div class="modal__image-placeholder">Screenshot 1</div>
-                    <div class="modal__image-placeholder">Screenshot 2</div>
                 </div>
             </div>
         </div>

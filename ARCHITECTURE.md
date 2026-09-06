@@ -26,7 +26,9 @@ HTML do blog + RSS + sitemap + assets minificados
           ↓
 smoke tests
           ↓
-deploy FTP
+pacote público dist/ + deployment.json
+          ↓
+deploy FTP + verificação do conteúdo remoto
 ```
 
 ## Decisões

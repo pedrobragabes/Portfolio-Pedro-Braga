@@ -55,9 +55,6 @@
                 populateContact(data.contact);
             }
 
-            if (data.education) {
-                populateEducation(data.education);
-            }
 
             document.dispatchEvent(new CustomEvent('portfolio:content-loaded'));
 
@@ -240,46 +237,6 @@
             subtitleEl.textContent = sanitizeText(contact.sectionSubtitle);
         }
     }
-
-    /**
-     * Populates education/degree section from JSON data using safe DOM methods
-     * @param {Object} education - Education configuration object
-     */
-    function populateEducation(education) {
-        const { currentSemester, totalSemesters, expectedYear, subjects } = education;
-
-        const progressPercent = Math.round((currentSemester / totalSemesters) * 100);
-
-        const progressBar = document.querySelector('.education__progress-bar');
-        if (progressBar) {
-            progressBar.style.width = `${progressPercent}%`;
-        }
-
-        const progressLabel = document.querySelector('.education__progress-label');
-        if (progressLabel) {
-            progressLabel.setAttribute('data-progress', progressPercent);
-        }
-
-        const semesterEl = document.querySelector('.education__detail-item:nth-child(2) span');
-        if (semesterEl) {
-            semesterEl.setAttribute('data-semester', currentSemester);
-        }
-
-        // Update subjects tags - safe DOM creation
-        const tagsContainer = document.querySelector('.education__tags');
-        if (tagsContainer && subjects && subjects.length > 0) {
-            while (tagsContainer.firstChild) {
-                tagsContainer.removeChild(tagsContainer.firstChild);
-            }
-            subjects.forEach(subject => {
-                const span = document.createElement('span');
-                span.className = 'education__tag';
-                span.textContent = sanitizeText(subject);
-                tagsContainer.appendChild(span);
-            });
-        }
-    }
-
 
     // Initialize on DOM ready
     if (document.readyState === 'loading') {

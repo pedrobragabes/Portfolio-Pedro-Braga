@@ -1,48 +1,34 @@
-# Deploy
+# Deploy na Hostinger
 
-## Produção
+Produção: https://pedrobragabes.com. Repositório: [Portfolio-Pedro-Braga](https://github.com/pedrobragabes/Portfolio-Pedro-Braga).
 
-- URL: `https://pedrobragabes.com`
-- Hospedagem: Hostinger
-- Origem: branch `main`
-- Pipeline: `.github/workflows/deploy-hostinger.yml`
+## O que é automático
 
-## Secrets necessários
+Push na `main` dispara `.github/workflows/deploy-hostinger.yml`. Push em branch de trabalho não publica. Abrir uma PR executa o workflow Quality; integrar a PR na main publica. Edições no PC só chegam à hospedagem depois de commit e push. O workflow manual também exige main.
 
-- `FTP_SERVER`
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
+## Pipeline
 
-## Processo automático
+1. Node.js 22, npm ci e build (blog, minificação e smoke tests).
+2. npm run package:deploy recria somente dist/ com uma lista explícita de arquivos públicos.
+3. Publicação FTP de dist/ em /public_html/ com FTP_SERVER, FTP_USERNAME e FTP_PASSWORD.
+4. npm run verify:deploy consulta deployment.json e compara o SHA do commit e hashes de HTML, CSS, JS e dados com o build.
 
-1. Checkout do commit em `main`.
-2. Node.js 20 e `npm ci`.
-3. `npm run build`, incluindo smoke tests.
-4. Upload para `/public_html/` por FTP.
+Docs, scripts, tests, dependências, arquivos locais históricos e credenciais não entram no pacote. A pasta dist/ não é versionada. A ação FTP mantém o protocolo existente; alteração para FTPS/SFTP exige verificar suporte no provedor.
 
-Arquivos de desenvolvimento, documentação, fontes Markdown e dependências não são enviados.
+A publicação não é atômica: uma falha durante o upload pode deixar arquivos de versões diferentes. A verificação final detecta divergência nos arquivos principais e falha o workflow. O lock de concorrência serializa deploys sem interromper um upload ativo.
 
-## Verificação pós-deploy
+## Operação
 
-```bash
-curl -I https://pedrobragabes.com/
-curl -I https://pedrobragabes.com/404.html
-curl -I https://pedrobragabes.com/archive/
-curl -I https://pedrobragabes.com/css/style.min.css
-```
-
-Esperado: home `200`, 404 renderizável, archive `403` ou `404`, headers de segurança presentes e CSS/JS com cache curto.
-
-Também validar:
-
-- página principal e blog em desktop/mobile;
-- tema e tradução;
-- abertura/fechamento dos cases por teclado;
-- formulário sem efetuar envio de teste não autorizado;
-- sitemap e RSS.
+- Conferir [Actions](https://github.com/pedrobragabes/Portfolio-Pedro-Braga/actions/workflows/deploy-hostinger.yml) no commit desejado.
+- Não tratar falha do Dependabot como falha de hospedagem.
+- Em falha de verificação, conferir cache/CDN e repetir o workflow na main; não registrar senha em logs.
+- Conferir home, blog, links principais, 404 e bloqueios /archive/, /backend/ e default.php.
+- Os secrets foram encontrados no GitHub; seus valores não foram lidos ou alterados.
 
 ## Rollback
 
-Reverta o commit problemático em `main` com um novo commit. O push resultante executará o mesmo pipeline e republicará o estado anterior. Não reescreva o histórico da branch principal.
+Reverter o commit problemático por um novo commit na main e acompanhar o novo deploy. Não forçar histórico. O upload pode remover arquivos anteriormente gerenciados pelo estado da ação; arquivos históricos anteriores a esse estado podem exigir limpeza específica no provedor. Não apagar toda a raiz da hospedagem.
 
-Se o FTP mantiver arquivos removidos, exclua-os no gerenciador de arquivos da Hostinger. O prefixo `/archive/` permanece bloqueado pelo `.htaccess` como defesa adicional.
+## Evidência da auditoria
+
+Em 2026-09-05, o checkout local original e origin/main estavam em e17c09093306966233dca4ea4f0f0ebad13e6c26. Os três últimos workflows de deploy estavam concluídos com sucesso; o mais recente era [29504128519](https://github.com/pedrobragabes/Portfolio-Pedro-Braga/actions/runs/29504128519). O site público ainda continha a narrativa anterior. A nova execução ficará ligada à [issue #3](https://github.com/pedrobragabes/Portfolio-Pedro-Braga/issues/3).

@@ -61,14 +61,8 @@
     "whatsappMessage": "Olá Pedro, vi seu portfólio e gostaria de conversar sobre um projeto."
   },
   "education": {
-    "currentSemester": 2,
-    "totalSemesters": 10,
+    "startedYear": 2025,
     "expectedYear": 2030,
-    "subjects": [
-      "Algoritmos II",
-      "Cálculo I",
-      "Introdução à Computação",
-      "Fundamentos Web"
-    ]
+    "status": "Em andamento"
   }
 }

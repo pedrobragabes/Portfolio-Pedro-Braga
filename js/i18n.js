@@ -154,9 +154,13 @@
         translateElements('.project-card__cta', t.projects.view_case);
         translateElements('.project-card__btn--primary', t.projects.btn_site, { keepIcon: true });
         translateElements('.project-card__btn--secondary', t.projects.btn_code, { keepIcon: true });
-        for (let index = 1; index <= 6; index += 1) {
-            translateElements(`.project-card:nth-child(${index}) .project-card__tag`, t.projects[`tag_${index}`]);
-            translateElements(`.project-card:nth-child(${index}) .project-card__description`, t.projects[`description_${index}`]);
+        const projectTranslationKeys = {
+            'aquaflora-agroshop': 1, comerciobes: 2, joysticknights: 4,
+            'home-lab-hardware': 5, 'kingdom-of-aen': 6
+        };
+        for (const [slug, index] of Object.entries(projectTranslationKeys)) {
+            translateElements(`[data-project="${slug}"] .project-card__tag`, t.projects[`tag_${index}`]);
+            translateElements(`[data-project="${slug}"] .project-card__description`, t.projects[`description_${index}`]);
         }
 
 

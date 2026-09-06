@@ -1,0 +1,24 @@
+name: Trabalho planejado
+description: Mudança com problema, escopo e conclusão verificável
+title: "[Planejamento] "
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema e resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: escopo
+    attributes:
+      label: Escopo e dependências
+      description: Relacione issues existentes e separe implementação de configuração externa.
+    validations:
+      required: true
+  - type: textarea
+    id: conclusao
+    attributes:
+      label: Critério de conclusão e validação
+      description: Inclua evidências necessárias; não publique credenciais ou dados privados.
+    validations:
+      required: true

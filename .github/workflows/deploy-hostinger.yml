@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'
     name: Deploy via FTP
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -26,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -35,6 +36,9 @@ jobs:
       - name: Build blog and static assets
         run: npm run build
 
+      - name: Package public files and revision evidence
+        run: npm run package:deploy
+
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@3a9c65ae0fc12ac924ccef8afc26941cc43aad0b # v4.4.0
         with:
@@ -42,6 +46,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /public_html/
+          local-dir: ./dist/
           exclude: |
             **/.git*
             **/.git*/**
@@ -58,3 +63,6 @@ jobs:
             **/blog/posts/**
             **/package.json
             **/package-lock.json
+
+      - name: Verify published revision and content
+        run: npm run verify:deploy

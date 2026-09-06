@@ -64,8 +64,9 @@ assert.match(htaccess, /AddType application\/javascript \.js/);
 assert.match(htaccess, /Header set Cache-Control "public, max-age=3600, must-revalidate"/);
 assert.doesNotMatch(workflow, /\*\*\/(?:archive|backend)\/\*\*|\*\*\/default\\\.php/);
 assert.equal(fs.existsSync(path.join(root, '.vercelignore')), true);
-assert.equal(fs.existsSync(path.join(root, 'archive')), false);
-assert.equal(fs.existsSync(path.join(root, 'default.php')), false);
+// Local historical files may exist, but must never be versioned or deployed.
+const { execFileSync } = require('node:child_process');
+assert.equal(execFileSync('git', ['ls-files', 'archive', 'default.php'], { cwd: root, encoding: 'utf8' }).trim(), '');
 
 assert.equal(packageJson.license, 'MIT');
 assert.equal(Array.isArray(vercelConfig.headers), true);

@@ -3132,3 +3132,8 @@ textarea:focus-visible {
         order: -1;
     }
 }
+
+/* Professional links remain distinct from the translated resume action. */
+.hero__social-links { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.25rem; font-size: 1rem; }
+.hero__social-links a { text-decoration: underline; text-underline-offset: .25em; }
+.services { padding-block: 3rem; }
