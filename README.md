@@ -6,7 +6,7 @@ Produção: [pedrobragabes.com](https://pedrobragabes.com)
 
 ## Objetivo
 
-Apresentar competências, experiência e projetos de forma rápida, acessível e convincente para recrutadores e clientes. O produto é deliberadamente estático: não possui backend, banco, autenticação ou painel administrativo.
+Apresentar competências, experiência e projetos de forma rápida, acessível e convincente para recrutadores, pares e contato profissional. O produto é deliberadamente estático: não possui backend, banco, autenticação ou painel administrativo.
 
 ## Stack
 
@@ -19,7 +19,7 @@ Apresentar competências, experiência e projetos de forma rápida, acessível e
 
 ## Desenvolvimento
 
-Requisitos: Node.js 20 ou superior e npm.
+Requisitos: Node.js 22 ou superior e npm.
 
 ```bash
 npm ci
@@ -61,11 +61,11 @@ Os arquivos estáticos permanecem na raiz por compatibilidade com a hospedagem a
 - Scripts inline executáveis evitados.
 - Dependências verificadas por `npm audit`.
 - Build reproduzível a partir da data mais recente dos posts ou `SOURCE_DATE_EPOCH`.
-- Código legado e arquivos administrativos não fazem parte do repositório nem do deploy.
+- Código legado e arquivos administrativos não fazem parte do repositório nem do deploy; cópias históricas locais são preservadas e ignoradas.
 
 ## Deploy
 
-Pushes na branch `main` executam `.github/workflows/deploy-hostinger.yml`. O workflow instala dependências com `npm ci`, executa o build completo e publica por FTP usando secrets do GitHub.
+Pushes na branch `main` executam `.github/workflows/deploy-hostinger.yml`. O workflow instala dependências com `npm ci`, executa o build completo empacota apenas arquivos públicos e publica por FTP usando secrets do GitHub. A etapa final compara o commit e os hashes publicados com o build.
 
 Consulte [DEPLOY.md](DEPLOY.md) para operação e rollback.
 
@@ -77,7 +77,10 @@ Consulte [DEPLOY.md](DEPLOY.md) para operação e rollback.
 - [DEPLOY.md](DEPLOY.md)
 - [ROADMAP.md](ROADMAP.md)
 - [SECURITY.md](SECURITY.md)
-- [Auditoria técnica](docs/AUDITORIA_TECNICA.md)
+- [Posicionamento e escopo](docs/POSICIONAMENTO.md)
+- [Política de cases](docs/CASES.md)
+- [Auditoria de organização e sincronização](docs/AUDITORIA_2026-09-05.md)
+- [Auditoria técnica histórica](docs/AUDITORIA_TECNICA.md)
 
 ## Licença
 

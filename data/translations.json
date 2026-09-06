@@ -2,7 +2,7 @@
     "pt": {
         "nav": {
             "about": "Sobre",
-            "solutions": "Soluções",
+            "solutions": "Atuação",
             "skills": "Competências",
             "projects": "Projetos",
             "education": "Formação",
@@ -26,27 +26,26 @@
             "greeting": "Olá, eu sou",
             "name": "Pedro Braga",
             "role": "Software Engineer | Backend & DevOps",
-            "description": "Desenvolvedor Full Stack com foco em Backend e Infraestrutura. Experiência em automações Python, APIs Node.js e arquitetura de e-commerce.",
+            "description": "Backend · Automação · Sistemas de e-commerce · Infraestrutura. Desenvolvo produtos, integrações e sistemas internos que conectam software a operações reais.",
             "cta_projects": "Ver projetos",
             "cta_cv": "Currículo"
         },
         "about": {
             "label": "Sobre",
             "title": "Quem sou eu",
-            "text1": "Cresci dentro de uma loja de computadores. Meu pai, sargento da PM e técnico autodidata, abriu seu próprio negócio de TI no final dos anos 90 - consertando hardware, instalando software e resolvendo problemas. Foi ali, entre placas-mãe e gabinetes abertos, que aprendi que tecnologia é sobre fazer funcionar.",
-            "text2": "O que começou como hobby virou profissão. Hoje gerencio um servidor pessoal com Proxmox rodando diversos serviços em produção - de apps mobile de estoque com scanner até automações que economizam horas de trabalho manual.",
-            "text3": "Como cofundador digital da AquaFlora AgroShop, lidero a transformação digital da empresa - do e-commerce inicial às automações com IA que hoje respondem clientes no WhatsApp."
+            "text1": "Cresci dentro de uma loja de computadores. Entre hardware, software e problemas do dia a dia, aprendi a construir tecnologia que funciona para quem precisa dela.",
+            "text2": "Hoje trabalho com backend, APIs, automação e infraestrutura. Meu HomeLab com Proxmox é um espaço para estudar, testar e operar serviços próprios.",
+            "text3": "Sou Software Engineer na AquaFlora AgroShop, com atuação em e-commerce, integrações e ferramentas internas. Curso Engenharia de Computação na UNIVESP."
         },
         "services": {
-            "label": "Soluções",
-            "title": "Onde entrego valor",
-            "cta": "Agendar consultoria",
-            "card1_title": "Logística & Estoque Inteligente",
-            "card1_desc": "Sistemas com leitura de código de barras, auditoria e alertas em tempo real para zerar ruptura e perda.",
-            "card2_title": "Bots & Automação (RPA)",
-            "card2_desc": "Fluxos automatizados em WhatsApp/Slack, emissão de notas e integrações entre ERPs e planilhas.",
-            "card3_title": "E-commerce High-Performance",
-            "card3_desc": "Lojas enxutas, Core Web Vitals em dia e SEO técnico para converter mais e melhor."
+            "label": "Atuação",
+            "title": "Áreas em que trabalho",
+            "card1_title": "Backend & APIs",
+            "card1_desc": "Integrações entre sistemas, contratos de dados e ferramentas para operações reais.",
+            "card2_title": "Automação & IA aplicada",
+            "card2_desc": "Rotinas de catálogo, processamento de dados e automação com revisão humana.",
+            "card3_title": "E-commerce & Infraestrutura",
+            "card3_desc": "WooCommerce, SEO técnico, Docker, Linux e operação de serviços web."
         },
         "skills": {
             "label": "Competências",
@@ -61,14 +60,12 @@
             "btn_code": "GitHub",
             "tag_1": "E-commerce",
             "tag_2": "Vitrine Local",
-            "tag_3": "E-commerce agrícola",
             "tag_4": "Portal de Notícias",
             "tag_5": "Infraestrutura",
             "tag_6": "Game Development",
-            "description_1": "Gestão manual causava perdas em produtos perecíveis. Desenvolvi ecossistema Python + Web com automação de chatbot e integração de rotinas operacionais.",
+            "description_1": "E-commerce WooCommerce, integração de estoque e ferramentas internas. Commerce Agent em desenvolvimento.",
             "description_2": "Plataforma local para conectar negócios da cidade com novos clientes, com foco em descoberta mobile e geração de leads.",
-            "description_3": "Estrutura de loja digital com foco em descoberta de produtos, confiança e jornada de compra orientada à conversão.",
-            "description_4": "WordPress otimizado para SEO, leitura e carregamento com lazy loading e cache.",
+            "description_4": "Plataforma editorial própria com conteúdo real, CMS e SEO. Evolução para Next.js e WordPress headless acompanhada como trabalho em desenvolvimento.",
             "description_5": "Servidor Proxmox com aplicações de estoque, automações e containers Docker. Infraestrutura pessoal usada para resolver problemas reais.",
             "description_6": "Engine de card game em JavaScript puro com sistema de turnos, IA adversária, persistência de estado e regras de domínio sem dependência de frameworks."
         },
@@ -85,13 +82,10 @@
         "education": {
             "label": "Formação",
             "title": "Educação & Certificações",
-            "degree_title": "Engenharia de Computação",
+            "degree_title": "Bacharelado em Engenharia de Computação",
             "degree_university": "UNIVESP - Universidade Virtual do Estado de São Paulo",
             "degree_status": "Em andamento",
-            "degree_expected": "Previsão: 2030",
-            "degree_semester": "2º Semestre",
-            "degree_focus": "Disciplinas Atuais:",
-            "progress_label": "20% concluído",
+            "degree_expected": "2025–2030 · conclusão prevista",
             "certs_title": "Certificações & Formações"
         },
         "testimonials": {
@@ -190,7 +184,7 @@
     "en": {
         "nav": {
             "about": "About",
-            "solutions": "Solutions",
+            "solutions": "Focus",
             "skills": "Skills",
             "projects": "Projects",
             "education": "Education",
@@ -214,27 +208,26 @@
             "greeting": "Hi, I'm",
             "name": "Pedro Braga",
             "role": "Software Engineer | Backend & DevOps",
-            "description": "Full Stack Developer focused on Backend and Infrastructure. Experience with Python automations, Node.js APIs and e-commerce architecture.",
+            "description": "Backend · Automation · E-commerce systems · Infrastructure. I build products, integrations and internal tools that connect software to real operations.",
             "cta_projects": "View projects",
             "cta_cv": "Resume"
         },
         "about": {
             "label": "About",
             "title": "Who am I",
-            "text1": "I grew up inside a computer shop. My father, a police sergeant and self-taught technician, opened his own IT business in the late 90s - fixing hardware, installing software, and solving problems. It was there, among motherboards and open cases, that I learned technology is about making things work.",
-            "text2": "What started as a hobby became a profession. Today I manage a personal server with Proxmox running multiple production services - from mobile inventory apps with scanners to automations that save hours of manual work.",
-            "text3": "As digital co-founder of AquaFlora AgroShop, I lead the company's digital transformation - from the initial e-commerce to AI automations that now respond to customers on WhatsApp."
+            "text1": "I grew up in a computer shop. Working with hardware, software and everyday problems taught me to build technology that works for the people who need it.",
+            "text2": "Today I work with backend systems, APIs, automation and infrastructure. My Proxmox HomeLab is a place to study, test and run personal services.",
+            "text3": "I am a Software Engineer at AquaFlora AgroShop, working on e-commerce, integrations and internal tools. I study Computer Engineering at UNIVESP."
         },
         "services": {
-            "label": "Solutions",
-            "title": "Where I create impact",
-            "cta": "Book a consulting call",
-            "card1_title": "Logistics & Smart Inventory",
-            "card1_desc": "Barcode-driven systems with audits and real-time alerts to kill stockouts and shrinkage.",
-            "card2_title": "Bots & Automation (RPA)",
-            "card2_desc": "Automated flows on WhatsApp/Slack, invoice issuance, and integrations across ERPs and spreadsheets.",
-            "card3_title": "High-Performance E-commerce",
-            "card3_desc": "Lean storefronts with Core Web Vitals on point and technical SEO built to convert."
+            "label": "Focus",
+            "title": "Areas I work in",
+            "card1_title": "Backend & APIs",
+            "card1_desc": "System integrations, data contracts and tools for real operations.",
+            "card2_title": "Automation & applied AI",
+            "card2_desc": "Catalog workflows, data processing and automation with human review.",
+            "card3_title": "E-commerce & Infrastructure",
+            "card3_desc": "WooCommerce, technical SEO, Docker, Linux and web service operations."
         },
         "skills": {
             "label": "Skills",
@@ -249,14 +242,12 @@
             "btn_code": "GitHub",
             "tag_1": "E-commerce",
             "tag_2": "Local Discovery",
-            "tag_3": "Agricultural E-commerce",
             "tag_4": "News Portal",
             "tag_5": "Infrastructure",
             "tag_6": "Game Development",
-            "description_1": "Manual inventory work caused losses in perishable products. I built a Python + Web ecosystem with chatbot automation and integrated operating routines.",
+            "description_1": "WooCommerce e-commerce, inventory integration and internal tools. Commerce Agent is in development.",
             "description_2": "A local platform that connects city businesses with new customers, focused on mobile discovery and lead generation.",
-            "description_3": "A digital storefront designed for product discovery, trust and a conversion-oriented purchase journey.",
-            "description_4": "A WordPress portal optimized for search, reading performance, lazy loading and caching.",
+            "description_4": "An independent editorial platform with real content, a CMS and SEO. The move to Next.js and headless WordPress is tracked as work in development.",
             "description_5": "A Proxmox server running inventory applications, automation and Docker containers to solve real operating needs.",
             "description_6": "A vanilla JavaScript card-game engine with turn management, opponent AI, persistent state and framework-free domain rules."
         },
@@ -273,13 +264,10 @@
         "education": {
             "label": "Education",
             "title": "Education & Certifications",
-            "degree_title": "Computer Engineering",
+            "degree_title": "Bachelor’s degree in Computer Engineering",
             "degree_university": "UNIVESP - Virtual University of São Paulo State",
             "degree_status": "In progress",
-            "degree_expected": "Expected: 2030",
-            "degree_semester": "2nd Semester",
-            "degree_focus": "Current Subjects:",
-            "progress_label": "20% complete",
+            "degree_expected": "2025–2030 · expected graduation",
             "certs_title": "Certifications & Training"
         },
         "testimonials": {

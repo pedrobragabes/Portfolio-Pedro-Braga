@@ -2,6 +2,15 @@
 
 As mudanças relevantes deste projeto seguem [Semantic Versioning](https://semver.org/).
 
+## Não lançado — revisão 2026-09-05
+
+- Corrigidos posicionamento pessoal, cargo, formação e maturidade dos projetos em PT/EN.
+- Removidos Florescer da vitrine e placeholders do modal; links profissionais adicionados ao hero.
+- Tradução por slug para suportar curadoria sem trocar descrições.
+- Criados planejamento, issues, milestones, política de cases e templates de contribuição.
+- Adicionados pacote público, CI em PR e verificação de commit/hashes após publicação na Hostinger.
+- Atualizada a dependência transitiva js-yaml; documentos locais históricos preservados e ignorados.
+
 ## 1.8.1 — 2026-07-16
 
 ### Segurança

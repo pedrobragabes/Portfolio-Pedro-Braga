@@ -30,12 +30,12 @@
             title: 'AquaFlora AgroShop',
             tag: 'E-commerce',
             problem: 'A operação tinha gargalos de estoque e atendimento em momentos de pico. O time precisava reduzir fricção na jornada de compra sem perder controle de catálogo.',
-            solution: 'Foi estruturado um ecossistema integrado com WooCommerce, automações e fluxos de atendimento. O projeto uniu melhorias de performance, organização operacional e comunicação mais rápida com clientes.',
-            result: 'O ciclo comercial ficou mais enxuto, com resposta mais rápida e operação mais previsível para escalar catálogo e campanhas.',
+            solution: 'O trabalho reúne WooCommerce, sincronização de estoque e ferramentas internas. O Commerce Agent está em desenvolvimento; automação de atendimento não é apresentada como produção validada.',
+            result: 'O case documenta a engenharia aplicada à operação. Resultados quantitativos e estado de cada componente serão publicados com evidências verificáveis.',
             metrics: [
-                { label: 'Atendimento', value: 'Automatizado' },
+                { label: 'Commerce Agent', value: 'Em desenvolvimento' },
                 { label: 'Catálogo', value: 'Integrado' },
-                { label: 'Operação', value: 'Centralizada' }
+                { label: 'E-commerce', value: 'Em produção' }
             ],
             images: [
                 'assets/AquaFlora/AquaFlora Home.webp',
@@ -68,30 +68,6 @@
                 { label: 'Status', value: 'Em evolução' }
             ],
             images: [],
-            videos: [],
-            links: {
-                live: '',
-                repo: '',
-                demo: '',
-                blog: ''
-            }
-        },
-        'florescer-garden': {
-            title: 'Florescer Garden',
-            tag: 'E-commerce agrícola',
-            problem: 'Era necessário organizar uma vitrine digital com narrativa clara de valor para transformar interesse em contato comercial.',
-            solution: 'O projeto foi desenhado com layout orientado a conversão, categorização de produtos e CTAs estratégicos para acelerar a tomada de decisão.',
-            result: 'A estrutura permite validar a oferta com mais consistência e preparar terreno para crescimento com dados reais de comportamento.',
-            metrics: [
-                { label: 'Objetivo', value: 'Conversão' },
-                { label: 'Canal', value: 'Catálogo digital' },
-                { label: 'Status', value: 'Em tração' }
-            ],
-            images: [
-                'assets/FlorescerGarden/fachada.png',
-                'assets/FlorescerGarden/Produtos.png',
-                'assets/FlorescerGarden/Carrinho.png'
-            ],
             videos: [],
             links: {
                 live: '',
@@ -188,12 +164,12 @@
             'aquaflora-agroshop': {
                 tag: 'E-commerce',
                 problem: 'The operation had inventory and customer-service bottlenecks during peak periods. The team needed to reduce friction in the purchase journey without losing catalog control.',
-                solution: 'An integrated ecosystem was built with WooCommerce, automation and customer-service workflows. The project combined performance improvements, operational organization and faster communication with customers.',
-                result: 'The sales cycle became leaner, with faster responses and a more predictable operation for scaling the catalog and campaigns.',
+                solution: 'The work covers WooCommerce, inventory synchronization and internal tools. Commerce Agent is in development; customer-service automation is not presented as verified production.',
+                result: 'This case documents engineering for real operations. Quantitative outcomes and the maturity of each component will be published with verifiable evidence.',
                 metrics: [
-                    { label: 'Customer service', value: 'Automated' },
+                    { label: 'Commerce Agent', value: 'In development' },
                     { label: 'Catalog', value: 'Integrated' },
-                    { label: 'Operation', value: 'Centralized' }
+                    { label: 'E-commerce', value: 'In production' }
                 ],
                 videoTitles: ['Visit the live store']
             },
@@ -206,17 +182,6 @@
                     { label: 'Primary focus', value: 'Local leads' },
                     { label: 'Experience', value: 'Mobile-first' },
                     { label: 'Status', value: 'Evolving' }
-                ]
-            },
-            'florescer-garden': {
-                tag: 'Agricultural E-commerce',
-                problem: 'The business needed a digital storefront with a clear value narrative to turn interest into commercial conversations.',
-                solution: 'The project was designed around conversion, product categorization and strategic calls to action that speed up decision-making.',
-                result: 'The structure supports more consistent offer validation and prepares the product for growth based on real behavior data.',
-                metrics: [
-                    { label: 'Goal', value: 'Conversion' },
-                    { label: 'Channel', value: 'Digital catalog' },
-                    { label: 'Status', value: 'Gaining traction' }
                 ]
             },
             joysticknights: {

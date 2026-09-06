@@ -6,6 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
+    "package:deploy": "node scripts/package-deploy.js",
+    "verify:deploy": "node scripts/verify-deploy.js",
     "build:blog": "node scripts/build-blog.js",
     "test": "node tests/smoke.test.js",
     "minify:css": "node scripts/minify-css.js",

@@ -1,5 +1,15 @@
 # Dependency directories
 node_modules/
+dist/
+
+# Historical local material; preserved on disk, never published.
+/archive/
+/default.php
+/docs/CONTEXTO.md
+/docs/DEPLOY.md
+/docs/PLANOS.md
+/docs/ROADMAP.md
+/docs/SEGURANCA.md
 
 # OS generated files
 .DS_Store
