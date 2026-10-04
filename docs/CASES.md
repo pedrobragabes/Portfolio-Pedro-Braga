@@ -22,3 +22,5 @@ No ecossistema AquaFlora, manter uma linha por WooCommerce, Stock Sync, apps int
 - Novo projeto só entra em destaque depois de demonstração estável. Não preencher três posições com projetos sem evidência.
 
 Use [o template de case](templates/case.md) e acompanhe as tarefas na [M2](https://github.com/pedrobragabes/Portfolio-Pedro-Braga/milestone/2).
+
+Os critérios para CadastraFácil, RastreIAGastos e PromoGames, com a decisão aplicada a cada projeto, estão em [Entrada de produtos no portfólio](ADMISSAO-DE-PRODUTOS.md).
