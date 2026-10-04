@@ -34,7 +34,7 @@
   "homepage": "https://pedrobragabes.com",
   "devDependencies": {
     "clean-css": "^5.3.3",
-    "terser": "^5.49.0",
+    "terser": "^5.51.2",
     "gray-matter": "^4.0.3",
     "marked": "^18.0.6"
   }
