@@ -79,6 +79,7 @@ Consulte [DEPLOY.md](DEPLOY.md) para operação e rollback.
 - [SECURITY.md](SECURITY.md)
 - [Posicionamento e escopo](docs/POSICIONAMENTO.md)
 - [Política de cases](docs/CASES.md)
+- [Entrada de produtos no portfólio](docs/ADMISSAO-DE-PRODUTOS.md)
 - [Auditoria de organização e sincronização](docs/AUDITORIA_2026-09-05.md)
 - [Auditoria técnica histórica](docs/AUDITORIA_TECNICA.md)
 
