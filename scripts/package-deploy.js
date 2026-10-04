@@ -16,7 +16,7 @@ for (const entry of publicEntries) {
     });
 }
 const files = {};
-for (const file of ['index.html', 'css/style.min.css', 'js/main.min.js', 'js/i18n.min.js', 'data/translations.json', 'data/content.json']) {
+for (const file of ['index.html', 'css/style.min.css', 'js/main.min.js', 'js/i18n.min.js', 'data/translations.json', 'data/content.json', 'assets/resume/CV_Pedro_Braga_Software_Engineer.pdf', 'assets/resume/Resume_Pedro_Braga_Software_Engineer.pdf']) {
     files[file] = crypto.createHash('sha256').update(fs.readFileSync(path.join(output, file))).digest('hex');
 }
 const revision = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
